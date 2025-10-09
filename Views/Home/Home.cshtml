@@ -1,0 +1,29 @@
+<h4>Tus objetivos de hoy:</h4>
+
+<section>
+
+<!-- esto es meramente maquetado (inicio) -->
+@foreach(Tarea i in ViewBag.listaTareas)
+{   
+    <div>
+    
+        <p>@ViewBag.textoTarea</p>
+
+        <p>@ViewBag.progEnFracc</p>
+
+        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: 0%"></div>
+        </div>
+
+    </div>
+}
+
+
+<h2>La Racha</h2>
+
+<img src="#" />
+<h1>@ViewBag.racha</h1>
+
+<!-- esto es meramente maquetado (fin) -->
+
+</section>

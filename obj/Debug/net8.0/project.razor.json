@@ -19329,8 +19329,18 @@
   "RootNamespace": "NoHaze",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\Home\\Home.cshtml",
+      "TargetPath": "Views\\Home\\Home.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\Home\\Perfil.cshtml",
+      "TargetPath": "Views\\Home\\Perfil.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -19344,8 +19354,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\Account\\SignIn.cshtml",
+      "TargetPath": "Views\\Account\\SignIn.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\Account\\Login.cshtml",
+      "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\49255481\\Desktop\\NoHaze\\Views\\Home\\PlayList.cshtml",
+      "TargetPath": "Views\\Home\\PlayList.cshtml",
       "FileKind": "mvc"
     },
     {
