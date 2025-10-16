@@ -27,3 +27,14 @@ C:\Users\49255481\Desktop\NoHaze\obj\Debug\net8.0\refint\NoHaze.dll
 C:\Users\49255481\Desktop\NoHaze\obj\Debug\net8.0\NoHaze.pdb
 C:\Users\49255481\Desktop\NoHaze\obj\Debug\net8.0\NoHaze.genruntimeconfig.cache
 C:\Users\49255481\Desktop\NoHaze\obj\Debug\net8.0\ref\NoHaze.dll
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.AssemblyInfoInputs.cache
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.AssemblyInfo.cs
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.csproj.CoreCompileInputs.cache
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.RazorAssemblyInfo.cache
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.RazorAssemblyInfo.cs
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.sourcelink.json
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.dll
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\refint\NoHaze.dll
+C:\Users\49255481\Downloads\NoHaze\obj\Debug\net8.0\NoHaze.pdb

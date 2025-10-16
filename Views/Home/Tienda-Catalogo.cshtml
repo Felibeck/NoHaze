@@ -1,0 +1,13 @@
+<h3>Tienda de monedas</h3>
+
+<h5>En esta tienda podras comprar tiempo de ocio en tus apps</h5>
+
+@foreach(App i in @ViewBag.listaAppsOcio)
+{
+    <div>
+    
+    <img src="/Imagenes/@i.icono" />
+    <a href="#">Comprar</a>
+    
+    </div>
+}

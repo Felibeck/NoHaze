@@ -1,0 +1,60 @@
+<!-- Imagen Playlist -->
+<img src="#" />
+
+<!-- Nombre Playlist -->
+<h1>Nombre Playlist</h1>
+
+<!-- Autor Playlist -->
+<h5>Autor Playlist</h5>
+
+<a href='@Url.Action("Reproducir", "Home")'>
+
+<div>
+
+    <img src="/Imagenes/icono-play" />
+    <h2>Play</h2>
+
+</div>
+
+</a>
+
+<a href='@Url.Action("Shuffle", "Home")'>
+
+<div>
+
+    <img src="/Imagenes/icono-shuffle" />
+    <h2>Shuffle</h2>
+
+</div>
+
+</a>
+
+<section>
+
+@foreach(Frecuencia i in @ViewBag.listaFrecuencias)
+{
+    <div>
+    
+        <img src="/Imagenes/@i.foto" />
+        <h3>@i.titulo</h3>
+        <h5>@i.autor</h5>
+
+    </div>
+}
+
+</section>
+
+
+<h1>Sonidos Recomendados</h1>
+
+<!-- foreach que pasa por las frecuencias que recomienda -->
+
+    <div>
+    
+        <img src="/Imagenes/@i.foto" />
+        <h3>@i.titulo</h3>
+        <h5>@i.autor</h5>
+
+    </div>
+
+<!-- cierre -->

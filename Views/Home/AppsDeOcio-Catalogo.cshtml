@@ -1,0 +1,18 @@
+
+<h1>Apps de Ocio</h1>
+
+<a href='@Url.Action("AppsDeOcio-Selector","Home")'>Seleccionar app de ocio</a>
+
+@foreach(AppOcio i in ViewBag.ListaAppsOcio)
+{
+    <div>
+
+    <img src="/Imagenes/@i.Icono" alt="Icono-App">
+    <h2>@i.Nombre</h2>
+    <button onclick="eliminarAppOcio('@i.id')">✕</button>
+
+
+    </div>
+
+
+}
