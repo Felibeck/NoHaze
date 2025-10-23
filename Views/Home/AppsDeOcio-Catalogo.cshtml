@@ -1,18 +1,54 @@
-
 <h1>Apps de Ocio</h1>
 
-<a href='@Url.Action("AppsDeOcio-Selector","Home")'>Seleccionar app de ocio</a>
+<a href="#">
+<img src="/Imagenes/add-icon.png" />
+Seleccionar app de ocio
 
-@foreach(AppOcio i in ViewBag.ListaAppsOcio)
-{
+</a>
+
+<section>
+
     <div>
+    
+        <img src="/Imagenes/tiktok-icon.png/" />
 
-    <img src="/Imagenes/@i.Icono" alt="Icono-App">
-    <h2>@i.Nombre</h2>
-    <button onclick="eliminarAppOcio('@i.id')">✕</button>
+        Tiktok
 
+        <a href="#">
+        
+        <img src="/Imagenes/delete-icon.png" /> 
+
+        </a>
+
+    </div>
+
+    <div>
+    
+        <img src="/Imagenes/x-icon.jpg/" />
+
+        X
+
+        <a href="#">
+        
+        <img src="/Imagenes/delete-icon.png" /> 
+
+        </a>
+
+    </div>
+
+        <div>
+    
+        <img src="/Imagenes/youtube-icon.png/" />
+
+        Youtube
+
+        <a href="#">
+        
+        <img src="/Imagenes/delete-icon.png" /> 
+
+        </a>
 
     </div>
 
 
-}
+</section>
