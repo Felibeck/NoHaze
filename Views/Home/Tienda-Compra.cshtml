@@ -13,7 +13,45 @@
 
 <!-- inicio Carousel -->
 
+  <div class="selector">
+    <span class="flecha" id="menos">◀</span>
+    <span id="valor">15 min</span>
+    <span class="flecha" id="mas">▶</span>
+  </div>
+
+<script>
+  const valor = document.getElementById("valor");
+  const menos = document.getElementById("menos");
+  const mas = document.getElementById("mas");
+
+  let minutos = 15;
+
+  function actualizar() {
+    valor.textContent = `${minutos} min`;
+  }
+
+  menos.addEventListener("click", () => {
+    if (minutos > 5) minutos -= 5;
+    actualizar();
+  });
+
+  mas.addEventListener("click", () => {
+    if (minutos < 120) minutos += 5;
+    actualizar();
+  });
+</script>
 
 <!-- fin Carousel -->
 
+<button onclick="">Comprar</button>
 
+
+
+<!-- boton para volver -->
+<a href="#">
+
+<i class="bi bi-arrow-return-left"></i>
+
+</a>
+
+<!-- fin boton para volver -->

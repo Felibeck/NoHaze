@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoHaze")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c58126999b5b093275250b292ccd6bdd6d8eba77")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d420e14c5908358db4422ac891589c3b251173c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("NoHaze")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NoHaze")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
