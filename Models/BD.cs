@@ -33,4 +33,32 @@ static public class BD
     }
 
 
+// get lista de playlists
+    public static List<Playlist> getListaPlaylists(int IDUsuario)
+    {
+        List<Playlist> playlists = new List<Playlist>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM Playlists WHERE IDUsuario = @pIDUsuario";
+                playlists = connection.Query<Playlist>(query, new { pIDUsuario = IDUsuario}).ToList();
+            }
+
+        return playlists;
+        // despues para comprobar si esta vacia simplemente usamos el empty si lo necesitamos
+    }
+
+//get Usuario
+
+    public static Usuario GetUsuario(int IDUsuario)
+    {
+        Usuario UsuarioBuscado = new Usuario(); 
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Usuarios WHERE ID = @pIDUsuario";
+            UsuarioBuscado = connection.QueryFirstOrDefault<Usuario>(query, new { pIDUsuario = IDUsuario});
+        }
+            return UsuarioBuscado;
+    }
+
+
 }
