@@ -31,4 +31,6 @@ static public class BD
                 connection.Execute(query, new {pemail = email, pusername = username, ppassword = password, pfechaNacimiento = fechaNacimiento, pmonedas = 0, paceptaNotificaciones = aceptaNotificaciones, pracha = 0});
             }
     }
+
+
 }

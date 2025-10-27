@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XZ00zbOpaWVpVtpBu+///s7f0zaUpIiMuClyqDwaIdY=",
+  "Hash": "XY+OMWSV2NXXbDLtEXp/jBLRc19q/4dL1/DMkOEwmJQ=",
   "Source": "NoHaze",
   "BasePath": "_content/NoHaze",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "NoHaze\\wwwroot",
       "Source": "NoHaze",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\.gitignore",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\.gitignore",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": ".gitignore",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\.gitignore"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\css\\site.css",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\favicon.ico",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\add-icon.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\add-icon.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/add-icon.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\add-icon.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\delete-icon.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\delete-icon.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/delete-icon.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\delete-icon.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\icono-play.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\icono-play.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/icono-play.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\icono-play.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\icono-shuffle.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\icono-shuffle.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/icono-shuffle.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\icono-shuffle.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\logo-x.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\logo-x.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/logo-x.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\logo-x.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\NoHaze-Logo.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\NoHaze-Logo.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/NoHaze-Logo.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\NoHaze-Logo.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\tiktok-icon.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\tiktok-icon.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/tiktok-icon.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\tiktok-icon.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\x-icon.jpg",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\x-icon.jpg",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/x-icon.jpg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\x-icon.jpg"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\Imagenes\\youtube-icon.png",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\Imagenes\\youtube-icon.png",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "Imagenes/youtube-icon.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\youtube-icon.png"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\js\\site.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\49255481\\NoHaze\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "NoHaze",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49255481\\Downloads\\NoHaze\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49255481\\NoHaze\\wwwroot\\",
       "BasePath": "_content/NoHaze",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

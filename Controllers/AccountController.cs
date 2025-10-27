@@ -50,8 +50,13 @@ public class AccountController : Controller
     {
         if(BD.Login(username, password) == -1)
         {
-            // falta terminar de hacer esto
+            BD.SignIn(email, username, password, fechaNacimiento, aceptaNotificaciones);
+
+            HttpContext.Session.SetString("ID",BD.Login(username, password).ToString());
+
         }
+
+        return RedirectToAction("SignIn");
     }
 
 }
