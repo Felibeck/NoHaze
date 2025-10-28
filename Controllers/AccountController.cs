@@ -59,4 +59,10 @@ public class AccountController : Controller
         return RedirectToAction("SignIn");
     }
 
+    public IActionResult logOut()
+    {
+        HttpContext.Session.Remove("ID");
+        return RedirectToAction("Index", "Home");
+    }
+
 }   

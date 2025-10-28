@@ -60,5 +60,9 @@ static public class BD
             return UsuarioBuscado;
     }
 
+    // get frecuencias por id de playlist
+
+    public 
+
 
 }
