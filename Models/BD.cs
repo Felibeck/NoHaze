@@ -62,5 +62,33 @@ static public class BD
 
     // get frecuencias por id de playlist
 
+<<<<<<< HEAD
+=======
+     public static List<Frecuencia> getListaFrecuencias(int IDPlaylist)
+    {
+        List<Frecuencia> frcuencias = new List<Frecuencia>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "exec getFrecuencias @pIDPlaylist";
+                frecuencias = connection.Query<Frecuencia>(query, new { pIDUsuario = IDUsuario}).ToList();
+            }
+
+        return frecuencias;
+    }
+
+    // get desafios por id de usuario
+
+    public static List<Desafio> getListaDesafios(int IDUsuario)
+    {
+        List<Desafio> desafios = new List<Desafio>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "exec getDesafios @pIDUsuario";
+                desafios = connection.Query<Desafio>(query, new { pIDUsuario = IDUsuario}).ToList();
+            }
+
+        return desafios;
+    }
+>>>>>>> c89d5e52000ecdb9d38cb3e466334cf28336d23d
 
 }
