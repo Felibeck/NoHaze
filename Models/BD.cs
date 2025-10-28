@@ -62,7 +62,5 @@ static public class BD
 
     // get frecuencias por id de playlist
 
-    public 
-
 
 }

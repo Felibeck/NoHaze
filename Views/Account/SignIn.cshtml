@@ -1,14 +1,16 @@
     <main>
+
+    <div class="centrar">
         <img src="/Imagenes/NoHaze-Logo nuevo.png" alt="NoHaze Logo">
-        
-        <h1>Create Account</h1>
-        
-        <form action="Home.html"> 
+        <h1 class="titulo">Create Account</h1>
+    </div>
+
+        <form action='@Url.Action("guardarSignIn","Account")' method="POST"> 
         
             <input type="text"  placeholder="Email" name="email" />
             <input type="text"  placeholder="Username" name="username"/>
             <input type="password"  placeholder="Password" name="password" />
-            <input type="date"  placeholder="Fecha de Nacimiento" />
+            <input type="date"  placeholder="Fecha de Nacimiento" name="fechaNacimiento" />
         
             <input type="radio" name="recibeNotis" />
             <label>Recibir Notificación</label>
@@ -17,6 +19,6 @@
         
         </form>
         
-        <a href="Index.html">.</a>
+        <a href='@Url.Action("Index","Home")'>.</a>
 
     </main>

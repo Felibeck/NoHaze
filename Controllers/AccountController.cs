@@ -32,11 +32,8 @@ public class AccountController : Controller
              return RedirectToAction("Home", "Home");
         }else   
         {
-            return View();
+            return RedirectToAction("Home","Home");
         }
-
-
-        return RedirectToAction("Login");
 
     }
 
