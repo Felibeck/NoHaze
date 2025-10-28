@@ -20,22 +20,39 @@ public class HomeController : Controller
 
     public IActionResult Home()
     {
-        Usuario hayQuePedirloAlaBaseDeDatos = new Usuario();
-        List <Desafio> hayQuePedirloAlaBaseDeDatos2 = new List <Desafio>();
-        ViewBag.nombre = hayQuePedirloAlaBaseDeDatos.username;
-        ViewBag.racha = hayQuePedirloAlaBaseDeDatos.racha;
-        ViewBag.desafio = hayQuePedirloAlaBaseDeDatos2;
-        return View("Home");
+        int id = int.Parse(HttpContext.Session.GetString("id"));
+        string direccion = "Index";
+             Usuario Usuario = BD.GetUsuario(id);
+            List <Desafio> hayQuePedirloAlaBaseDeDatos2 = new List <Desafio>();
+            ViewBag.nombre = Usuario.username;
+            ViewBag.racha = Usuario.racha;
+            ViewBag.desafio = hayQuePedirloAlaBaseDeDatos2;
+       
+        return View(direccion);
     }
+    public IActionResult Pasar(string direccion)
+    {
+        int id = int.Parse(HttpContext.Session.GetString("id"));
+        string direccion = "index";
+        if(id != null)
+        {
+            direccion = direccion;
+        }
+        return RedirectToAction(direccion);
+    }
+    
      public IActionResult Playlist()
     {
-        Playlist hayQuePedirloAlaBaseDeDatos = new Playlist();
+        int id = int.Parse(HttpContext.Session.GetString("id"));
+
+        List<Playlist> playlists = BD.getListaPlaylists(id);
         List <Tag> hayQuePedirloAlaBaseDeDatos2 = new List <Tag>();
-        ViewBag.Playlist = hayQuePedirloAlaBaseDeDatos;
+        ViewBag.Playlist = playlists;
         ViewBag.Tags = hayQuePedirloAlaBaseDeDatos2;
         return View("Playlist-Frecuencias");
     }
 
+    
     public IActionResult Playlist_Catalogo()
     {
         List <AppOcio> hayQuePedirloAlaBaseDeDatos2 = new List <AppOcio>();
