@@ -62,15 +62,13 @@ static public class BD
 
     // get frecuencias por id de playlist
 
-<<<<<<< HEAD
-=======
      public static List<Frecuencia> getListaFrecuencias(int IDPlaylist)
     {
-        List<Frecuencia> frcuencias = new List<Frecuencia>();
+        List<Frecuencia> frecuencias = new List<Frecuencia>();
         using(SqlConnection connection = new SqlConnection(_connectionString))
             {
                 string query = "exec getFrecuencias @pIDPlaylist";
-                frecuencias = connection.Query<Frecuencia>(query, new { pIDUsuario = IDUsuario}).ToList();
+                frecuencias = connection.Query<Frecuencia>(query, new { pIDPlaylist = IDPlaylist}).ToList();
             }
 
         return frecuencias;
@@ -89,6 +87,34 @@ static public class BD
 
         return desafios;
     }
->>>>>>> c89d5e52000ecdb9d38cb3e466334cf28336d23d
+
+    // get tags por id playlist
+   public static List<Tag> getListaTags(int IDPlaylist)
+    {
+        List<Tag> tags = new List<Tag>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "exec getListaTags @pIDPlaylist";
+                tags = connection.Query<Tag>(query, new { pIDPlaylist = IDPlaylist}).ToList();
+            }
+
+        return tags;
+    }
+
+    // get apps de ocio por id usuario
+
+   public static List<AppOcio> getListaAppsOcio(int IDUsuario)
+    {
+        List<AppOcio> appsOcio = new List<AppOcio>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "exec getListaAppsOcio @pIDUsuario";
+                appsOcio = connection.Query<AppOcio>(query, new { pIDUsuario = IDUsuario}).ToList();
+            }
+
+        return appsOcio;
+    }
+
+    // falta hacer el storeprocedure en la base de datos de getListaAppsOcio
 
 }
