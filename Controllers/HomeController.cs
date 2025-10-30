@@ -41,7 +41,6 @@ public class HomeController : Controller
     {
         
         string direccion = Direccion;
-        Console.WriteLine(Direccion);
         string id = HttpContext.Session.GetString("ID");
         ViewBag.ID = int.Parse(id);
         if (string.IsNullOrEmpty(id))
@@ -59,6 +58,10 @@ public class HomeController : Controller
         List <Tag> hayQuePedirloAlaBaseDeDatos2 = new List <Tag>();
         ViewBag.Playlist = playlists;
         ViewBag.Tags = hayQuePedirloAlaBaseDeDatos2;
+        return View();
+    }
+    public IActionResult Estadisticas()
+    {
         return View();
     }
 
@@ -93,7 +96,7 @@ public class HomeController : Controller
         int id = int.Parse(HttpContext.Session.GetString("ID"));
         ViewBag.Usuario = BD.GetUsuario(id);
 
-        return View();
+        return View("Perfil");
     }
     public IActionResult Editar_Perfil()
     {
