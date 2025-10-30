@@ -49,22 +49,22 @@ public class HomeController : Controller
         List <Tag> hayQuePedirloAlaBaseDeDatos2 = new List <Tag>();
         ViewBag.Playlist = playlists;
         ViewBag.Tags = hayQuePedirloAlaBaseDeDatos2;
-        return View("Playlist");
+        return View();
     }
 
     
-    public IActionResult PlaylistFrecuencias(int idPlaylist)
+    public IActionResult Playlist_Frecuencias(int idPlaylist)
     {
-        Frecuencia Frecuencias = BD.getListaFrecuencias(idPlaylist);
+        List<Frecuencia> Frecuencias = BD.getListaFrecuencias(idPlaylist);
         ViewBag.Frecuencias = Frecuencias;
-        return View("Playlist-Frecuencias");
+        return View();
     }
 
     public IActionResult Tienda_Catalogo()
     {
         List <AppOcio> AppOcio = new List <AppOcio>();
-        ViewBag.ApsDeOcio = hayQuePedirloAlaBaseDeDatos1;
-        return View("Tienda-Catalogo");
+        ViewBag.ApsDeOcio = AppOcio;
+        return View();
     }
 
     public IActionResult AppsDeOcio_Catalogo()
