@@ -15,27 +15,35 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        string id = HttpContext.Session.GetString("ID");
+        if (!string.IsNullOrEmpty(id))
+        {
+        ViewBag.ID = int.Parse(id);
+        }
+        else{
+        ViewBag.ID = 0;
+        }
         return View();
     }   
 
     public IActionResult Home()
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
-        string direccion = "Index";
             Usuario Usuario = BD.GetUsuario(id);
             List <Desafio> desafios = BD.getListaDesafios(id);
             ViewBag.nombre = Usuario.username;
             ViewBag.racha = Usuario.racha;
             ViewBag.desafio = desafios;
-       
-        return View(direccion);
+
+        return View();
     }
     public IActionResult Pasar(string Direccion)
     {
-
+        
         string direccion = Direccion;
         Console.WriteLine(Direccion);
         string id = HttpContext.Session.GetString("ID");
+        ViewBag.ID = int.Parse(id);
         if (string.IsNullOrEmpty(id))
         {
             direccion = "Index";

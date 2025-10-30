@@ -16,6 +16,14 @@ public class AccountController : Controller
    
     public IActionResult Login()
     {
+        string id = HttpContext.Session.GetString("ID");
+        if (!string.IsNullOrEmpty(id))
+        {
+        ViewBag.ID = int.Parse(id);
+        }
+        else{
+        ViewBag.ID = 0;
+        }
         return View();
     }
 
@@ -23,34 +31,42 @@ public class AccountController : Controller
 
     public IActionResult guardarLogin(string username, string password)
     {   
-
+        if(username != null && password != null){
         int IDusuario = BD.Login(username, password);
 
         if(IDusuario > 0)
         {
             HttpContext.Session.SetString("ID",IDusuario.ToString());
             return RedirectToAction("Pasar","Home", new{Direccion = "Home"});
-        }else   
-        {
-            return View("Login");
+        }  
         }
+          return RedirectToAction("Login");
+        
 
     }
 
      public IActionResult SignIn()
     {
+        string id = HttpContext.Session.GetString("ID");
+        if (!string.IsNullOrEmpty(id))
+        {
+        ViewBag.ID = int.Parse(id);
+        }
+        else{
+        ViewBag.ID = 0;
+        }
         return View();
     }
 
     [HttpPost]
     public IActionResult guardarSignIn(string email, string username, string password, DateTime fechaNacimiento, bool aceptaNotificaciones)
-    {
-        if(BD.Login(username, password) == -1)
+    {   Console.WriteLine(BD.Login(username, password));
+        if(BD.Login(username, password) < 1)
         {
             BD.SignIn(email, username, password, fechaNacimiento, aceptaNotificaciones);
-
+            Console.WriteLine("llega?");
             HttpContext.Session.SetString("ID",BD.Login(username, password).ToString());
-            return View();
+            return View("Index", "Home");
         }
         return RedirectToAction("SignIn");
     }
