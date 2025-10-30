@@ -32,13 +32,15 @@ public class HomeController : Controller
     }
     public IActionResult Pasar(string Direccion)
     {
-        int id = int.Parse(HttpContext.Session.GetString("ID"));
-        string direccion = "index";
-        if(id != null)
+
+        string direccion = Direccion;
+        Console.WriteLine(Direccion);
+        string id = HttpContext.Session.GetString("ID");
+        if (string.IsNullOrEmpty(id))
         {
-            direccion = Direccion;
+            direccion = "Index";
         }
-        return RedirectToAction(direccion);
+        return RedirectToAction(direccion, "Home");
     }
     
      public IActionResult Playlist()

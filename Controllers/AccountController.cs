@@ -26,10 +26,10 @@ public class AccountController : Controller
 
         int IDusuario = BD.Login(username, password);
 
-        if(IDusuario != -1)
+        if(IDusuario > 0)
         {
-             HttpContext.Session.SetString("ID",IDusuario.ToString());
-             return RedirectToAction("Index","Home");
+            HttpContext.Session.SetString("ID",IDusuario.ToString());
+            return RedirectToAction("Pasar","Home", new{Direccion = "Home"});
         }else   
         {
             return View("Login");
