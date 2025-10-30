@@ -17,7 +17,7 @@ static public class BD
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT ID FROM Usuarios WHERE username = @pUsername AND password = @pPassword";
-            IDUsuarioBuscado = connection.QueryFirstOrDefault<int>(query, new { pPassword = password, pUsername = username});
+            IDUsuarioBuscado = connection.QueryFirstOrDefault<int>(query, new { pUsername = username, pPassword = password});
         }
             return IDUsuarioBuscado;
     }

@@ -103,6 +103,15 @@ public class HomeController : Controller
         return View();
     }
 
+    // para eliminar la app de ocio
+
+    public IActionResult eliminarAppOcio(int IDAppOcio)
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.eliminarAppOcio(IDAppOcio, id);
+        return View("AppsDeOcio_Catalogo", "Home");
+    }
+
     
 
 }
