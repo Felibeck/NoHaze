@@ -57,7 +57,7 @@ public class HomeController : Controller
     {
         List <AppOcio> hayQuePedirloAlaBaseDeDatos2 = new List <AppOcio>();
         ViewBag.ApsDeOcio = hayQuePedirloAlaBaseDeDatos2;
-        return View("AppsDeOcio-Catalogo");
+        return View();
     }
 
     public IActionResult Tienda_Catalogo()
@@ -65,6 +65,11 @@ public class HomeController : Controller
         List <AppOcio> hayQuePedirloAlaBaseDeDatos1 = new List <AppOcio>();
         ViewBag.ApsDeOcio = hayQuePedirloAlaBaseDeDatos1;
         return View("Tienda-Catalogo");
+    }
+
+    public IActionResult AppsDeOcio_Catalogo()
+    {
+        
     }
     
 

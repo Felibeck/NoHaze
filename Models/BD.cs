@@ -115,6 +115,23 @@ static public class BD
         return appsOcio;
     }
 
-    // falta hacer el storeprocedure en la base de datos de getListaAppsOcio
+    
 
+
+    // get playlist por IDPlaylist
+
+    public static Playlist GetPlaylist(int IDUsuario)
+    {
+        Playlist playlistBuscada = new Playlist(); 
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT * FROM Playlists WHERE Playlists.IDUsuario = @pIDUsuario";
+            playlistBuscada = connection.QueryFirstOrDefault<Playlist>(query, new { pIDUsuario = IDUsuario});
+        }
+            return playlistBuscada;
+    }
+  
+
+
+   
 }
