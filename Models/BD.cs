@@ -130,7 +130,20 @@ static public class BD
         }
             return playlistBuscada;
     }
-  
+
+    // eliminar app de ocio del usuario
+
+    public static int eliminarAppOcio(int IDApp, int IDUsuario)
+    {
+        int registrosAfectados = 0;
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec eliminarAppOcio @pIDApp @IDUsuario";
+            registrosAfectados = connection.Execute(query, new { pIDApp = IDApp, pIDUsuario = IDUsuario});
+
+        }
+        return registrosAfectados;
+    }
 
 
    

@@ -73,8 +73,16 @@ public class HomeController : Controller
 
         ViewBag.listaAppsOcio = BD.getListaAppsOcio(id);
 
+
         return View();
     }
+
+    public IActionResult Editar_Perfil()
+    {
+        
+        return View();
+    }
+
     
 
 }
