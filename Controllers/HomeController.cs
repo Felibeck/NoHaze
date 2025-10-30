@@ -20,7 +20,7 @@ public class HomeController : Controller
 
     public IActionResult Home()
     {
-        int id = int.Parse(HttpContext.Session.GetString("id"));
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
         string direccion = "Index";
             Usuario Usuario = BD.GetUsuario(id);
             List <Desafio> desafios = BD.getListaDesafios(id);
@@ -30,20 +30,20 @@ public class HomeController : Controller
        
         return View(direccion);
     }
-    public IActionResult Pasar(string direccion)
+    public IActionResult Pasar(string Direccion)
     {
-        int id = int.Parse(HttpContext.Session.GetString("id"));
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
         string direccion = "index";
         if(id != null)
         {
-            direccion = direccion;
+            direccion = Direccion;
         }
         return RedirectToAction(direccion);
     }
     
      public IActionResult Playlist()
     {
-        int id = int.Parse(HttpContext.Session.GetString("id"));
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
 
         List<Playlist> playlists = BD.getListaPlaylists(id);
         List <Tag> hayQuePedirloAlaBaseDeDatos2 = new List <Tag>();
