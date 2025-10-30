@@ -29,10 +29,10 @@ public class AccountController : Controller
         if(IDusuario != -1)
         {
              HttpContext.Session.SetString("ID",IDusuario.ToString());
-             return RedirectToAction("Home", "Home");
+             return RedirectToAction("Index","Home");
         }else   
         {
-            return RedirectToAction("Home","Home");
+            return View("Login");
         }
 
     }
