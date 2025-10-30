@@ -1,17 +1,20 @@
 <main>
-        <div class="centrar">
+    <div class="centrar">
         <img src="/Imagenes/NoHaze-Logo nuevo.png" alt="NoHaze Logo">
-            <h1 class="titulo">Login</h1>
-        </div>
-            <form action='@Url.Action("guardarLogin","Account")' method="POST">
-             <section>
-                    <input type="text" name="username" placeholder="Username"/>
-                    <input type="password" name="password" placeholder="Password"/>
-                    <h4>Forgot password?</h4>
-                <input type="submit" value="Log In"/>
-                </section>
-            </form>
+        <h1 class="titulo">Login</h1>
+    </div>
 
-        <a href='@Url.Action("Index","Home")'>.</a>
+    <form action='@Url.Action("guardarLogin","Account")' method="POST">
+        <section>
+            <input type="text" name="username" placeholder="Username"/>
+            <input type="password" name="password" placeholder="Password"/>
+            <h4>Forgot password?</h4>
+            <input type="submit" value="Log in"/>
+        </section>
+    </form>
 
-    </main>
+    <div class="centrar">
+        <a href='@Url.Action("Index","Home")' class="back-arrow">&#8629;</a>
+    </div>
+
+</main>

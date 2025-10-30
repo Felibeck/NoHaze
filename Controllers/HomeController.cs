@@ -115,6 +115,17 @@ public class HomeController : Controller
         return View("AppsDeOcio_Catalogo", "Home");
     }
 
+    // aceptar cambios en editar perfil
+
+    [HttpPost] 
+
+    public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.actualizarPerfil(username, fechaNacimiento, descripcion, objetivo, id);
+
+        return View("Perfil");
+    }
     
 
 }

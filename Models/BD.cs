@@ -158,5 +158,17 @@ static public class BD
         // despues para comprobar si esta vacia simplemente usamos el empty si lo necesitamos
     }
 
+    // actualizar los datos del perfil
+
+    public static void actualizarPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo, int IDUsuario)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec actualizarPerfil @pusername @pfechaNacimiento @pdescripcion @pobjetivo @pIDUsuario";
+            connection.Execute(query, new { pusername = username,  pfechaNacimiento = fechaNacimiento, pdescripcion = descripcion, pobjetivo = objetivo, pIDUsuario = IDUsuario});
+        }
+
+    }
+
    
 }

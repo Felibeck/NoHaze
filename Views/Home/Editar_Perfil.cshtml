@@ -2,6 +2,10 @@
 
 <img src="@ViewBag.Usuario.foto" alt="foto de perfil" />
 
+<form action='@Url.Action("aceptarCambiosPerfil", "Home")' method="POST">
+
+
+
 <label>Username</label>
 <input type="text" placeholder="@ViewBag.Usuario.username"/>
 
@@ -14,9 +18,11 @@
 <label>Objetivo</label>
 <input type="text" placeholder="@ViewBag.Usuario.objetivo"/>
 
-<a href="#">Aceptar</a>
-<a href="#">Cancelar</a> 
+<input type="submit" value="Aceptar" />
 
-<!-- faltan hacer estos dos metodos en el controller. Y el aceptar seguro que tiene que tener trabajo de bd con update -->
+</form>
+
+<a href='@Url.Action("Perfil", "Home")'>Cancelar</a> 
+
 
 </main>
