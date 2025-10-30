@@ -40,11 +40,6 @@
     margin-right: auto;
   }
   
-  /* Ocultar header en páginas de autenticación */
-  body:has(main:not([role="main"])) header {
-    display: none;
-  }
-  
   body:has(main:not([role="main"])) main {
     margin-top: 60px;
   }

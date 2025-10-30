@@ -145,16 +145,23 @@ static public class BD
         return registrosAfectados;
     }
 
-        public static Dictionary<DateTime, int> getHorasProductivas(int IDUsuario, int dias)
+        public static List<Informe> getHorasProductivas(int IDUsuario, int dias)
     {
-        List<Informe> playlists = new List<Informe>();
+        List<Informe> informes = new List<Informe>();
         using(SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM Playlists WHERE IDUsuario = @pIDUsuario";
-                playlists = connection.Query<Playlist>(query, new { pIDUsuario = IDUsuario}).ToList();
+                string query = "exec getHorasProductivas @pIDUsuario  @pdias";
+                informes = connection.Query<Informe>(query, new { pIDUsuario = IDUsuario, pdias = dias}).ToList();
             }
 
-        return playlists;
+        List<Informe> informesAcotados = new List<Informe>();
+
+        for (int i = 0; i < dias-1; i++)
+        {
+            
+        }
+
+        return informes;
         // despues para comprobar si esta vacia simplemente usamos el empty si lo necesitamos
     }
 
