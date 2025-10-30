@@ -146,5 +146,17 @@ static public class BD
     }
 
 
+    // actualizar los datos del perfil
+
+    public static void actualizarPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec actualizarPerfil @pusername @pfechaNacimiento @pdescripcion @pobjetivo";
+            connection.Execute(query, new { pusername = username,  pfechaNacimiento = fechaNacimiento, pdescripcion = descripcion, pobjetivo = objetivo});
+        }
+
+    }
+
    
 }

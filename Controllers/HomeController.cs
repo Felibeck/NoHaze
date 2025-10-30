@@ -112,6 +112,16 @@ public class HomeController : Controller
         return View("AppsDeOcio_Catalogo", "Home");
     }
 
+    // aceptar cambios en editar perfil
+
+    [HttpPost] 
+
+    public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
+    {
+        
+
+        return View("Perfil");
+    }
     
 
 }
