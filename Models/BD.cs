@@ -145,7 +145,7 @@ static public class BD
         return registrosAfectados;
     }
 
-        public static Dictionary<DateTime, int> getHorasProductivas(int IDUsuario)
+        public static Dictionary<DateTime, int> getHorasProductivas(int IDUsuario, int dias)
     {
         List<Informe> playlists = new List<Informe>();
         using(SqlConnection connection = new SqlConnection(_connectionString))
