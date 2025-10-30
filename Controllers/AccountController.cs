@@ -32,11 +32,8 @@ public class AccountController : Controller
              return RedirectToAction("Home", "Home");
         }else   
         {
-            return View();
+            return RedirectToAction("Login");
         }
-
-
-        return RedirectToAction("Login");
 
     }
 
@@ -53,9 +50,8 @@ public class AccountController : Controller
             BD.SignIn(email, username, password, fechaNacimiento, aceptaNotificaciones);
 
             HttpContext.Session.SetString("ID",BD.Login(username, password).ToString());
-
+            return View();
         }
-
         return RedirectToAction("SignIn");
     }
 

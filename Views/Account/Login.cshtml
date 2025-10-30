@@ -2,10 +2,10 @@
 
         <img src="/Imagenes/NoHaze-Logo nuevo.png" alt="NoHaze Logo">
             <h1>Login</h1>
-            <form action="Home.html">
+            <form action='@Url.Action("guardarInicio","Account")' method= "post">
              <section>
-                    <input type="text" name="Username" placeholder="Username"/>
-                    <input type="password" name="Password" placeholder="Password"/>
+                    <input type="text" name="username" placeholder="Username"/>
+                    <input type="password" name="password" placeholder="Password"/>
                     <h4>Forgot password?</h4>
                 <input type="submit" value="Log In"/>
                 </section>
