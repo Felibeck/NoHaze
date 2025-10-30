@@ -11,9 +11,17 @@ Seleccionar app de ocio
     @foreach(AppOcio item in @ViewBag.listaAppsOcio)
     {
     <div>
+          <img src="/Imagenes/@item.foto/" />
+
+        @item.titulo
+
+        <a href="#">
         
+        
+        <img src="/Imagenes/delete-icon.png" /> 
+
+        </a>
     </div>
     }
-
 
 </section>
