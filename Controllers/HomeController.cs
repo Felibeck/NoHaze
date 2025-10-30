@@ -53,11 +53,11 @@ public class HomeController : Controller
     }
 
     
-    public IActionResult PlaylistFrecuencias(int idPlaylist)
+    public IActionResult Playlist_Frecuencias(int idPlaylist)
     {
         Frecuencia Frecuencias = BD.getListaFrecuencias(idPlaylist);
         ViewBag.Frecuencias = Frecuencias;
-        return View("Playlist-Frecuencias");
+        return View();
     }
 
     public IActionResult Tienda_Catalogo()
@@ -69,7 +69,11 @@ public class HomeController : Controller
 
     public IActionResult AppsDeOcio_Catalogo()
     {
-        
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+
+        ViewBag.listaAppsOcio = BD.getListaAppsOcio(id);
+
+        return View();
     }
     
 
