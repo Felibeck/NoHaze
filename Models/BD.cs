@@ -145,6 +145,18 @@ static public class BD
         return registrosAfectados;
     }
 
+        public static Dictionary<DateTime, int> getHorasProductivas(int IDUsuario)
+    {
+        List<Informe> playlists = new List<Informe>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT * FROM Playlists WHERE IDUsuario = @pIDUsuario";
+                playlists = connection.Query<Playlist>(query, new { pIDUsuario = IDUsuario}).ToList();
+            }
+
+        return playlists;
+        // despues para comprobar si esta vacia simplemente usamos el empty si lo necesitamos
+    }
 
    
 }
