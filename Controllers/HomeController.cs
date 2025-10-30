@@ -77,8 +77,18 @@ public class HomeController : Controller
         return View();
     }
 
+
+    public IActionResult Perfil()
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        ViewBag.Usuario = BD.GetUsuario(id);
+
+        return View();
+    }
     public IActionResult Editar_Perfil()
     {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        ViewBag.Usuario = BD.GetUsuario(id);
         
         return View();
     }

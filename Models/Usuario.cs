@@ -11,6 +11,7 @@ public class Usuario
     public bool aceptaNotis {get; private set;}
     public DateTime ultimaFecha {get; private set;}
     public int racha {get; private set;}
+    public string foto {get; private set;}
 
     
 

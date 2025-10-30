@@ -1,5 +1,22 @@
 <main>
 
-<img src="@ViewBag." alt="" />
+<img src="@ViewBag.Usuario.foto" alt="foto de perfil" />
+
+<label>Username</label>
+<input type="text" placeholder="@ViewBag.Usuario.username"/>
+
+<label>Username</label>
+<input type="date" placeholder="@ViewBag.Usuario.fechaNacimiento"/>
+
+<label>Descripcion</label>
+<input type="textarea" placeholder="@ViewBag.Usuario.descripcion"/>
+
+<label>Objetivo</label>
+<input type="text" placeholder="@ViewBag.Usuario.objetivo"/>
+
+<a href="#">Aceptar</a>
+<a href="#">Cancelar</a> 
+
+<!-- faltan hacer estos dos metodos en el controller. Y el aceptar seguro que tiene que tener trabajo de bd con update -->
 
 </main>
