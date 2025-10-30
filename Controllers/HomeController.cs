@@ -69,7 +69,11 @@ public class HomeController : Controller
 
     public IActionResult AppsDeOcio_Catalogo()
     {
-        
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+
+        ViewBag.listaAppsOcio = BD.getListaAppsOcio(id);
+
+        return View();
     }
     
 
