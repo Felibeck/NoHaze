@@ -62,7 +62,7 @@ public class HomeController : Controller
 
     public IActionResult Tienda_Catalogo()
     {
-        List <AppOcio> AppOcio = BD.get
+        List <AppOcio> AppOcio = new List <AppOcio>();
         ViewBag.ApsDeOcio = hayQuePedirloAlaBaseDeDatos1;
         return View("Tienda-Catalogo");
     }
