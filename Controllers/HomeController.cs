@@ -121,7 +121,8 @@ public class HomeController : Controller
 
     public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
     {
-        
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.actualizarPerfil(username, fechaNacimiento, descripcion, objetivo, id);
 
         return View("Perfil");
     }
