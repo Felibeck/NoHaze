@@ -410,3 +410,15 @@
           width: 70%;
       }
   }
+
+
+/* Ajuste para cuando el usuario NO está autenticado */
+main.no-header {
+    margin-top: 0 !important;
+    padding-top: 20px;
+}
+
+/* Ajuste para cuando el usuario SÍ está autenticado */
+main:not(.no-header) {
+    margin-top: 80px; /* Ajusta según la altura de tu navbar */
+}
