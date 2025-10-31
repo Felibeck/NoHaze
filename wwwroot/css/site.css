@@ -274,7 +274,8 @@
   footer section div img {
       width: 35px;
       height: 35px;
-      filter: brightness(0) invert(1);
+      /* filter: brightness(0) invert(1); */
+      
   }
   
   footer section div h4 {
