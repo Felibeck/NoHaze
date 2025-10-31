@@ -7,19 +7,29 @@ namespace NoHaze;
 
 static public class BD
 {
+    // Inicio Conexion a la base de datos NORMAL
+
     private static string _connectionString = @"Server=localhost;DataBase=NoHaze;Integrated Security=True;TrustServerCertificate=True;";
+
+    // Cierre de conexion a la base de datos NORMAL
+
+    // Inicio Conexion a la base de datos de CASA
+    // private static string _connectionString = @"Server=localhost\SQLEXPRESS;Database=NoHaze;Integrated Security=True;TrustServerCertificate=True;";
+
+    // Cierre de conexion a la base de datos de CASA
+
 
 
     // login
-     public static int Login(string username, string password)
+    public static int Login(string username, string password)
     {
-        int IDUsuarioBuscado = -1;
-        using(SqlConnection connection = new SqlConnection(_connectionString))
+        int IDUsuarioBuscado = 0;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "SELECT ID FROM Usuarios WHERE username = @pUsername AND password = @pPassword";
-            IDUsuarioBuscado = connection.QueryFirstOrDefault<int>(query, new { pUsername = username, pPassword = password});
+            IDUsuarioBuscado = connection.QueryFirstOrDefault<int>(query, new { pUsername = username, pPassword = password });
         }
-            return IDUsuarioBuscado;
+        return IDUsuarioBuscado;
     }
 
     // Registrarse

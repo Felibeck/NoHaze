@@ -1,27 +1,27 @@
 <h1>Apps de Ocio</h1>
 
 <a href="#">
-<img src="/Imagenes/add-icon.png" />
-Seleccionar app de ocio
+    <img src="/Imagenes/add-icon.png" />
+    Seleccionar app de ocio
 
 </a>
 
 <section>
 
-    @foreach(AppOcio item in @ViewBag.listaAppsOcio)
+    @foreach (AppOcio item in @ViewBag.listaAppsOcio)
     {
-    <div>
-          <img src="/Imagenes/@item.foto/" />
+        <div>
+            <img src="/Imagenes/@item.foto/" />
 
-        @item.titulo
+            @item.titulo
 
-        <a href='@Url.Action("eliminarAppOcio", "Home", new { IDAppOcio = item.id })'>
-        
-        
-        <img src="/Imagenes/delete-icon.png" /> 
+            <a href='@Url.Action("eliminarAppOcio", "Home", new { IDAppOcio = item.id })'>
 
-        </a>
-    </div>
+
+                <img src="/Imagenes/delete-icon.png" />
+
+            </a>
+        </div>
     }
 
 </section>

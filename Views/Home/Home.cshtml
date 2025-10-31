@@ -1,47 +1,63 @@
- <!--View finalizada  -->
+<!--View Home - Con clase home-page para CSS específico -->
  
- <main>
+<main class="home-page">
     
-        <div class="separador">
-            <h1>¡Hola MATE!</h1>
+    <div class="separador">
+        <h1>¡Hola @(ViewBag.nombre ?? "Mate")!</h1>
+        <h4>Tus objetivos de hoy:</h4>
+    </div>
 
-            <h4>Tus objetivos de hoy:</h4>
-        </div>
-        <section>
+    <section>
+        @if(ViewBag.desafio != null)
+        {
+            @foreach(Desafio desafio in ViewBag.desafio)
+            {
+                <div class="fondoDiv">
+                    <h3>@desafio.titulo</h3>
+                    <h3>7/@desafio.meta</h3>
+                    <button>Reclamar</button>
+                    <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <!-- Ejemplo mientras no hay datos -->
             <div class="fondoDiv">
                 <h3>Horas sin usar apps de ocio:</h3>
                 <h3>4/4</h3>
                 <button>Reclamar</button>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar" style="width: 100%"></div>
                 </div>
             </div>
 
             <div class="fondoDiv">
                 <h3>Horas sin usar apps de ocio:</h3>
-                <h3>4/4</h3>
+                <h3>7/8</h3>
                 <button>Reclamar</button>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 100%"></div>
+                <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 87%"></div>
                 </div>
             </div>
 
-            <div class="fondoDiv"
-            >
+            <div class="fondoDiv">
                 <h3>Horas sin usar apps de ocio:</h3>
-                <h3>4/4</h3>
+                <h3>7/12</h3>
                 <button>Reclamar</button>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 100%"></div>
+                <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 58%"></div>
                 </div>
             </div>
-        </section>
+        }
+    </section>
 
-            <h2>Tu Racha</h2>
-            <div class="horizontal">
-                <img src="Imagenes/NoHaze-Logo nuevo.png" alt="logo">
-                <h1>45 dias</h1>
-            </div>
+    <h2>Tu Racha</h2>
+    <div class="horizontal">
+        <img src="~/Imagenes/NoHaze-Logo nuevo.png" alt="logo">
+        <h1>@(ViewBag.racha ?? 45) <span>Días</span></h1>
+    </div>
 
-
-    </main>
+</main>

@@ -13,59 +13,63 @@ public class AccountController : Controller
         _logger = logger;
     }
 
-   
+
     public IActionResult Login()
     {
         string id = HttpContext.Session.GetString("ID");
         if (!string.IsNullOrEmpty(id))
         {
-        ViewBag.ID = int.Parse(id);
+            ViewBag.ID = int.Parse(id);
         }
-        else{
-        ViewBag.ID = 0;
+        else
+        {
+            ViewBag.ID = 0;
         }
         return View();
     }
 
-    [HttpPost] 
+    [HttpPost]
 
     public IActionResult guardarLogin(string username, string password)
-    {   
-        if(username != null && password != null){
-        int IDusuario = BD.Login(username, password);
-
-        if(IDusuario > 0)
+    {
+        if (username != null && password != null)
         {
-            HttpContext.Session.SetString("ID",IDusuario.ToString());
-            return RedirectToAction("Pasar","Home", new{Direccion = "Home"});
-        }  
+            int IDusuario = BD.Login(username, password);
+
+            if (IDusuario > 0)
+            {
+                HttpContext.Session.SetString("ID", IDusuario.ToString());
+                return RedirectToAction("Pasar", "Home", new { Direccion = "Home" });
+            }
         }
-          return RedirectToAction("Login");
-        
+        return RedirectToAction("Login");
+
 
     }
 
-     public IActionResult SignIn()
+    public IActionResult SignIn()
     {
         string id = HttpContext.Session.GetString("ID");
         if (!string.IsNullOrEmpty(id))
         {
-        ViewBag.ID = int.Parse(id);
+            ViewBag.ID = int.Parse(id);
         }
-        else{
-        ViewBag.ID = 0;
+        else
+        {
+            ViewBag.ID = 0;
         }
         return View();
     }
 
     [HttpPost]
     public IActionResult guardarSignIn(string email, string username, string password, DateTime fechaNacimiento, bool aceptaNotificaciones)
-    {   Console.WriteLine(BD.Login(username, password));
-        if(BD.Login(username, password) < 1)
+    {
+        Console.WriteLine(BD.Login(username, password));
+        if (BD.Login(username, password) < 1)
         {
             BD.SignIn(email, username, password, fechaNacimiento, aceptaNotificaciones);
             Console.WriteLine("llega?");
-            HttpContext.Session.SetString("ID",BD.Login(username, password).ToString());
+            HttpContext.Session.SetString("ID", BD.Login(username, password).ToString());
             return View("Index", "Home");
         }
         return RedirectToAction("SignIn");
@@ -77,4 +81,4 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-}   
+}
