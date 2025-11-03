@@ -805,3 +805,366 @@ main:not(.no-header) {
 .home-page .horizontal {
     animation-delay: 0.5s;
 }
+
+/* ========================================
+   CSS EXCLUSIVO PARA PERFIL.CSHTML
+   Agregar al final de site.css
+   
+   IMPORTANTE: Agregar clase "perfil-page" al <main> de Perfil.cshtml
+   ======================================== */
+
+/* Contenedor principal del perfil */
+.perfil-page {
+    max-width: 500px;
+    margin: 80px auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+}
+
+/* Header del perfil con imagen de fondo */
+.perfil-header {
+    background: linear-gradient(180deg, #B89DD9 0%, #C7B2E1 100%);
+    padding: 30px 20px 80px;
+    position: relative;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+}
+
+/* Contenedor de la foto de perfil */
+.perfil-photo-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 15px;
+}
+
+.perfil-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Nombre del usuario */
+.perfil-nombre {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+/* Fecha de nacimiento */
+.perfil-fecha {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+}
+
+/* Contenedor de información del perfil */
+.perfil-info {
+    background: white;
+    margin: -60px 20px 20px;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Campos de información */
+.perfil-campo {
+    margin-bottom: 20px;
+}
+
+.perfil-campo:last-child {
+    margin-bottom: 0;
+}
+
+.perfil-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7A5BA8;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.perfil-value {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    min-height: 24px;
+}
+
+.perfil-value:empty::before {
+    content: 'No especificado';
+    color: #999;
+    font-style: italic;
+}
+
+/* Separador entre campos */
+.perfil-separador {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #E0E0E0 20%, #E0E0E0 80%, transparent 100%);
+    margin: 20px 0;
+}
+
+/* Contenedor de botones */
+.perfil-botones {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px 30px;
+    margin-top: auto;
+}
+
+.perfil-btn {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.perfil-btn-editar {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3);
+}
+
+.perfil-btn-editar:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(51, 51, 51, 0.4);
+}
+
+.perfil-btn-logout {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3);
+}
+
+.perfil-btn-logout:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(51, 51, 51, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px - 1024px)
+   ======================================== */
+@media (min-width: 768px) {
+    .perfil-page {
+        max-width: 600px;
+    }
+
+    .perfil-header {
+        padding: 40px 30px 90px;
+    }
+
+    .perfil-photo-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .perfil-photo {
+        width: 160px;
+        height: 160px;
+        border: 6px solid white;
+    }
+
+    .perfil-nombre {
+        font-size: 2.2rem;
+    }
+
+    .perfil-fecha {
+        font-size: 1.05rem;
+    }
+
+    .perfil-info {
+        margin: -70px 30px 30px;
+        padding: 30px 25px;
+    }
+
+    .perfil-campo {
+        margin-bottom: 25px;
+    }
+
+    .perfil-label {
+        font-size: 1rem;
+    }
+
+    .perfil-value {
+        font-size: 1.1rem;
+    }
+
+    .perfil-botones {
+        padding: 0 30px 40px;
+        gap: 20px;
+    }
+
+    .perfil-btn {
+        padding: 16px 24px;
+        font-size: 1.05rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .perfil-page {
+        max-width: 700px;
+    }
+
+    .perfil-header {
+        padding: 50px 40px 100px;
+        border-radius: 0 0 35px 35px;
+    }
+
+    .perfil-photo-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .perfil-photo {
+        width: 180px;
+        height: 180px;
+        border: 7px solid white;
+    }
+
+    .perfil-nombre {
+        font-size: 2.5rem;
+    }
+
+    .perfil-fecha {
+        font-size: 1.1rem;
+    }
+
+    .perfil-info {
+        margin: -80px 40px 40px;
+        padding: 35px 30px;
+    }
+
+    .perfil-campo {
+        margin-bottom: 30px;
+    }
+
+    .perfil-label {
+        font-size: 1.05rem;
+    }
+
+    .perfil-value {
+        font-size: 1.15rem;
+    }
+
+    .perfil-botones {
+        padding: 0 40px 50px;
+        gap: 25px;
+    }
+
+    .perfil-btn {
+        padding: 18px 28px;
+        font-size: 1.1rem;
+    }
+
+    /* Efecto hover más pronunciado en desktop */
+    .perfil-btn:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PEQUEÑO (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .perfil-page {
+        margin-top: 60px;
+    }
+
+    .perfil-header {
+        padding: 25px 15px 70px;
+        border-radius: 0 0 25px 25px;
+    }
+
+    .perfil-photo-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .perfil-photo {
+        width: 120px;
+        height: 120px;
+        border: 4px solid white;
+    }
+
+    .perfil-nombre {
+        font-size: 1.6rem;
+    }
+
+    .perfil-fecha {
+        font-size: 0.9rem;
+    }
+
+    .perfil-info {
+        margin: -50px 15px 15px;
+        padding: 20px 15px;
+    }
+
+    .perfil-campo {
+        margin-bottom: 18px;
+    }
+
+    .perfil-label {
+        font-size: 0.85rem;
+    }
+
+    .perfil-value {
+        font-size: 0.95rem;
+    }
+
+    .perfil-botones {
+        padding: 0 15px 25px;
+        gap: 12px;
+    }
+
+    .perfil-btn {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+@keyframes fadeInProfile {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.perfil-header {
+    animation: fadeInProfile 0.5s ease forwards;
+}
+
+.perfil-info {
+    animation: fadeInProfile 0.5s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.perfil-botones {
+    animation: fadeInProfile 0.5s ease 0.3s forwards;
+    opacity: 0;
+}
