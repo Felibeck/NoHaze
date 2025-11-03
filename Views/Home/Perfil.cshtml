@@ -1,11 +1,22 @@
     <main>
         <div>
             <img src="/Imagenes/FotoPerfil.jpg" alt="Perfil">
-            <h1>Mateo Luna</h1>
-            <h3>09/09/2006</h3>
-
-            <h3>Objetivo: Estudiar más de dos horas sin desconcentrarme</h3>
-            <p>Descripción: Me gusta comer milanesa con pure y usar discord</p>
+            <h1>@ViewBag.Usuario.nombre</h1>
+            <h3>@ViewBag.Usuario.fechaNacimiento</h3>
+            @if(ViewBag.Usuario.Objetivo != null)
+            {
+                <h3>Objetivos: @ViewBag.Usuario.Objetivo</h3>
+            }
+            else{
+                <h3>Objetivos:</h3>
+            }
+            @if(ViewBag.Usuario.Descripción != null)
+            {
+                <h3>Descripción: @ViewBag.Usuario.Descripción</h3>
+            }
+            else{
+                <h3>Descripción:</h3>
+            }
         </div>
 
         <div>
