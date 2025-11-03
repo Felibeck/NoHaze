@@ -68,9 +68,8 @@ public class AccountController : Controller
         if (BD.Login(username, password) < 1)
         {
             BD.SignIn(email, username, password, fechaNacimiento, aceptaNotificaciones);
-            Console.WriteLine("llega?");
             HttpContext.Session.SetString("ID", BD.Login(username, password).ToString());
-            return View("Index", "Home");
+            return RedirectToAction("Pasar", "Home", new { Direccion = "Home" });
         }
         return RedirectToAction("SignIn");
     }

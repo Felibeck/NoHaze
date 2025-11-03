@@ -6,8 +6,8 @@
 
     <form action='@Url.Action("guardarLogin","Account")' method="POST">
         <section>
-            <input type="text" name="username" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
+            <input type="text" name="username" placeholder="Username" required/>
+            <input type="password" name="password" placeholder="Password" required/>
             <h4>Forgot password?</h4>
             <input type="submit" value="Log in"/>
         </section>
