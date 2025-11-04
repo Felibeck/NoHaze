@@ -807,212 +807,186 @@ main:not(.no-header) {
 }
 
 /* ========================================
-   CSS EXCLUSIVO PARA PERFIL.CSHTML
-   Agregar al final de site.css
-   
-   IMPORTANTE: Agregar clase "perfil-page" al <main> de Perfil.cshtml
+   CSS EXCLUSIVO PARA SIGNIN.CSHTML
+   Agregar esto AL FINAL de tu site.css
    ======================================== */
 
-/* Contenedor principal del perfil */
-.perfil-page {
+/* Container principal del SignIn */
+.signin-page {
     max-width: 500px;
-    margin: 80px auto 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Formulario de SignIn */
+.signin-form {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 80px);
+    gap: 25px;
+    margin-top: 30px;
 }
 
-/* Header del perfil con imagen de fondo */
-.perfil-header {
-    background: linear-gradient(180deg, #B89DD9 0%, #C7B2E1 100%);
-    padding: 30px 20px 80px;
-    position: relative;
-    border-radius: 0 0 30px 30px;
-    text-align: center;
-}
-
-/* Contenedor de la foto de perfil */
-.perfil-photo-container {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 15px;
-}
-
-.perfil-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Nombre del usuario */
-.perfil-nombre {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #333;
-    margin: 10px 0 5px;
-}
-
-/* Fecha de nacimiento */
-.perfil-fecha {
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: #666;
-    margin: 0;
-}
-
-/* Contenedor de información del perfil */
-.perfil-info {
-    background: white;
-    margin: -60px 20px 20px;
-    padding: 25px 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-/* Campos de información */
-.perfil-campo {
-    margin-bottom: 20px;
-}
-
-.perfil-campo:last-child {
-    margin-bottom: 0;
-}
-
-.perfil-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #7A5BA8;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.perfil-value {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #333;
-    line-height: 1.5;
-    min-height: 24px;
-}
-
-.perfil-value:empty::before {
-    content: 'No especificado';
-    color: #999;
-    font-style: italic;
-}
-
-/* Separador entre campos */
-.perfil-separador {
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, #E0E0E0 20%, #E0E0E0 80%, transparent 100%);
-    margin: 20px 0;
-}
-
-/* Contenedor de botones */
-.perfil-botones {
+/* Grupos de campos del formulario */
+.signin-form .form-group {
     display: flex;
-    gap: 15px;
-    padding: 0 20px 30px;
-    margin-top: auto;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.perfil-btn {
-    flex: 1;
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+/* Label para fecha de nacimiento */
+.signin-form .date-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+/* Inputs de texto, email, password */
+.signin-form input[type="text"],
+.signin-form input[type="email"],
+.signin-form input[type="password"] {
+    width: 100%;
+    padding: 18px 20px;
     border: none;
+    border-radius: 12px;
+    background-color: white;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.signin-form input[type="text"]:focus,
+.signin-form input[type="email"]:focus,
+.signin-form input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 4px 15px rgba(122, 91, 168, 0.3);
+}
+
+.signin-form input[type="text"]::placeholder,
+.signin-form input[type="email"]::placeholder,
+.signin-form input[type="password"]::placeholder {
+    color: #999;
+}
+
+/* Input de fecha mejorado */
+.signin-form input[type="date"] {
+    width: 100%;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
     cursor: pointer;
 }
 
-.perfil-btn-editar {
-    background-color: #333;
+.signin-form input[type="date"]:focus {
+    outline: none;
+    box-shadow: 0 4px 15px rgba(122, 91, 168, 0.3);
+}
+
+/* Estilo para el calendario del date picker */
+.signin-form input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    filter: opacity(0.6);
+    transition: all 0.2s ease;
+}
+
+.signin-form input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    filter: opacity(1);
+    background-color: rgba(122, 91, 168, 0.1);
+}
+
+/* Grupo de checkbox */
+.signin-form .checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.signin-form .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--color-secundario);
+}
+
+.signin-form .checkbox-group label {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+    user-select: none;
+}
+
+/* Botón de submit */
+.signin-form input[type="submit"] {
+    width: 70%;
+    margin: 20px auto 0;
+    padding: 16px 40px;
+    background-color: var(--color-secundario);
     color: white;
-    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(122, 91, 168, 0.3);
+    transition: all 0.3s ease;
 }
 
-.perfil-btn-editar:hover {
-    background-color: #222;
+.signin-form input[type="submit"]:hover {
+    background-color: #6A4B98;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(51, 51, 51, 0.4);
+    box-shadow: 0 6px 15px rgba(122, 91, 168, 0.4);
 }
 
-.perfil-btn-logout {
-    background-color: #333;
-    color: white;
-    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.3);
-}
-
-.perfil-btn-logout:hover {
-    background-color: #222;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(51, 51, 51, 0.4);
+.signin-form input[type="submit"]:active {
+    transform: translateY(0);
 }
 
 /* ========================================
-   RESPONSIVE - TABLET (768px - 1024px)
+   RESPONSIVE - TABLET (768px+)
    ======================================== */
 @media (min-width: 768px) {
-    .perfil-page {
-        max-width: 600px;
+    .signin-page {
+        padding: 50px 30px;
     }
 
-    .perfil-header {
-        padding: 40px 30px 90px;
+    .signin-form {
+        gap: 30px;
     }
 
-    .perfil-photo-container {
-        width: 160px;
-        height: 160px;
-    }
-
-    .perfil-photo {
-        width: 160px;
-        height: 160px;
-        border: 6px solid white;
-    }
-
-    .perfil-nombre {
-        font-size: 2.2rem;
-    }
-
-    .perfil-fecha {
+    .signin-form input[type="text"],
+    .signin-form input[type="email"],
+    .signin-form input[type="password"],
+    .signin-form input[type="date"] {
+        padding: 20px 22px;
         font-size: 1.05rem;
     }
 
-    .perfil-info {
-        margin: -70px 30px 30px;
-        padding: 30px 25px;
+    .signin-form .checkbox-group {
+        padding: 18px 22px;
     }
 
-    .perfil-campo {
-        margin-bottom: 25px;
-    }
-
-    .perfil-label {
-        font-size: 1rem;
-    }
-
-    .perfil-value {
-        font-size: 1.1rem;
-    }
-
-    .perfil-botones {
-        padding: 0 30px 40px;
-        gap: 20px;
-    }
-
-    .perfil-btn {
-        padding: 16px 24px;
+    .signin-form .checkbox-group label {
         font-size: 1.05rem;
+    }
+
+    .signin-form input[type="submit"] {
+        width: 60%;
+        padding: 18px 50px;
+        font-size: 1.15rem;
     }
 }
 
@@ -1020,64 +994,17 @@ main:not(.no-header) {
    RESPONSIVE - DESKTOP (1024px+)
    ======================================== */
 @media (min-width: 1024px) {
-    .perfil-page {
-        max-width: 700px;
+    .signin-page {
+        max-width: 550px;
+        padding: 60px 40px;
     }
 
-    .perfil-header {
-        padding: 50px 40px 100px;
-        border-radius: 0 0 35px 35px;
+    .signin-form {
+        gap: 35px;
     }
 
-    .perfil-photo-container {
-        width: 180px;
-        height: 180px;
-    }
-
-    .perfil-photo {
-        width: 180px;
-        height: 180px;
-        border: 7px solid white;
-    }
-
-    .perfil-nombre {
-        font-size: 2.5rem;
-    }
-
-    .perfil-fecha {
-        font-size: 1.1rem;
-    }
-
-    .perfil-info {
-        margin: -80px 40px 40px;
-        padding: 35px 30px;
-    }
-
-    .perfil-campo {
-        margin-bottom: 30px;
-    }
-
-    .perfil-label {
-        font-size: 1.05rem;
-    }
-
-    .perfil-value {
-        font-size: 1.15rem;
-    }
-
-    .perfil-botones {
-        padding: 0 40px 50px;
-        gap: 25px;
-    }
-
-    .perfil-btn {
-        padding: 18px 28px;
-        font-size: 1.1rem;
-    }
-
-    /* Efecto hover más pronunciado en desktop */
-    .perfil-btn:hover {
-        transform: translateY(-3px);
+    .signin-form input[type="submit"] {
+        width: 55%;
     }
 }
 
@@ -1085,69 +1012,54 @@ main:not(.no-header) {
    RESPONSIVE - MOBILE PEQUEÑO (max 480px)
    ======================================== */
 @media (max-width: 480px) {
-    .perfil-page {
-        margin-top: 60px;
+    .signin-page {
+        padding: 30px 15px;
     }
 
-    .perfil-header {
-        padding: 25px 15px 70px;
-        border-radius: 0 0 25px 25px;
+    .signin-form {
+        gap: 20px;
     }
 
-    .perfil-photo-container {
-        width: 120px;
-        height: 120px;
+    .signin-form input[type="text"],
+    .signin-form input[type="email"],
+    .signin-form input[type="password"],
+    .signin-form input[type="date"] {
+        padding: 16px 18px;
+        font-size: 0.95rem;
     }
 
-    .perfil-photo {
-        width: 120px;
-        height: 120px;
-        border: 4px solid white;
-    }
-
-    .perfil-nombre {
-        font-size: 1.6rem;
-    }
-
-    .perfil-fecha {
-        font-size: 0.9rem;
-    }
-
-    .perfil-info {
-        margin: -50px 15px 15px;
-        padding: 20px 15px;
-    }
-
-    .perfil-campo {
-        margin-bottom: 18px;
-    }
-
-    .perfil-label {
+    .signin-form .date-label {
         font-size: 0.85rem;
     }
 
-    .perfil-value {
+    .signin-form .checkbox-group {
+        padding: 14px 18px;
+    }
+
+    .signin-form .checkbox-group input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+
+    .signin-form .checkbox-group label {
         font-size: 0.95rem;
     }
 
-    .perfil-botones {
-        padding: 0 15px 25px;
-        gap: 12px;
-    }
-
-    .perfil-btn {
-        padding: 12px 16px;
-        font-size: 0.95rem;
+    .signin-form input[type="submit"] {
+        width: 80%;
+        padding: 14px 30px;
+        font-size: 1rem;
     }
 }
 
 /* ========================================
    ANIMACIONES
    ======================================== */
-@keyframes fadeInProfile {
+
+@keyframes fadeInSignIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -1186,17 +1098,123 @@ main:not(.no-header) {
 
 .signin-form input[type="submit"] {
     animation: fadeInSignIn 0.4s ease 0.35s forwards;
-.perfil-header {
-    animation: fadeInProfile 0.5s ease forwards;
-}
-
-.perfil-info {
-    animation: fadeInProfile 0.5s ease 0.2s forwards;
     opacity: 0;
 }
 
-.perfil-botones {
-    animation: fadeInProfile 0.5s ease 0.3s forwards;
-    opacity: 0;
-}
-}
+
+/* ========================================
+   NAVBAR HORIZONTAL PARA DESKTOP
+   ======================================== */
+
+/* Ocultar navbar horizontal en mobile */
+.navbar-nav-desktop {
+    display: none;
+  }
+  
+  /* Mostrar navbar horizontal en desktop (768px+) */
+  @media (min-width: 768px) {
+    /* Ocultar botón hamburguesa en desktop */
+    .navbar-toggler {
+      display: none !important;
+    }
+  
+    /* Mostrar navbar horizontal */
+    .navbar-nav-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    
+      .navbar-nav-desktop .nav-item {
+        margin: 0;
+      }
+    
+      .navbar-nav-desktop .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+    
+      .navbar-nav-desktop .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-1px);
+      }
+    
+      .navbar-nav-desktop .nav-link svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+    
+      /* Estilo especial para Log Out */
+      .navbar-nav-desktop .nav-link-logout {
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-left: 5px;
+      }
+    
+      .navbar-nav-desktop .nav-link-logout:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+    
+      /* Ajustar el container-fluid para que distribuya bien el espacio */
+      .navbar .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+    
+      /* Ajustar el logo en desktop */
+      .navbar-brand {
+        flex-shrink: 0;
+      }
+    }
+    
+    /* Para pantallas más grandes (1024px+) */
+    @media (min-width: 1024px) {
+      .navbar-nav-desktop {
+        gap: 8px;
+      }
+    
+      .navbar-nav-desktop .nav-link {
+        padding: 10px 16px;
+        font-size: 1rem;
+      }
+    
+      .navbar-nav-desktop .nav-link svg {
+        width: 18px;
+        height: 18px;
+      }
+    
+      .navbar .container-fluid {
+        padding: 0 40px;
+      }
+    }
+    
+    /* Para pantallas muy grandes (1440px+) */
+    @media (min-width: 1440px) {
+      .navbar .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+    
+      .navbar-nav-desktop {
+        gap: 12px;
+      }
+    
+      .navbar-nav-desktop .nav-link {
+        padding: 12px 20px;
+        font-size: 1.05rem;
+      }
+    }
