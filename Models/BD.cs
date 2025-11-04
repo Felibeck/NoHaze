@@ -165,14 +165,22 @@ static public class BD
             }
 
         List<Informe> informesAcotados = new List<Informe>();
-
+  
+      
+            DateTime Hoy = Date.today;
         for (int i = 0; i < dias-1; i++)
         {
-            
+                int acuHoras = 0;
+            for (int j = 0; j < informes.Count; j++)
+            {
+                if(informes[j].fecha == (Hoy - i))
+                {
+                    acuHoras+= informes[j].horas;
+                }
+            }
+            informesAcotados.Add(acuHoras);
         }
-
-        return informes;
-        // despues para comprobar si esta vacia simplemente usamos el empty si lo necesitamos
+        return informesAcotados;
     }
 
     // actualizar los datos del perfil

@@ -62,6 +62,8 @@ public class HomeController : Controller
     }
     public IActionResult Estadisticas()
     {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        ViewBag.informes = BD.getHorasProductivas(id, 30);
         return View();
     }
 

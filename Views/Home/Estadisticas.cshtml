@@ -2,15 +2,36 @@
 
         <h1>Tiempo de productividad</h1>
 
-            <section class="parent">
-                    <div class="div1"> 1</div>
-                    <div class="div2"> 2</div>
-                    <div class="div3"> 3</div>
-                    <div class="div4"> 4</div>
-                    <div class="div5"> 5</div>
-                    <div class="div6"> 6</div>
-                    <div class="div7"> 7</div>
+            <section id="diario"> 
+            
+              <div>
+
+                 <h2> @ViewBag.horaDiaria horas </h2>
+
+              </div>
+
             </section>
+
+            <section id="semanal">
+
+              @foreach(int item in ViewBag.horasSemanales)
+              {
+
+                <div>
+                  <h2> @item horas </h2>
+                </div>
+
+              }
+
+            
+            </section>
+
+            <section id="mensual"> 
+            
+            </section>
+
+
+
 
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
@@ -24,11 +45,11 @@
                     <h1>diario</h1>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onclick = restar()>
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onclick = sumar()>
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
@@ -42,5 +63,5 @@
                  <div class="oro"><img src="" alt="AppOro"></div>
             </div>
     
-
+    <script src="~/js/estadisticas.js"></script>
     </main>

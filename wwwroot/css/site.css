@@ -807,189 +807,6 @@ main:not(.no-header) {
 }
 
 /* ========================================
-<<<<<<< HEAD
-   CSS EXCLUSIVO PARA SIGNIN.CSHTML
-   Agregar esto AL FINAL de tu site.css
-   ======================================== */
-
-/* Container principal del SignIn */
-.signin-page {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* Formulario de SignIn */
-.signin-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 30px;
-}
-
-/* Grupos de campos del formulario */
-.signin-form .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* Label para fecha de nacimiento */
-.signin-form .date-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #666;
-    margin-bottom: 5px;
-    padding-left: 5px;
-}
-
-/* Inputs de texto, email, password */
-.signin-form input[type="text"],
-.signin-form input[type="email"],
-.signin-form input[type="password"] {
-    width: 100%;
-    padding: 18px 20px;
-    border: none;
-    border-radius: 12px;
-    background-color: white;
-    font-size: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.signin-form input[type="text"]:focus,
-.signin-form input[type="email"]:focus,
-.signin-form input[type="password"]:focus {
-    outline: none;
-    box-shadow: 0 4px 15px rgba(122, 91, 168, 0.3);
-}
-
-.signin-form input[type="text"]::placeholder,
-.signin-form input[type="email"]::placeholder,
-.signin-form input[type="password"]::placeholder {
-    color: #999;
-}
-
-/* Input de fecha mejorado */
-.signin-form input[type="date"] {
-    width: 100%;
-    padding: 18px 20px;
-    border: none;
-    border-radius: 12px;
-    background-color: white;
-    font-size: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    color: #333;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-    cursor: pointer;
-}
-
-.signin-form input[type="date"]:focus {
-    outline: none;
-    box-shadow: 0 4px 15px rgba(122, 91, 168, 0.3);
-}
-
-/* Estilo para el calendario del date picker */
-.signin-form input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-    filter: opacity(0.6);
-    transition: all 0.2s ease;
-}
-
-.signin-form input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    filter: opacity(1);
-    background-color: rgba(122, 91, 168, 0.1);
-}
-
-/* Grupo de checkbox */
-.signin-form .checkbox-group {
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 20px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.signin-form .checkbox-group input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: var(--color-secundario);
-}
-
-.signin-form .checkbox-group label {
-    font-size: 1rem;
-    color: #333;
-    cursor: pointer;
-    margin: 0;
-    user-select: none;
-}
-
-/* Botón de submit */
-.signin-form input[type="submit"] {
-    width: 70%;
-    margin: 20px auto 0;
-    padding: 16px 40px;
-    background-color: var(--color-secundario);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(122, 91, 168, 0.3);
-    transition: all 0.3s ease;
-}
-
-.signin-form input[type="submit"]:hover {
-    background-color: #6A4B98;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(122, 91, 168, 0.4);
-}
-
-.signin-form input[type="submit"]:active {
-    transform: translateY(0);
-}
-
-/* ========================================
-   RESPONSIVE - TABLET (768px+)
-   ======================================== */
-@media (min-width: 768px) {
-    .signin-page {
-        padding: 50px 30px;
-    }
-
-    .signin-form {
-        gap: 30px;
-    }
-
-    .signin-form input[type="text"],
-    .signin-form input[type="email"],
-    .signin-form input[type="password"],
-    .signin-form input[type="date"] {
-        padding: 20px 22px;
-        font-size: 1.05rem;
-    }
-
-    .signin-form .checkbox-group {
-        padding: 18px 22px;
-    }
-
-    .signin-form .checkbox-group label {
-        font-size: 1.05rem;
-    }
-
-    .signin-form input[type="submit"] {
-        width: 60%;
-        padding: 18px 50px;
-        font-size: 1.15rem;
-    }
-=======
    CSS EXCLUSIVO PARA PERFIL.CSHTML
    Agregar al final de site.css
    
@@ -1197,26 +1014,12 @@ main:not(.no-header) {
         padding: 16px 24px;
         font-size: 1.05rem;
     }
->>>>>>> 0be00979b93d671a47423bb66f07a8b6c794d9a7
 }
 
 /* ========================================
    RESPONSIVE - DESKTOP (1024px+)
    ======================================== */
 @media (min-width: 1024px) {
-<<<<<<< HEAD
-    .signin-page {
-        max-width: 550px;
-        padding: 60px 40px;
-    }
-
-    .signin-form {
-        gap: 35px;
-    }
-
-    .signin-form input[type="submit"] {
-        width: 55%;
-=======
     .perfil-page {
         max-width: 700px;
     }
@@ -1275,7 +1078,6 @@ main:not(.no-header) {
     /* Efecto hover más pronunciado en desktop */
     .perfil-btn:hover {
         transform: translateY(-3px);
->>>>>>> 0be00979b93d671a47423bb66f07a8b6c794d9a7
     }
 }
 
@@ -1283,45 +1085,6 @@ main:not(.no-header) {
    RESPONSIVE - MOBILE PEQUEÑO (max 480px)
    ======================================== */
 @media (max-width: 480px) {
-<<<<<<< HEAD
-    .signin-page {
-        padding: 30px 15px;
-    }
-
-    .signin-form {
-        gap: 20px;
-    }
-
-    .signin-form input[type="text"],
-    .signin-form input[type="email"],
-    .signin-form input[type="password"],
-    .signin-form input[type="date"] {
-        padding: 16px 18px;
-        font-size: 0.95rem;
-    }
-
-    .signin-form .date-label {
-        font-size: 0.85rem;
-    }
-
-    .signin-form .checkbox-group {
-        padding: 14px 18px;
-    }
-
-    .signin-form .checkbox-group input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
-    }
-
-    .signin-form .checkbox-group label {
-        font-size: 0.95rem;
-    }
-
-    .signin-form input[type="submit"] {
-        width: 80%;
-        padding: 14px 30px;
-        font-size: 1rem;
-=======
     .perfil-page {
         margin-top: 60px;
     }
@@ -1375,25 +1138,16 @@ main:not(.no-header) {
     .perfil-btn {
         padding: 12px 16px;
         font-size: 0.95rem;
->>>>>>> 0be00979b93d671a47423bb66f07a8b6c794d9a7
     }
 }
 
 /* ========================================
    ANIMACIONES
    ======================================== */
-<<<<<<< HEAD
-
-@keyframes fadeInSignIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-=======
 @keyframes fadeInProfile {
     from {
         opacity: 0;
         transform: translateY(20px);
->>>>>>> 0be00979b93d671a47423bb66f07a8b6c794d9a7
     }
     to {
         opacity: 1;
@@ -1401,7 +1155,6 @@ main:not(.no-header) {
     }
 }
 
-<<<<<<< HEAD
 .signin-form .form-group {
     animation: fadeInSignIn 0.4s ease forwards;
 }
@@ -1433,7 +1186,6 @@ main:not(.no-header) {
 
 .signin-form input[type="submit"] {
     animation: fadeInSignIn 0.4s ease 0.35s forwards;
-=======
 .perfil-header {
     animation: fadeInProfile 0.5s ease forwards;
 }
@@ -1445,6 +1197,6 @@ main:not(.no-header) {
 
 .perfil-botones {
     animation: fadeInProfile 0.5s ease 0.3s forwards;
->>>>>>> 0be00979b93d671a47423bb66f07a8b6c794d9a7
     opacity: 0;
+}
 }
