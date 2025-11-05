@@ -71,10 +71,15 @@
   
   .navbar-brand img
   {
-      width: 50% !important;
-      height: auto !important;
+      height: 40px !important;
+      width: auto !important;
   }
   
+  @media (min-width: 768px) {
+    .navbar-brand img {
+      height: 50px !important;
+    }
+  }
   .navbar 
   {
       background-color: #B89DD9 !important;
@@ -274,6 +279,7 @@
   footer section div img {
       width: 35px;
       height: 35px;
+      border-radius: 50%;
       /* filter: brightness(0) invert(1); */
       
   }
@@ -1111,6 +1117,17 @@ main:not(.no-header) {
     display: none;
   }
   
+  /* Logo siempre a la izquierda */
+  .navbar-brand {
+    order: 1;
+  }
+  
+  /* Botón hamburguesa a la derecha en mobile */
+  .navbar-toggler {
+    order: 3;
+    margin-left: auto;
+  }
+  
   /* Mostrar navbar horizontal en desktop (768px+) */
   @media (min-width: 768px) {
     /* Ocultar botón hamburguesa en desktop */
@@ -1120,101 +1137,93 @@ main:not(.no-header) {
   
     /* Mostrar navbar horizontal */
     .navbar-nav-desktop {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-    
-      .navbar-nav-desktop .nav-item {
-        margin: 0;
-      }
-    
-      .navbar-nav-desktop .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 12px;
-        color: white !important;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-        white-space: nowrap;
-      }
-    
-      .navbar-nav-desktop .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.15);
-        transform: translateY(-1px);
-      }
-    
-      .navbar-nav-desktop .nav-link svg {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-      }
-    
-      /* Estilo especial para Log Out */
-      .navbar-nav-desktop .nav-link-logout {
-        background-color: rgba(255, 255, 255, 0.1);
-        margin-left: 5px;
-      }
-    
-      .navbar-nav-desktop .nav-link-logout:hover {
-        background-color: rgba(255, 255, 255, 0.25);
-      }
-    
-      /* Ajustar el container-fluid para que distribuya bien el espacio */
-      .navbar .container-fluid {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-      }
-    
-      /* Ajustar el logo en desktop */
-      .navbar-brand {
-        flex-shrink: 0;
-      }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      order: 2;
+      margin-left: auto;
     }
-    
-    /* Para pantallas más grandes (1024px+) */
-    @media (min-width: 1024px) {
-      .navbar-nav-desktop {
-        gap: 8px;
-      }
-    
-      .navbar-nav-desktop .nav-link {
-        padding: 10px 16px;
-        font-size: 1rem;
-      }
-    
-      .navbar-nav-desktop .nav-link svg {
-        width: 18px;
-        height: 18px;
-      }
-    
-      .navbar .container-fluid {
-        padding: 0 40px;
-      }
+  
+    .navbar-nav-desktop .nav-item {
+      margin: 0;
     }
-    
-    /* Para pantallas muy grandes (1440px+) */
-    @media (min-width: 1440px) {
-      .navbar .container-fluid {
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-    
-      .navbar-nav-desktop {
-        gap: 12px;
-      }
-    
-      .navbar-nav-desktop .nav-link {
-        padding: 12px 20px;
-        font-size: 1.05rem;
-      }
+  
+    .navbar-nav-desktop .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
+  
+    .navbar-nav-desktop .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+  
+    .navbar-nav-desktop .nav-link svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+  
+    /* Ajustar el container-fluid */
+    .navbar .container-fluid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    padding: 0 20px;
+  }
+
+  /* Logo a la izquierda */
+  .navbar-brand {
+    flex-shrink: 0;
+  }
+}
+
+/* Para pantallas más grandes (1024px+) */
+@media (min-width: 1024px) {
+  .navbar-nav-desktop {
+    gap: 8px;
+  }
+
+  .navbar-nav-desktop .nav-link {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  .navbar-nav-desktop .nav-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .navbar .container-fluid {
+    padding: 0 40px;
+  }
+}
+
+/* Para pantallas muy grandes (1440px+) */
+@media (min-width: 1440px) {
+  .navbar .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .navbar-nav-desktop {
+    gap: 12px;
+  }
+
+  .navbar-nav-desktop .nav-link {
+    padding: 12px 20px;
+    font-size: 1.05rem;
+  }
+}
