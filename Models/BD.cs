@@ -155,7 +155,7 @@ static public class BD
         return registrosAfectados;
     }
 
-        public static List<Informe> getHorasProductivas(int IDUsuario, int dias)
+        public static List<int> getHorasProductivas(int IDUsuario, int dias)
     {
         List<Informe> informes = new List<Informe>();
         using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -173,7 +173,7 @@ static public class BD
                 int acuHoras = 0;
             for (int j = 0; j < informes.Count; j++)
             {
-                if(informes[j].fecha == (Hoy.addDays(-i)))
+                if(informes[j].fecha == (Hoy.AddDays(-i)))
                 {
                     acuHoras+= informes[j].horas;
                 }
