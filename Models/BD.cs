@@ -167,7 +167,7 @@ static public class BD
         List<Informe> informesAcotados = new List<Informe>();
   
       
-            DateTime Hoy = Date.today;
+            DateTime Hoy = DateTime.today;
         for (int i = 0; i < dias-1; i++)
         {
                 int acuHoras = 0;
