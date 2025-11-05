@@ -139,5 +139,8 @@ public class HomeController : Controller
         return View("Perfil");
     }
     
-
+    public IActionResult Ajustes()
+    {
+        return View();
+    }
 }
