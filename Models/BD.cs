@@ -160,20 +160,20 @@ static public class BD
         List<Informe> informes = new List<Informe>();
         using(SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "exec getHorasProductivas @pIDUsuario  @pdias";
+                string query = "exec getHorasProductivas @pIDUsuario,  @pdias";
                 informes = connection.Query<Informe>(query, new { pIDUsuario = IDUsuario, pdias = dias}).ToList();
             }
 
-        List<Informe> informesAcotados = new List<Informe>();
+        List<int> informesAcotados = new List<int>();
   
       
-            DateTime Hoy = DateTime.today;
+            DateTime Hoy = DateTime.Today;
         for (int i = 0; i < dias-1; i++)
         {
                 int acuHoras = 0;
             for (int j = 0; j < informes.Count; j++)
             {
-                if(informes[j].fecha == (Hoy - i))
+                if(informes[j].fecha == (Hoy.addDays(-i)))
                 {
                     acuHoras+= informes[j].horas;
                 }
