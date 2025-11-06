@@ -12,7 +12,7 @@
                     <img src= @item.foto alt="FotoPlaylist">
                     <h2> @ViewBag.Playlist[i].titulo </h2>
                     <button onclick="Play()">Play</button>
-                    @foreach(Tags item in ViewBag.["Tags"+i])
+                    @foreach(Tag item in ViewBag.["Tags"+i])
                     {
                        <p>@item.titulo</p> 
                     }
