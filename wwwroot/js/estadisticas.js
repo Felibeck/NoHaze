@@ -32,17 +32,30 @@ function pasar(num)
             const valor = parseFloat(texto);   
     
             const div = h2.parentElement;
-            div.style.paddingTop = (valor * 10) + "px";  
+            div.style.paddingTop = (valor * 10) + "%";  
         }
-
     }
     else if(config == 1)
     {
 
+        for (let i = 1; i <= 4; i++) {
+            const h2 = document.getElementById(`mensual${i}`);
+            const texto = h2.innerText;        
+            const valor = parseFloat(texto);   
+    
+            const div = h2.parentElement;
+            div.style.paddingTop = (valor * 10) + "%";  
+        }
+
     }
     else
     {
-
+        const h2 = document.getElementById('hoy');
+            const texto = h2.innerText;        
+            const valor = parseFloat(texto);   
+    
+            const div = h2.parentElement;
+            div.style.paddingTop = (valor * 10) + "%";
     }
 
 }
