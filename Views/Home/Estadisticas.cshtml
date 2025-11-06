@@ -12,34 +12,77 @@
 
             <section>
 
-              @foreach(int item in ViewBag.horasSemanales)
-              {
-                int i = 1;
-
                 <div>
 
-                  <h2 id="semanal + @i"> @item horas </h2>
+                  <h2 id="semanal1"> @ViewBag.horasSemanales[0] horas </h2>
 
                 </div>
 
-                i++;
-              }
+                <div>
+
+                  <h2 id="semanal2"> @ViewBag.horasSemanales[1] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal3"> @ViewBag.horasSemanales[2] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal4"> @ViewBag.horasSemanales[3] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal5"> @ViewBag.horasSemanales[4] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal6"> @ViewBag.horasSemanales[5] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal7"> @ViewBag.horasSemanales[6] horas </h2>
+
+                </div>
 
             
             </section>
 
             <section> 
 
-            @foreach(int item in ViewBag.horasMensuales)
-            {
-              int i = 1;
             <div>
-              <h2 id="mensual + @i">
+              <h2 id="mensual1">
                 @item horas
               </h2>
             </div>
-            i++;
-            }
+
+            <div>
+              <h2 id="mensual2">
+                @item horas
+              </h2>
+            </div>
+
+            <div>
+              <h2 id="mensual3">
+                @item horas
+              </h2>
+            </div>
+
+            <div>
+              <h2 id="mensual4">
+                @item horas
+              </h2>
+            </div>
+
             
             </section>
 
