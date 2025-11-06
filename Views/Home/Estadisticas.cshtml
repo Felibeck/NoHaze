@@ -2,31 +2,46 @@
 
         <h1>Tiempo de productividad</h1>
 
-            <section id="diario"> 
+            <section> 
             
               <div>
 
-                 <h2> @ViewBag.horaDiaria horas </h2>
+                 <h2 id="dia"> @ViewBag.horaDiaria horas </h2>
 
               </div>
 
             </section>
 
-            <section id="semanal">
+            <section>
 
               @foreach(int item in ViewBag.horasSemanales)
               {
+                int i = 1;
 
                 <div>
-                  <h2> @item horas </h2>
+
+                  <h2 id="semanal + @i"> @item horas </h2>
+
                 </div>
 
+                i++;
               }
 
             
             </section>
 
-            <section id="mensual"> 
+            <section> 
+
+            @foreach(int item in ViewBag.horasMensuales)
+            {
+              int i = 1;
+            <div>
+              <h2 id="mensual + @i">
+                @item horas
+              </h2>
+            </div>
+            i++;
+            }
             
             </section>
 
@@ -45,11 +60,11 @@
                     <h1>diario</h1>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onclick = restar()>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onclick = pasar(-1)>
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onclick = sumar()>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onclick = pasar(1)>
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>

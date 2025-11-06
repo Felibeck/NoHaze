@@ -1,20 +1,20 @@
 let config = 0;
 
-function sumar()
+function pasar(num)
 {
-    if(config == 1)
+    if(num == 1)
     {
-        config = -1;
-    }
-    else
-    {
-        config++;
-    }
-}
+        if(config == 1)
+        {
+            config = -1;
+        }
+        else
+        {
+            config++;
+        }
 
-function restar()
-{
-    if(config == -1)
+    }
+    else if(config == -1)
     {
         config = 1;
     }
@@ -22,4 +22,19 @@ function restar()
     {
         config--;
     }
+
+    if(config == 0)
+    {
+
+    }
+    else if(config == 1)
+    {
+
+    }
+    else
+    {
+
+    }
+
 }
+
