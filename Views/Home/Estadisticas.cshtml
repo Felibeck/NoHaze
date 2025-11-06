@@ -1,30 +1,88 @@
         <h1>Tiempo de productividad</h1>
 
-            <section id="diario"> 
+            <section> 
             
               <div>
 
-                 <h2> @ViewBag.horaDiaria horas </h2>
+                 <h2 id="dia"> @ViewBag.horaDiaria horas </h2>
 
               </div>
 
             </section>
 
-            <section id="semanal">
-
-              @foreach(int item in ViewBag.horasSemanales)
-              {
+            <section>
 
                 <div>
-                  <h2> @item horas </h2>
+
+                  <h2 id="semanal1"> @ViewBag.horasSemanales[0] horas </h2>
+
                 </div>
 
-              }
+                <div>
+
+                  <h2 id="semanal2"> @ViewBag.horasSemanales[1] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal3"> @ViewBag.horasSemanales[2] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal4"> @ViewBag.horasSemanales[3] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal5"> @ViewBag.horasSemanales[4] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal6"> @ViewBag.horasSemanales[5] horas </h2>
+
+                </div>
+
+                <div>
+
+                  <h2 id="semanal7"> @ViewBag.horasSemanales[6] horas </h2>
+
+                </div>
 
             
             </section>
 
-            <section id="mensual"> 
+            <section> 
+
+            <div>
+              <h2 id="mensual1">
+                @item horas
+              </h2>
+            </div>
+
+            <div>
+              <h2 id="mensual2">
+                @item horas
+              </h2>
+            </div>
+
+            <div>
+              <h2 id="mensual3">
+                @item horas
+              </h2>
+            </div>
+
+            <div>
+              <h2 id="mensual4">
+                @item horas
+              </h2>
+            </div>
+
             
             </section>
 
@@ -43,11 +101,11 @@
                     <h1>diario</h1>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onclick = restar()>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onclick = pasar(-1)>
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onclick = sumar()>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onclick = pasar(1)>
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>

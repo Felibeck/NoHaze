@@ -70,7 +70,29 @@ public class HomeController : Controller
     public IActionResult Estadisticas()
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
-        ViewBag.informes = BD.getHorasProductivas(id, 30);
+        List<int>informes = BD.getHorasProductivas(id, 28);
+        ViewBag.horaDiaria = informes[0];
+        List<int> horasSemanales = new List<int>();
+        for(int i=0; i < 7; i++)
+        {
+            horasSemanales.Add(informes[i]);
+        }
+        ViewBag.horasSemanales = horasSemanales;
+
+        List<int>horasMensuales = new List<int>();
+
+        for(int i = 0;i < 4; i++)
+        {
+            int acu = 0;
+            for(int j = 0; i < 7; i++)
+            {
+                acu += informes[j + (i*7)];
+            }
+            horasMensuales.Add(acu/7);
+        }
+        
+        ViewBag.horasMensuales = horasMensuales;
+
         return View();
     }
 
