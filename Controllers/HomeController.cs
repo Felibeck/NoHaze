@@ -54,21 +54,18 @@ public class HomeController : Controller
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
         List<Playlist> playlists = BD.getListaPlaylists(id);
-        ViewBag.Playlist = playlists;
+        ViewBag.Playlists = playlists;
 
       int i = 0;
 
-    foreach (Playlist item in playlists)
-    {
-    var tags = BD.getListaTags(item.id);
+        List<List<Tag>> listaDeListasTag = new List<List<Tag>>();
+        foreach(Playlist item in playlists)
+        {
+            listaDeListasTag.Add(BD.getListaTags(item.id));
+        }
 
-    string nombreViewBag = "Tags" + i;  // 👉 generas el nombre dinámico
-    ((IDictionary<string, object>)ViewBag)[nombreViewBag] = tags;
-
-    i++;
-    }
-
-    return View(playlists);
+        ViewBag.listaTags = listaDeListasTag    ;
+    return View();
     }
     public IActionResult Estadisticas()
     {
