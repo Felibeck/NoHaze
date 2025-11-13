@@ -169,6 +169,14 @@
   {
     background-color: var(--color-fondo-div);
   }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+      width: 20px;
+      height: 20px;
+      background-size: 100%;
+      filter: brightness(0) saturate(100%) invert(0%);
+  }
   
   .centrar
   {
@@ -1553,3 +1561,6 @@ main:not(.no-header) {
     opacity: 0;
 }
 }
+
+
+
