@@ -175,10 +175,6 @@ public class HomeController : Controller
     return View("Perfil");
     }
     
-    public IActionResult Ajustes()
-    {
-        return View();
-    }
     public IActionResult Pomodoro_Timer()
     {
         return View();
