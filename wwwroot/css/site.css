@@ -1563,7 +1563,6 @@ main:not(.no-header) {
 }
 
 
-<<<<<<< HEAD
 /* ========================================
    CSS EXCLUSIVO PARA PERFIL.CSHTML
    Agregar esto AL FINAL de tu site.css
@@ -1990,7 +1989,7 @@ main:not(.no-header) {
     width: 100%;
     margin: 10px 0 0 0;
     padding: 14px 40px;
-    background-color: #888;
+    background-color: var(--color-principal);
     color: white;
     border: none;
     border-radius: 12px;
@@ -2002,7 +2001,7 @@ main:not(.no-header) {
 }
 
 .editar-perfil-page form input[type="submit"]:hover {
-    background-color: #777;
+    background-color: var(--color-secundario);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(136, 136, 136, 0.4);
 }
@@ -2014,7 +2013,7 @@ main:not(.no-header) {
     justify-content: center;
     width: 100%;
     padding: 14px 40px;
-    background-color: #333;
+    background-color: var(--color-secundario);
     color: white;
     text-decoration: none;
     border-radius: 12px;
@@ -2025,7 +2024,7 @@ main:not(.no-header) {
 }
 
 .editar-perfil-page > a:hover {
-    background-color: #222;
+    background-color: rgb(189, 6, 6);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(51, 51, 51, 0.4);
     color: white;
@@ -2219,6 +2218,386 @@ main:not(.no-header) {
     animation-delay: 0.35s;
     opacity: 0;
 }
-=======
 
->>>>>>> 40c8578ba2f4d2bac879b3a8b3cfe82526cedd9b
+/* ========================================
+   CSS EXCLUSIVO PARA POMODORO_TIMER.CSHTML
+   Agregar esto AL FINAL de tu site.css
+   ======================================== */
+
+/* Container principal */
+.pomodoro-page {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Círculo del timer */
+.pomodoro-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9B7AC7 0%, #B89DD9 100%);
+    border: 12px solid #7A5BA8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(122, 91, 168, 0.4);
+    position: relative;
+}
+
+/* Texto de estado */
+.pomodoro-circle h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+/* Tiempo grande */
+.pomodoro-circle h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Contenedor de botones de control */
+.pomodoro-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Botones base */
+.pomodoro-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón Inicio (morado) */
+.pomodoro-btn-inicio {
+    background-color: #B89DD9;
+    color: white;
+}
+
+.pomodoro-btn-inicio:hover {
+    background-color: #9B7AC7;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(184, 157, 217, 0.4);
+}
+
+/* Botón Editar (morado más oscuro) */
+.pomodoro-btn-editar {
+    background-color: #7A5BA8;
+    color: white;
+}
+
+.pomodoro-btn-editar:hover {
+    background-color: #6A4B98;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(122, 91, 168, 0.4);
+}
+
+/* Botón Cancelar (negro) */
+.pomodoro-btn-cancelar {
+    background-color: #2C3E50;
+    color: white;
+}
+
+.pomodoro-btn-cancelar:hover {
+    background-color: #1A252F;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+}
+
+/* Modal */
+.pomodoro-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Contenido del modal */
+.pomodoro-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pomodoro-modal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 25px 0;
+    text-align: center;
+}
+
+/* Grupo de input en modal */
+.pomodoro-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.pomodoro-input-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.pomodoro-input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.pomodoro-input-group input:focus {
+    outline: none;
+    border-color: #7A5BA8;
+    box-shadow: 0 0 0 3px rgba(122, 91, 168, 0.1);
+}
+
+/* Botones del modal */
+.pomodoro-modal-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.pomodoro-btn-modal {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pomodoro-btn-guardar {
+    background-color: #7A5BA8;
+    color: white;
+}
+
+.pomodoro-btn-guardar:hover {
+    background-color: #6A4B98;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.3);
+}
+
+.pomodoro-btn-cancelar-modal {
+    background-color: #E0E0E0;
+    color: #333;
+}
+
+.pomodoro-btn-cancelar-modal:hover {
+    background-color: #D0D0D0;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .pomodoro-page {
+        padding: 60px 30px;
+        gap: 50px;
+    }
+
+    .pomodoro-circle {
+        width: 320px;
+        height: 320px;
+        border: 14px solid #7A5BA8;
+    }
+
+    .pomodoro-circle h3 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .pomodoro-circle h1 {
+        font-size: 4rem;
+    }
+
+    .pomodoro-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 1rem;
+    }
+
+    .pomodoro-modal-content {
+        padding: 40px;
+        max-width: 450px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .pomodoro-page {
+        max-width: 800px;
+        padding: 80px 40px;
+        gap: 60px;
+    }
+
+    .pomodoro-circle {
+        width: 380px;
+        height: 380px;
+        border: 16px solid #7A5BA8;
+    }
+
+    .pomodoro-circle h3 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+
+    .pomodoro-circle h1 {
+        font-size: 5rem;
+    }
+
+    .pomodoro-controles {
+        gap: 30px;
+    }
+
+    .pomodoro-btn {
+        width: 90px;
+        height: 90px;
+        font-size: 1.05rem;
+    }
+
+    .pomodoro-btn-editar svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .pomodoro-modal-content {
+        max-width: 500px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PEQUEÑO (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .pomodoro-page {
+        padding: 30px 15px;
+        gap: 35px;
+    }
+
+    .pomodoro-circle {
+        width: 240px;
+        height: 240px;
+        border: 10px solid #7A5BA8;
+    }
+
+    .pomodoro-circle h3 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .pomodoro-circle h1 {
+        font-size: 3rem;
+    }
+
+    .pomodoro-controles {
+        gap: 15px;
+    }
+
+    .pomodoro-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 0.85rem;
+    }
+
+    .pomodoro-btn-editar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .pomodoro-modal-content {
+        padding: 25px;
+    }
+
+    .pomodoro-modal-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+@keyframes pulseCircle {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.pomodoro-circle {
+    animation: pulseCircle 2s ease-in-out infinite;
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInModal {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pomodoro-modal {
+    animation: fadeInModal 0.3s ease;
+}
+
+.pomodoro-modal-content {
+    animation: slideInModal 0.3s ease;
+}
