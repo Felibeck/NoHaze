@@ -1,16 +1,19 @@
 let config = 0;
 
 function pasar(num) {
-    if (num == 1) {
-        if (config == 1) {
-            config = -1;
+    if(num != 0)
+    {
+        if (num == 1) {
+            if (config == 1) {
+                config = -1;
+            } else {
+                config++;
+            }
+        } else if (config == -1) {
+            config = 1;
         } else {
-            config++;
+            config--;
         }
-    } else if (config == -1) {
-        config = 1;
-    } else {
-        config--;
     }
 
     // Ocultar todas las secciones
@@ -18,13 +21,10 @@ function pasar(num) {
     document.getElementById('seccion-semanal').style.display = 'none';
     document.getElementById('seccion-mensual').style.display = 'none';
 
-    // Actualizar el texto del carrusel
-    const carouselTitle = document.querySelector('#carouselExample .carousel-item.active h1');
     
     // Mostrar la sección correspondiente y aplicar estilos
     if (config == 0) {
         // SEMANAL
-        carouselTitle.textContent = 'Semanal';
         document.getElementById('seccion-semanal').style.display = 'flex';
         
         for (let i = 1; i <= 7; i++) {
@@ -36,7 +36,6 @@ function pasar(num) {
         }
     } else if (config == 1) {
         // MENSUAL
-        carouselTitle.textContent = 'Mensual';
         document.getElementById('seccion-mensual').style.display = 'flex';
         
         for (let i = 1; i <= 4; i++) {
@@ -48,7 +47,6 @@ function pasar(num) {
         }
     } else {
         // DIARIO
-        carouselTitle.textContent = 'Diario';
         document.getElementById('seccion-diario').style.display = 'flex';
         
         const h2 = document.getElementById('dia');
