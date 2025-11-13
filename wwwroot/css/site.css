@@ -5,7 +5,10 @@
   --color-fondo: #F3EEF8;
   --color-principal:#B89DD9;
   }
-  
+
+  body{
+    background-color: var(--color-fondo) !important;
+  }
   *
   {
     margin:0px;

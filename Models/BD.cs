@@ -125,7 +125,17 @@ static public class BD
         return appsOcio;
     }
 
-    
+       public static List<AppOcio> getAppsNoAsociadas(int IDUsuario)
+    {
+        List<AppOcio> appsOcioNoSeleccionadas = new List<AppOcio>();
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "exec getAppsNoAsociadas @pIDUsuario";
+                appsOcioNoSeleccionadas = connection.Query<AppOcio>(query, new { pIDUsuario = IDUsuario}).ToList();
+            }
+
+        return appsOcioNoSeleccionadas;
+    }
 
 
     // get playlist por IDPlaylist
