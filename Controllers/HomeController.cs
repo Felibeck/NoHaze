@@ -120,6 +120,14 @@ public class HomeController : Controller
 
         return View();
     }
+        public IActionResult AppsDeOcio_Selector()
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+
+        ViewBag.listaAppsNoAsociadas = BD.getAppsNoAsociadas(id);
+
+        return View();
+    }
     public IActionResult Perfil()
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
