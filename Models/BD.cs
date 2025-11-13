@@ -188,7 +188,7 @@ static public class BD
     {
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "exec actualizarPerfil @pusername @pfechaNacimiento @pdescripcion @pobjetivo @pIDUsuario";
+            string query = "exec actualizarPerfil @pusername, @pfechaNacimiento, @pdescripcion, @pobjetivo, @pIDUsuario";
             connection.Execute(query, new { pusername = username,  pfechaNacimiento = fechaNacimiento, pdescripcion = descripcion, pobjetivo = objetivo, pIDUsuario = IDUsuario});
         }
 

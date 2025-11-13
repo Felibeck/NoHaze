@@ -148,17 +148,17 @@ public class HomeController : Controller
 
     [HttpPost] 
 
-public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
-{
-    int id = int.Parse(HttpContext.Session.GetString("ID"));
-
-    // Validar que la fecha sea válida para SQL Server
-    if (fechaNacimiento.Year < 1753)
+    public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
     {
-        // Si la fecha es inválida, mantener la fecha actual del usuario
-        // O puedes poner una fecha por defecto
-        fechaNacimiento = new DateTime(2000, 1, 1);
-    }
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+
+        // Validar que la fecha sea válida para SQL Server
+        if (fechaNacimiento.Year < 1753)
+        {
+            // Si la fecha es inválida, mantener la fecha actual del usuario
+            // O puedes poner una fecha por defecto
+            fechaNacimiento = new DateTime(2000, 1, 1);
+        }
 
     BD.actualizarPerfil(username, fechaNacimiento, descripcion, objetivo, id);
 
@@ -166,10 +166,15 @@ public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimie
     ViewBag.Usuario = BD.GetUsuario(id);
 
     return View("Perfil");
-}
+    }
     
     public IActionResult Ajustes()
     {
         return View();
     }
+    public IActionResult Pomodoro_Timer()
+    {
+        return View();
+    }
+    
 }
