@@ -167,7 +167,7 @@ static public class BD
         List<int> informesAcotados = new List<int>();
         DateTime Hoy = DateTime.Today;
 
-        for (int i = 0; i < dias-1; i++)
+        for (int i = 0; i < dias; i++)
         {
                 int acuHoras = 0;
             for (int j = 0; j < informes.Count; j++)

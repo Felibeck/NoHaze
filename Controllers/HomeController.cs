@@ -84,7 +84,7 @@ public class HomeController : Controller
         for(int i = 0;i < 4; i++)
         {
             int acu = 0;
-            for(int j = 0; i < 7; i++)
+            for(int j = 0; j < 7; j++)
             {
                 acu += informes[j + (i*7)];
             }
