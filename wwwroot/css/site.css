@@ -5,7 +5,10 @@
   --color-fondo: #F3EEF8;
   --color-principal:#B89DD9;
   }
-  
+
+  body{
+    background-color: var(--color-fondo) !important;
+  }
   *
   {
     margin:0px;
@@ -1563,7 +1566,6 @@ main:not(.no-header) {
 }
 
 
-<<<<<<< HEAD
 /* ========================================
    CSS EXCLUSIVO PARA PERFIL.CSHTML
    Agregar esto AL FINAL de tu site.css
@@ -2219,6 +2221,3 @@ main:not(.no-header) {
     animation-delay: 0.35s;
     opacity: 0;
 }
-=======
-
->>>>>>> 40c8578ba2f4d2bac879b3a8b3cfe82526cedd9b
