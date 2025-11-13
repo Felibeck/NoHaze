@@ -1,28 +1,25 @@
-<main>
+<main class="editar-perfil-page">
 
 <img src="@ViewBag.Usuario.foto" alt="foto de perfil" />
 
 <form action='@Url.Action("aceptarCambiosPerfil", "Home")' method="POST">
 
+    <label>Username</label>
+    <input type="text" name="username" value="@ViewBag.Usuario.username"/>
 
+    <label>Fecha de Nacimiento</label>
+    <input type="date" name="fechaNacimiento" value="@ViewBag.Usuario.fechaNacimiento.ToString("yyyy-MM-dd")"/>
 
-<label>Username</label>
-<input type="text" placeholder="@ViewBag.Usuario.username"/>
+    <label>Objetivo</label>
+    <input type="text" name="objetivo" value="@ViewBag.Usuario.objetivo"/>
 
-<label>Fecha de Nacimiento</label>
-<input type="date" placeholder="@ViewBag.Usuario.fechaNacimiento"/>
+    <label>Descripción</label>
+    <textarea name="descripcion" rows="4">@ViewBag.Usuario.descripcion</textarea>
 
-<label>Descripcion</label>
-<input type="textarea" placeholder="@ViewBag.Usuario.descripcion"/>
-
-<label>Objetivo</label>
-<input type="text" placeholder="@ViewBag.Usuario.objetivo"/>
-
-<input type="submit" value="Aceptar" />
+    <input type="submit" value="Aceptar" />
 
 </form>
 
 <a href='@Url.Action("Perfil", "Home")'>Cancelar</a> 
-
 
 </main>

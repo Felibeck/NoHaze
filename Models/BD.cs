@@ -192,6 +192,7 @@ static public class BD
             connection.Execute(query, new { pusername = username,  pfechaNacimiento = fechaNacimiento, pdescripcion = descripcion, pobjetivo = objetivo, pIDUsuario = IDUsuario});
         }
 
+        return;
     }
 
    
