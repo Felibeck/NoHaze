@@ -12,17 +12,11 @@
 
     @foreach (AppOcio item in @ViewBag.listaAppsOcio)
     {
-        <div>
+        <div id="app_@item.id">
             <img src="/Imagenes/@item.foto/" />
 
             @item.titulo
-
-            <a href='@Url.Action("eliminarAppOcio", "Home", new { IDAppOcio = item.id })'>
-
-
-                <img src="/Imagenes/delete-icon.png" />
-
-            </a>
+            <input type="image" src="/Imagenes/delete-icon.png" onclick="EliminarApp(@item.id)" />
         </div>
     }
 

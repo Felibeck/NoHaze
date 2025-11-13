@@ -145,11 +145,10 @@ public class HomeController : Controller
 
     // para eliminar la app de ocio
 
-    public IActionResult eliminarAppOcio(int IDAppOcio)
+    public int eliminarAppOcio(int Id)
     {
-        int id = int.Parse(HttpContext.Session.GetString("ID"));
-        BD.eliminarAppOcio(IDAppOcio, id);
-        return View("AppsDeOcio_Catalogo", "Home");
+        BD.eliminarAppOcio(Id);
+        return 1;
     }
 
     // aceptar cambios en editar perfil

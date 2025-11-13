@@ -3,3 +3,18 @@
 
 // Write your JavaScript code.
 
+function EliminarApp(ID) {
+    $.ajax({
+        url: '/Home/eliminarAppOcio',
+        data: { Id: ID },
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            //document.getElementById("app_" + ID).style.display = "none";
+            $("#app_" + ID).attr("style", "display: none !important;");
+
+        }
+    });
+}
+// Ocultar con !important
+

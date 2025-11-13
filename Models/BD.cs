@@ -153,13 +153,13 @@ static public class BD
 
     // eliminar app de ocio del usuario
 
-    public static int eliminarAppOcio(int IDApp, int IDUsuario)
+    public static int eliminarAppOcio(int ID)
     {
         int registrosAfectados = 0;
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "exec eliminarAppOcio @pIDApp @IDUsuario";
-            registrosAfectados = connection.Execute(query, new { pIDApp = IDApp, pIDUsuario = IDUsuario});
+            string query = "exec eliminarAppOcio @pID";
+            registrosAfectados = connection.Execute(query, new { pID = ID});
 
         }
         return registrosAfectados;
