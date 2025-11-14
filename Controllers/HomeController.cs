@@ -151,6 +151,15 @@ public class HomeController : Controller
         return 1;
     }
 
+    // para agregar la app de ocio
+
+    public int agregarAppOcio(int Id)
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.agregarAppOcio(id, Id);
+        return 1;
+    }
+
     // aceptar cambios en editar perfil
 
     [HttpPost] 

@@ -165,6 +165,18 @@ static public class BD
         return registrosAfectados;
     }
 
+    public static void agregarAppOcio(int IDUsuario, int IDApp)
+    {
+
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec agregarAppOcio @pIDUsuario, @pIDApp";
+            connection.Execute(query, new { pIDUsuario = IDUsuario, pIDApp = IDApp});
+
+        }
+        return;
+
+    }
         public static List<int> getHorasProductivas(int IDUsuario, int dias)
     {
         List<Informe> informes = new List<Informe>();
@@ -182,7 +194,7 @@ static public class BD
                 int acuHoras = 0;
             for (int j = 0; j < informes.Count; j++)
             {
-                if(informes[j].fecha == (Hoy.AddDays(-i)))
+                if(informes[j].dia == (Hoy.AddDays(-i)))
                 {
                     acuHoras+= informes[j].horas;
                 }

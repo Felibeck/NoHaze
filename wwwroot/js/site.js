@@ -18,3 +18,15 @@ function EliminarApp(ID) {
 }
 // Ocultar con !important
 
+function AgregarApp(ID) {
+    $.ajax({
+        url: '/Home/agregarAppOcio',
+        data: { Id: ID },
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            $("#app_" + ID).attr("style", "display: none !important;");
+
+        }
+    });
+}
