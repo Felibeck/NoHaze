@@ -189,4 +189,11 @@ public class HomeController : Controller
         return View();
     }
     
+    public int AgregarRegistro(int Tiempo)
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        DateTime Hoy = DateTime.Today;
+        BD.agregarRegistro(id, Tiempo, Fecha);
+        return 1;
+    }
 }

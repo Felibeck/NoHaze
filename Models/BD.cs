@@ -216,6 +216,15 @@ static public class BD
 
         return;
     }
+    
+   public static void AgregarRegistro(int id, int Tiempo ,DateTime Fecha)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec actualizarPerfil @pId, @pTiempo, @pFecha";
+            connection.Execute(query, new { pId = id, pTiempo = Tiempo ,pfecha = Fecha});
+        }
 
-   
+        return;
+    }
 }
