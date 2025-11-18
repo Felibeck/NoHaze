@@ -3,6 +3,7 @@ let tiempoDescanso = 5;
 let segundosRestantes = tiempoTrabajo * 60;
 let estado = "pausado"; // "trabajo", "descanso", o "pausado"
 let temporizador = null;
+let tiempoTrabajado = 0;
 
 function actualizarPantalla() {
     const min = Math.floor(segundosRestantes / 60);
@@ -35,6 +36,7 @@ function iniciar() {
                     estado = "descanso";
                     segundosRestantes = tiempoDescanso * 60;
                     document.getElementById("estado").textContent = "Tiempo de descanso";
+                    tiempoTrabajado += tiempoTrabajo;
                 } else {
                     estado = "trabajo";
                     segundosRestantes = tiempoTrabajo * 60;
@@ -52,6 +54,17 @@ function reiniciar() {
     estado = "pausado";
     segundosRestantes = tiempoTrabajo * 60;
     document.getElementById("estado").textContent = "Tiempo de trabajo";
+
+     
+        $.ajax({
+            url: '/Home/AgregarRegistro',
+            data: { Tiempo: tiempoTrabajado},
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+            }
+        });
+
     actualizarPantalla();
 }
 
