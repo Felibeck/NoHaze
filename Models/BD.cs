@@ -174,7 +174,7 @@ static public class BD
             connection.Execute(query, new { pIDUsuario = IDUsuario, pIDApp = IDApp});
 
         }
-        return;
+        return  ; 
 
     }
         public static List<int> getHorasProductivas(int IDUsuario, int dias)

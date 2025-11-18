@@ -10,22 +10,22 @@ function EliminarApp(ID) {
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            //document.getElementById("app_" + ID).style.display = "none";
             $("#app_" + ID).attr("style", "display: none !important;");
 
         }
     });
 }
+
 // Ocultar con !important
 
 function AgregarApp(ID) {
     $.ajax({
         url: '/Home/agregarAppOcio',
-        data: { Id: ID },
+        data: { id: ID },
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            $("#app_" + ID).attr("style", "display: none !important;");
+            $("#noApp_" + ID).attr("style", "display: none !important;");
 
         }
     });

@@ -153,10 +153,10 @@ public class HomeController : Controller
 
     // para agregar la app de ocio
 
-    public int agregarAppOcio(int Id)
+    public int agregarAppOcio(int id)
     {
-        int id = int.Parse(HttpContext.Session.GetString("ID"));
-        BD.agregarAppOcio(id, Id);
+        int ID = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.agregarAppOcio(ID, id);
         return 1;
     }
 

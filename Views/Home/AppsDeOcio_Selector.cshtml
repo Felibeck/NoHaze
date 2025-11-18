@@ -9,11 +9,8 @@
 
             @item.titulo
 
-            <a href='@Url.Action("agregarAppOcio", "Home", new { IDAppOcio = item.ID })'>
-
                 <input type="image" src="/Imagenes/delete-icon.png" onclick="AgregarApp(@item.ID)"/>
 
-            </a>
         </div>
     }
 
