@@ -193,7 +193,7 @@ public class HomeController : Controller
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
         DateTime Hoy = DateTime.Today;
-        BD.agregarRegistro(id, Tiempo, Fecha);
+        BD.AgregarRegistro(id, Tiempo, Hoy);
         return 1;
     }
 }

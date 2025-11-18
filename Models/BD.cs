@@ -221,7 +221,7 @@ static public class BD
     {
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "exec actualizarPerfil @pId, @pTiempo, @pFecha";
+            string query = "exec AgregarRegistro @pId, @pTiempo, @pFecha";
             connection.Execute(query, new { pId = id, pTiempo = Tiempo ,pfecha = Fecha});
         }
 
