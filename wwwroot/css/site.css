@@ -84,6 +84,47 @@
       width: auto !important;
   }
   
+  .navbar-brand img
+{
+    height: 40px !important;
+    width: auto !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand img {
+    height: 50px !important;
+  }
+}
+
+/* Contador de HazeCoins en navbar */
+.navbar-monedas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #C7B2E1 0%, #D4C4E8 100%);
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(122, 91, 168, 0.2);
+    order: 2;
+    margin-left: 12px;
+}
+
+.navbar-monedas-cantidad {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.navbar-monedas img {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar
+{
+    background-color: #B89DD9 !important;
+}
+
   @media (min-width: 768px) {
     .navbar-brand img {
       height: 50px !important;
@@ -1164,6 +1205,24 @@ main:not(.no-header) {
       display: none !important;
     }
   
+    /* Ajustar contador de monedas en desktop */
+  .navbar-monedas {
+    order: 2;
+    margin-left: auto;
+    margin-right: 15px;
+    padding: 8px 18px;
+    gap: 10px;
+  }
+
+  .navbar-monedas-cantidad {
+    font-size: 1.15rem;
+  }
+
+  .navbar-monedas img {
+    width: 28px;
+    height: 28px;
+  }
+
     /* Mostrar navbar horizontal */
     .navbar-nav-desktop {
       display: flex;
@@ -2617,33 +2676,6 @@ main:not(.no-header) {
     padding: 20px;
 }
 
-/* Header con cantidad de monedas */
-.tienda-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
-.tienda-monedas {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #C7B2E1 0%, #D4C4E8 100%);
-    padding: 8px 16px;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(122, 91, 168, 0.2);
-}
-
-.tienda-cantidad {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #333;
-}
-
-.tienda-monedas img {
-    width: 28px;
-    height: 28px;
-}
 
 /* Título principal */
 .tienda-catalogo-page h1 {
@@ -2734,24 +2766,6 @@ main:not(.no-header) {
         padding: 30px;
     }
 
-    .tienda-header {
-        margin-bottom: 25px;
-    }
-
-    .tienda-monedas {
-        padding: 10px 20px;
-        gap: 10px;
-    }
-
-    .tienda-cantidad {
-        font-size: 1.4rem;
-    }
-
-    .tienda-monedas img {
-        width: 32px;
-        height: 32px;
-    }
-
     .tienda-catalogo-page h1 {
         font-size: 2.4rem;
         margin-bottom: 18px;
@@ -2795,23 +2809,6 @@ main:not(.no-header) {
         padding: 40px;
     }
 
-    .tienda-header {
-        margin-bottom: 30px;
-    }
-
-    .tienda-monedas {
-        padding: 12px 24px;
-    }
-
-    .tienda-cantidad {
-        font-size: 1.5rem;
-    }
-
-    .tienda-monedas img {
-        width: 36px;
-        height: 36px;
-    }
-
     .tienda-catalogo-page h1 {
         font-size: 2.8rem;
         margin-bottom: 20px;
@@ -2849,24 +2846,6 @@ main:not(.no-header) {
 @media (max-width: 480px) {
     .tienda-catalogo-page {
         padding: 15px;
-    }
-
-    .tienda-header {
-        margin-bottom: 18px;
-    }
-
-    .tienda-monedas {
-        padding: 6px 14px;
-        gap: 6px;
-    }
-
-    .tienda-cantidad {
-        font-size: 1.1rem;
-    }
-
-    .tienda-monedas img {
-        width: 24px;
-        height: 24px;
     }
 
     .tienda-catalogo-page h1 {
