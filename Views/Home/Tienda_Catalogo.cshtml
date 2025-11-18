@@ -1,27 +1,57 @@
-    <main>
+<main class="tienda-catalogo-page">
+    
+    <!-- Header con monedas -->
+    <div class="tienda-header">
+        <div class="tienda-monedas">
+            <span class="tienda-cantidad">120</span>
+            <img src="/Imagenes/NoHaze-Logo nuevo.png" alt="Moneda">
+        </div>
+    </div>
 
-        <h1>Tienda de monedas</h1>
+    <h1>Tienda de monedas</h1>
+    <p class="tienda-descripcion">En esta tienda podras comprar tiempo de ocio en tus apps</p>
 
-        <p>En esta tienda podras comprar tiempo de ocio en tus apps</p>
-
-        <section class="layout">
-            <div>
-                <img src="" alt="AppOcio">
-                <button onclick="Comprar()">Comprar</button>
+    <section class="tienda-grid">
+        @if(ViewBag.ApsDeOcio != null && ViewBag.ApsDeOcio.Count > 0)
+        {
+            @foreach(AppOcio app in ViewBag.ApsDeOcio)
+            {
+                <div class="tienda-card">
+                    <img src="/Imagenes/@app.foto" alt="@app.titulo">
+                    <span class="tienda-tiempo">15 mins</span>
+                    <a href='@Url.Action("Tienda_Compra", "Home", new { idApp = app.ID })' class="tienda-btn-comprar">Comprar</a>
+                </div>
+            }
+        }
+        else
+        {
+            <!-- Apps de ejemplo mientras no hay datos -->
+            <div class="tienda-card">
+                <img src="/Imagenes/discord-logo.png" alt="Discord">
+                <span class="tienda-tiempo">15 mins</span>
+                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
             </div>
-            <div>
-                <img src="" alt="AppOcio">
-                <button onclick="Comprar()">Comprar</button>
+            <div class="tienda-card">
+                <img src="/Imagenes/instagram-logo.png" alt="Instagram">
+                <span class="tienda-tiempo">15 mins</span>
+                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
             </div>
-            <div>
-                <img src="" alt="AppOcio">
-                <button onclick="Comprar()">Comprar</button>
+            <div class="tienda-card">
+                <img src="/Imagenes/logo-x.png" alt="X">
+                <span class="tienda-tiempo">15 mins</span>
+                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
             </div>
-            <div>
-                <img src="" alt="AppOcio">
-                <button onclick="Comprar()">Comprar</button>
+            <div class="tienda-card">
+                <img src="/Imagenes/youtube-icon.png" alt="YouTube">
+                <span class="tienda-tiempo">15 mins</span>
+                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
             </div>
-          </section>
+            <div class="tienda-card">
+                <img src="/Imagenes/tiktok-icon.png" alt="TikTok">
+                <span class="tienda-tiempo">15 mins</span>
+                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
+            </div>
+        }
+    </section>
 
-
-    </main>
+</main>
