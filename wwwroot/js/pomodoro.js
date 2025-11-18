@@ -55,16 +55,17 @@ function reiniciar() {
     segundosRestantes = tiempoTrabajo * 60;
     document.getElementById("estado").textContent = "Tiempo de trabajo";
 
-     
-        $.ajax({
-            url: '/Home/AgregarRegistro',
-            data: { Tiempo: tiempoTrabajado},
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
+     if (tiempoTrabajado > 0)
+     {
+         $.ajax({
+             url: '/Home/AgregarRegistro',
+             data: { Tiempo: tiempoTrabajado},
+             type: 'GET',
+             dataType: 'json',
+             success: function(response) {
             }
-        });
-
+        }); 
+    }
     actualizarPantalla();
 }
 
