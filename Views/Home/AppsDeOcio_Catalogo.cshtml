@@ -13,7 +13,7 @@
     @foreach (AppOcio item in @ViewBag.listaAppsOcio)
     {
         <div id="app_@item.ID">
-            <img src="/Imagenes/@item.foto/" />
+            <img src="~/Imagenes/@item.foto" />
 
             @item.titulo
             <input type="image" src="/Imagenes/delete-icon.png" onclick="EliminarApp(@item.ID)"/>

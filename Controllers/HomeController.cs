@@ -106,8 +106,14 @@ public class HomeController : Controller
 
     public IActionResult Tienda_Catalogo()
     {
-        List <AppOcio> AppOcio = new List <AppOcio>();
-        ViewBag.ApsDeOcio = AppOcio;
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        List<AppOcio> appsOcio = BD.getListaAppsOcio(id);
+        ViewBag.listaAppsOcio = appsOcio;
+        return View();
+    }
+
+    public IActionResult Tienda_Compra()
+    {
         return View();
     }
 

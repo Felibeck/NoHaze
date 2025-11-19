@@ -4,12 +4,13 @@
     <p class="tienda-descripcion">En esta tienda podras comprar tiempo de ocio en tus apps</p>
 
     <section class="tienda-grid">
-        @if(ViewBag.ApsDeOcio != null && ViewBag.ApsDeOcio.Count > 0)
+
+        @if(ViewBag.listaAppsOcio != null && ViewBag.listaAppsOcio.Count > 0)
         {
-            @foreach(AppOcio app in ViewBag.ApsDeOcio)
+            @foreach(AppOcio app in ViewBag.listaAppsOcio)
             {
                 <div class="tienda-card">
-                    <img src="/Imagenes/@app.foto" alt="@app.titulo">
+                    <img src="~/Imagenes/@app.foto" alt="@app.titulo">
                     <span class="tienda-tiempo">15 mins</span>
                     <a href='@Url.Action("Tienda_Compra", "Home", new { idApp = app.ID })' class="tienda-btn-comprar">Comprar</a>
                 </div>

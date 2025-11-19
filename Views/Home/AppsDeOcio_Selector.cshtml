@@ -5,11 +5,11 @@
     @foreach (AppOcio item in @ViewBag.listaAppsNoAsociadas)
     {
         <div id="noApp_@item.ID">
-            <img src="/Imagenes/@item.foto/" />
 
+            <img src="/Imagenes/@item.foto"/>
+            
             @item.titulo
-
-                <input type="image" src="/Imagenes/delete-icon.png" onclick="AgregarApp(@item.ID)"/>
+            <input type="image" src="/Imagenes/delete-icon.png" onclick="AgregarApp(@item.ID)"/>
 
         </div>
     }
