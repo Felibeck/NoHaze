@@ -1,7 +1,19 @@
 <main class="editar-perfil-page">
 
 <div class="perfil-photo-edit-container">
-    <img src="/Imagenes/FotoPerfil.jpg" alt="foto de perfil" id="previewFoto" />
+
+
+     @{
+            string fotoUsuario = ViewBag.Usuario.foto;
+            if(fotoUsuario == null)
+            {
+                <img src="/Imagenes/defaultUserFoto1.png" alt="Foto de perfil" class="perfil-photo">
+            }else
+            {
+                <img src="@fotoUsuario" alt="Foto de perfil" class="perfil-photo">
+            }
+        }
+    
     <label for="inputFoto" class="perfil-edit-button" title="Cambiar foto de perfil">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
             <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
