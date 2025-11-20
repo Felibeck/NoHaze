@@ -8,50 +8,36 @@
     </div>
 
     <section>
-        @if(ViewBag.desafio != null)
-        {
+        
             @foreach(Desafio desafio in ViewBag.desafio)
             {
+                @if(@ViewBag.Minutos <= desafio.meta)
+                {
+                var porcentaje = ((double)ViewBag.Minutos / desafio.meta) * 100;
+                var porcentajeCss = porcentaje.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture);
                 <div class="fondoDiv">
                     <h3>@desafio.titulo</h3>
-                    <h3>7/@desafio.meta</h3>
+                    <h3>@ViewBag.Minutos /@desafio.meta</h3>
                     <button>Reclamar</button>
                     <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 75%"></div>
+                        <div class="progress-bar" style="width:@porcentajeCss%"></div>
                     </div>
                 </div>
+                }
+                else
+                {
+                    <div class="fondoDiv">
+                        <h3>@desafio.titulo</h3>
+                        <h3>@desafio.meta /@desafio.meta</h3>
+                        <button>Reclamar</button>
+                        <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width:100%"></div>
+                        </div>
+                    </div>
+                }
             }
-        }
-        else
-        {
-            <!-- Ejemplo mientras no hay datos -->
-            <div class="fondoDiv">
-                <h3>Horas sin usar apps de ocio:</h3>
-                <h3>4/4</h3>
-                <button>Reclamar</button>
-                <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 100%"></div>
-                </div>
-            </div>
-
-            <div class="fondoDiv">
-                <h3>Horas sin usar apps de ocio:</h3>
-                <h3>7/8</h3>
-                <button>Reclamar</button>
-                <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 87%"></div>
-                </div>
-            </div>
-
-            <div class="fondoDiv">
-                <h3>Horas sin usar apps de ocio:</h3>
-                <h3>7/12</h3>
-                <button>Reclamar</button>
-                <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 58%"></div>
-                </div>
-            </div>
-        }
+        
+      
     </section>
 
     <h2>Tu Racha</h2>

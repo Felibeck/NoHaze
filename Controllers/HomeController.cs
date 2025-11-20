@@ -31,6 +31,8 @@ public class HomeController : Controller
         int id = int.Parse(HttpContext.Session.GetString("ID"));
             Usuario Usuario = BD.GetUsuario(id);
             List <Desafio> desafios = BD.getListaDesafios(id);
+            List<int> MinutosProductivos = BD.getHorasProductivas(id, 1);
+            ViewBag.Minutos = MinutosProductivos[0];
             ViewBag.nombre = Usuario.username;
             ViewBag.racha = Usuario.racha;
             ViewBag.desafio = desafios;
