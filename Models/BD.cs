@@ -227,4 +227,27 @@ static public class BD
 
         return;
     }
+
+       public static void CompletarMision (int id)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec CompletarMision @pId";
+            connection.Execute(query, new { pId = id});
+        }
+
+        return;
+    }
+        public static void agregarRecompensas (int id, int recompensa)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec AgregarRecompensa @pId, @pRecompensa";
+            connection.Execute(query, new { pId = id , pRecompensa = recompensa});
+        }
+
+        return;
+    }
+
+
 }

@@ -170,6 +170,15 @@ public class HomeController : Controller
         return 1;
     }
 
+    //Completar una mision
+    public int CompletarMision(int id, int recompensa)
+    {
+        int ID = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.agregarRecompensas(ID,recompensa);
+        BD.CompletarMision(id);
+        return 1;
+    }
+
     // aceptar cambios en editar perfil
 
     [HttpPost] 
