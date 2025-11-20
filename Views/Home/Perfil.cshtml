@@ -2,7 +2,17 @@
     <!-- Header con foto de perfil y nombre -->
     <div class="perfil-header">
         <div class="perfil-photo-container">
-            <img src="/Imagenes/FotoPerfil.jpg" alt="Foto de perfil" class="perfil-photo">
+
+        @{
+            string fotoUsuario = ViewBag.Usuario.foto;
+            if(fotoUsuario == null)
+            {
+                <img src="/Imagenes/FotoPerfil.jpg" alt="Foto de perfil" class="perfil-photo">
+            }else
+            {
+                <img src="@fotoUsuario" alt="Foto de perfil" class="perfil-photo">
+            }
+        }
         </div>
         <h1 class="perfil-nombre">@ViewBag.Usuario.username</h1>
         <h3 class="perfil-fecha">@ViewBag.Usuario.fechaNacimiento.ToString("dd/MM/yyyy")</h3>
