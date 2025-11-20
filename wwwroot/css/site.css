@@ -2019,13 +2019,54 @@ main:not(.no-header) {
 }
 
 /* Foto de perfil */
-.editar-perfil-page > img {
+.perfil-photo-edit-container {
+    position: relative;
     width: 150px;
     height: 150px;
+    margin-bottom: 30px;
+}
+
+.perfil-photo-edit-container img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(122, 91, 168, 0.3);
-    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.perfil-photo-edit-container:hover img {
+    box-shadow: 0 6px 20px rgba(122, 91, 168, 0.4);
+}
+
+/* Botón de cámara para editar foto */
+.perfil-edit-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #7A5BA8 0%, #9B7AC7 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(122, 91, 168, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid white;
+}
+
+.perfil-edit-button:hover {
+    background: linear-gradient(135deg, #6A4B98 0%, #8B6AB7 100%);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(122, 91, 168, 0.6);
+}
+
+.perfil-edit-button svg {
+    color: white;
+    width: 20px;
+    height: 20px;
 }
 
 /* Formulario */
