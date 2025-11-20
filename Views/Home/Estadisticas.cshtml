@@ -1,123 +1,182 @@
-        <h1>Tiempo de productividad</h1>
+<main class="estadisticas-page">
 
-            <section id="seccion-diario">  
-            
-              <div>
+    <!-- Título -->
+    <h1>Tiempo de productividad</h1>
 
-                 <h2 id="dia"> @ViewBag.horaDiaria minutos </h2>
+    <!-- Contenedor del gráfico -->
+    <div class="chart-container">
+        <canvas id="chartProductividad"></canvas>
+    </div>
 
-              </div>
+    <!-- Navegador Semanal/Mensual/Diario -->
+    <div class="navigator-container">
+        <button class="nav-btn" onclick="pasar(-1)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+            </svg>
+        </button>
+        <span class="nav-label" id="navLabel">Semanal</span>
+        <button class="nav-btn" onclick="pasar(1)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5a.5.5 0 0 0-.5.5z"/>
+            </svg>
+        </button>
+    </div>
 
-            </section>
+    <!-- Título Apps más usadas -->
+    <h2>Apps más usadas</h2>
 
-            <section id="seccion-semanal">
+    <!-- Contenedor de podios -->
+    <div class="podios-container">
+        <!-- Plata (segundo lugar) -->
+        <div class="podio plata">
+            <div class="podio-numero">2</div>
+            <img src="/Imagenes/placeholder-app.png" alt="App Plata" class="podio-img"/>
+            <span class="podio-label">Plata</span>
+        </div>
 
-                <div>
+        <!-- Oro (primer lugar) -->
+        <div class="podio oro">
+            <div class="podio-numero">1</div>
+            <img src="/Imagenes/placeholder-app.png" alt="App Oro" class="podio-img"/>
+            <span class="podio-label">Oro</span>
+        </div>
 
-                  <h2 id="semanal1"> @ViewBag.horasSemanales[0] minutos </h2>
+        <!-- Bronce (tercer lugar) -->
+        <div class="podio bronce">
+            <div class="podio-numero">3</div>
+            <img src="/Imagenes/placeholder-app.png" alt="App Bronce" class="podio-img"/>
+            <span class="podio-label">Bronce</span>
+        </div>
+    </div>
 
-                </div>
+</main>
 
-                <div>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script>
+    let chart = null;
+    let config = 0;
 
-                  <h2 id="semanal2"> @ViewBag.horasSemanales[1] minutos </h2>
+    // Datos desde ViewBag
+    const datos = {
+        semanal: [@string.Join(",", ViewBag.horasSemanales ?? new int[7])],
+        mensual: [@string.Join(",", ViewBag.horasMensuales ?? new int[4])],
+        diario: [@ViewBag.horaDiaria ?? 0]
+    };
 
-                </div>
+    function initChart(tipo) {
+        const ctx = document.getElementById('chartProductividad').getContext('2d');
+        
+        let labels, chartData, max;
+        
+        if (tipo === 'semanal') {
+            labels = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+            chartData = datos.semanal;
+            max = Math.max(...chartData) + 10;
+        } else if (tipo === 'mensual') {
+            labels = ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'];
+            chartData = datos.mensual;
+            max = Math.max(...chartData) + 10;
+        } else {
+            labels = ['Hoy'];
+            chartData = [datos.diario];
+            max = Math.max(...chartData) + 10;
+        }
 
-                <div>
+        if (chart) {
+            chart.destroy();
+        }
 
-                  <h2 id="semanal3"> @ViewBag.horasSemanales[2] minutos </h2>
+        chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Minutos de productividad',
+                    data: chartData,
+                    backgroundColor: '#7A5BA8',
+                    borderColor: '#6A4B98',
+                    borderWidth: 2,
+                    borderRadius: 8,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: max,
+                        ticks: {
+                            stepSize: 10,
+                            color: '#666',
+                            font: {
+                                size: 12,
+                                family: "'Zain', sans-serif"
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(200, 200, 200, 0.2)',
+                            drawBorder: false
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#666',
+                            font: {
+                                size: 12,
+                                family: "'Zain', sans-serif"
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    }
 
-                </div>
+    function pasar(num) {
+        if (num === 1) {
+            if (config === 1) {
+                config = -1;
+            } else {
+                config++;
+            }
+        } else if (num === -1) {
+            if (config === -1) {
+                config = 1;
+            } else {
+                config--;
+            }
+        }
 
-                <div>
+        let tipo;
+        if (config === 0) {
+            tipo = 'semanal';
+            document.getElementById('navLabel').textContent = 'Semanal';
+        } else if (config === 1) {
+            tipo = 'mensual';
+            document.getElementById('navLabel').textContent = 'Mensual';
+        } else {
+            tipo = 'diario';
+            document.getElementById('navLabel').textContent = 'Diario';
+        }
 
-                  <h2 id="semanal4"> @ViewBag.horasSemanales[3] minutos </h2>
+        initChart(tipo);
+    }
 
-                </div>
-
-                <div>
-
-                  <h2 id="semanal5"> @ViewBag.horasSemanales[4] minutos </h2>
-
-                </div>
-
-                <div>
-
-                  <h2 id="semanal6"> @ViewBag.horasSemanales[5] minutos </h2>
-
-                </div>
-
-                <div>
-
-                  <h2 id="semanal7"> @ViewBag.horasSemanales[6] minutos </h2>
-
-                </div>
-
-            
-            </section>
-
-            <section id="seccion-mensual" > 
-
-            <div>
-              <h2 id="mensual1">
-                @ViewBag.horasMensuales[0] minutos
-              </h2>
-            </div>
-
-            <div>
-              <h2 id="mensual2">
-                @ViewBag.horasMensuales[1] minutos
-              </h2>
-            </div>
-
-            <div>
-              <h2 id="mensual3">
-                @ViewBag.horasMensuales[2] minutos
-              </h2>
-            </div>
-
-            <div>
-              <h2 id="mensual4">
-                @ViewBag.horasMensuales[3] minutos
-              </h2>
-            </div>
-
-            
-            </section>
-
-
-
-
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <h1>semanal</h1>
-                  </div>
-                  <div class="carousel-item">
-                    <h1>mensual</h1>
-                  </div>
-                  <div class="carousel-item">
-                    <h1>diario</h1>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" onclick = pasar(-1)>
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" onclick = pasar(1)>
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <h1>Apps más usadas</h1>
-
-            <div class="parent1">
-                 <div class="bronce"><img src="" alt="AppBronce"></div>
-                 <div class="plata"><img src="" alt="AppPlata"></div>
-                 <div class="oro"><img src="" alt="AppOro"></div>
-            </div>
-
-    <script src="~/js/estadisticas.js"></script>
-        <script>pasar(0);</script>
+    // Inicializar gráfico al cargar
+    window.addEventListener('load', () => {
+        pasar(0);
+    });
+</script>
