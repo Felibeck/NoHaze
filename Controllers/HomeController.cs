@@ -6,11 +6,13 @@ namespace NoHaze.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    
 
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IWebHostEnvironment _env;
+
+    public HomeController(IWebHostEnvironment env)
     {
-        _logger = logger;
+        _env = env;
     }
 
     public IActionResult Index()
@@ -172,22 +174,30 @@ public class HomeController : Controller
 
     [HttpPost] 
 
-    public IActionResult aceptarCambiosPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo)
+    public IActionResult aceptarCambiosPerfil(Usuario user, IFormFile foto)
     {
-        int id = int.Parse(HttpContext.Session.GetString("ID"));
 
-        // Validar que la fecha sea válida para SQL Server
-        if (fechaNacimiento.Year < 1753)
-        {
-            // Si la fecha es inválida, mantener la fecha actual del usuario
-            // O puedes poner una fecha por defecto
-            fechaNacimiento = new DateTime(2000, 1, 1);
+        if (foto != null && foto.Length > 0){
+
+            string nombreArchivo = foto.FileName;
+
+            string rutaCarpeta = Path.Combine(_env.WebRootPath, "Imagenes");
+
+            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
+
+            using (var stream = new FileStream(rutaCompleta, FileMode.Create))
+            {
+                foto.CopyTo(stream);
+            }
+
+            int id = int.Parse(HttpContext.Session.GetString("ID"));
+
+            BD.actualizarPerfil(user);
+
+            // Recargar los datos del usuario
+
+            ViewBag.Usuario = BD.GetUsuario(id);
         }
-
-    BD.actualizarPerfil(username, fechaNacimiento, descripcion, objetivo, id);
-
-    // Recargar los datos del usuario
-    ViewBag.Usuario = BD.GetUsuario(id);
 
     return View("Perfil");
     }
