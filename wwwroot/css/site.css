@@ -2924,3 +2924,461 @@ main:not(.no-header) {
     animation-delay: 0.3s;
     opacity: 0;
 }
+
+/* ========================================
+   CSS EXCLUSIVO PARA APPSDEOCIO_SELECTOR.CSHTML
+   ======================================== */
+
+/* Container principal */
+.apps-selector-page {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+/* Título principal */
+.apps-selector-page h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 25px 0;
+    padding-top: 20px;
+}
+
+/* Barra de búsqueda */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 2px solid #E0E0E0;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 0 3px rgba(122, 91, 168, 0.1);
+}
+
+.search-container svg {
+    width: 18px;
+    height: 18px;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Zain', sans-serif;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* Lista de apps selector */
+.apps-selector-list {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 40px;
+}
+
+/* Item individual */
+.app-selector-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: linear-gradient(135deg, #C7B2E1 0%, #D4C4E8 100%) !important;
+    padding: 12px 16px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 3px 10px rgba(122, 91, 168, 0.15) !important;
+    transition: all 0.2s ease;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+.app-selector-item:hover {
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.25) !important;
+}
+
+.app-selector-item.hidden {
+    display: none !important;
+}
+
+/* Logo de la app */
+.app-selector-logo {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin: 0 !important;
+    object-fit: cover;
+}
+
+/* Nombre de la app */
+.app-selector-nombre {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Botón agregar */
+.btn-agregar {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: rgba(122, 91, 168, 0.3) !important;
+    border-radius: 50%;
+    border: none !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.btn-agregar:hover {
+    background-color: rgba(122, 91, 168, 0.5) !important;
+    transform: scale(1.1);
+}
+
+.btn-agregar svg {
+    width: 20px;
+    height: 20px;
+    fill: #7A5BA8;
+}
+
+/* Botón volver (flecha) */
+.btn-volver {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-secundario);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.3);
+    z-index: 100;
+}
+
+.btn-volver:hover {
+    background-color: #6A4B98;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(122, 91, 168, 0.4);
+}
+
+.btn-volver svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .apps-selector-page {
+        max-width: 700px;
+        padding: 30px;
+    }
+
+    .apps-selector-page h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .search-container {
+        padding: 14px 18px;
+        margin-bottom: 35px;
+    }
+
+    .search-container svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .search-input {
+        font-size: 1.05rem;
+    }
+
+    .apps-selector-list {
+        gap: 15px;
+        margin-bottom: 50px;
+    }
+
+    .app-selector-item {
+        padding: 14px 20px !important;
+    }
+
+    .app-selector-logo {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .app-selector-nombre {
+        font-size: 1.05rem;
+    }
+
+    .btn-agregar {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .btn-agregar svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .btn-volver {
+        width: 55px;
+        height: 55px;
+        bottom: 155px;
+    }
+
+    .btn-volver svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .apps-selector-page {
+        max-width: 900px;
+        padding: 40px;
+    }
+
+    .apps-selector-page h1 {
+        font-size: 2.8rem;
+        margin-bottom: 35px;
+    }
+
+    .search-container {
+        padding: 16px 20px;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+    }
+
+    .search-container svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .search-input {
+        font-size: 1.1rem;
+    }
+
+    /* Grid de 2 columnas para las apps en desktop */
+    .apps-selector-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-bottom: 60px;
+    }
+
+    .app-selector-item {
+        flex-direction: column !important;
+        padding: 20px !important;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .app-selector-item:hover {
+        transform: translateY(-3px);
+    }
+
+    .app-selector-logo {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .app-selector-nome {
+        flex: 1;
+        font-size: 1.1rem;
+    }
+
+    .btn-agregar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* Hacer los items posicionados relativamente */
+    .app-selector-item {
+        position: relative;
+    }
+
+    .btn-volver {
+        width: 60px;
+        height: 60px;
+        bottom:200px;
+    }
+
+    .btn-volver svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PEQUEÑO (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .apps-selector-page {
+        padding: 15px;
+    }
+
+    .apps-selector-page h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        padding-top: 15px;
+    }
+
+    .search-container {
+        padding: 10px 14px;
+        margin-bottom: 25px;
+    }
+
+    .search-container svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .search-input {
+        font-size: 0.95rem;
+    }
+
+    .apps-selector-list {
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .app-selector-item {
+        padding: 10px 14px !important;
+    }
+
+    .app-selector-logo {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .app-selector-nombre {
+        font-size: 0.95rem;
+    }
+
+    .btn-agregar {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .btn-agregar svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-volver {
+        width: 48px;
+        height: 48px;
+        bottom: 170px;
+    }
+
+    .btn-volver svg {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+@keyframes fadeInSelector {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.app-selector-item {
+    animation: fadeInSelector 0.4s ease forwards;
+}
+
+.app-selector-item:nth-child(1) {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.app-selector-item:nth-child(2) {
+    animation-delay: 0.15s;
+    opacity: 0;
+}
+
+.app-selector-item:nth-child(3) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.app-selector-item:nth-child(4) {
+    animation-delay: 0.25s;
+    opacity: 0;
+}
+
+.app-selector-item:nth-child(5) {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+@keyframes slideInButton {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.btn-volver {
+    animation: slideInButton 0.5s ease 0.4s forwards;
+    opacity: 0;
+}

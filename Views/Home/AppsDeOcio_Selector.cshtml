@@ -1,18 +1,44 @@
-<main class="apps-ocio-page">
+<main class="apps-selector-page">
 
-<h1>Apps de Ocio</h1>
+    <!-- Título -->
+    <h1>Apps de ocio</h1>
 
-    @foreach (AppOcio item in @ViewBag.listaAppsNoAsociadas)
-    {
-        <div id="noApp_@item.ID">
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.003-.003.007-.007.01-.01l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.01-.01zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Buscar..." class="search-input"/>
+    </div>
 
-            <img src="/Imagenes/@item.foto"/>
-            
-            @item.titulo
-            <input type="image" src="/Imagenes/delete-icon.png" onclick="AgregarApp(@item.ID)"/>
+    <!-- Lista de apps disponibles -->
+    <section class="apps-selector-list">
+        @foreach (AppOcio item in @ViewBag.listaAppsNoAsociadas)
+        {
+            <div class="app-selector-item" id="noApp_@item.ID" data-app-name="@item.titulo.ToLower()">
+                <!-- Logo de la app -->
+                <img src="/Imagenes/@item.foto/" alt="@item.titulo" class="app-selector-logo"/>
 
-        </div>
-    }
+                <!-- Nombre de la app -->
+                <span class="app-selector-nombre">@item.titulo</span>
+
+                <!-- Botón agregar -->
+                <button type="button" class="btn-agregar" onclick="AgregarApp(@item.ID)" title="Agregar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </button>
+            </div>
+        }
+    </section>
+
+    <!-- Botón volver (flecha) -->
+    <a href='@Url.Action("Pasar", "Home", new { Direccion = "AppsDeOcio_Catalogo" })' class="btn-volver">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+        </svg>
+    </a>
 
 </main>
-<!-- fin boton para volver -->
+
+<script src="~/js/apps-selector.js"></script>
