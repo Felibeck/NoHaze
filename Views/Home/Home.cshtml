@@ -11,6 +11,8 @@
         
             @foreach(Desafio desafio in ViewBag.desafio)
             {
+                if(!desafio.activo)
+                {
                 @if(@ViewBag.Minutos <= desafio.meta)
                 {
                 var porcentaje = ((double)ViewBag.Minutos / desafio.meta) * 100;
@@ -18,7 +20,7 @@
                 <div class="fondoDiv">
                     <h3>@desafio.titulo</h3>
                     <h3>@ViewBag.Minutos /@desafio.meta</h3>
-                    <button>Reclamar</button>
+                    <button onclick = CompletarMision(@desafio.id, @desafio.meta, @ViewBag.Minutos, @desafio.recompensa) id="boton_@desafio.id">Reclamar</button>
                     <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar" style="width:@porcentajeCss%"></div>
                     </div>
@@ -29,7 +31,19 @@
                     <div class="fondoDiv">
                         <h3>@desafio.titulo</h3>
                         <h3>@desafio.meta /@desafio.meta</h3>
-                        <button>Reclamar</button>
+                        <button onclick = "CompletarMision(@desafio.id, @desafio.meta, @ViewBag.Minutos, @desafio.recompensa)" id="boton_@desafio.id">Reclamar</button>
+                        <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width:100%"></div>
+                        </div>
+                    </div>
+                }
+                }
+                else
+                {
+                    <div class="fondoDiv">
+                        <h3>@desafio.titulo</h3>
+                        <h3>@desafio.meta /@desafio.meta</h3>
+                        <button>Reclamado</button>
                         <div class="progress" role="progressbar" aria-label="Progreso del desafío" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar" style="width:100%"></div>
                         </div>

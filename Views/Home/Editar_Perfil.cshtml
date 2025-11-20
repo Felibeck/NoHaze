@@ -22,7 +22,7 @@
     </label>
 </div>
 
-<form action='@Url.Action("aceptarCambiosPerfil", "Home")' method="POST">
+<form action='@Url.Action("aceptarCambiosPerfil", "Home")' method="POST" enctype="multipart/form-data">
 
     <input type="file" id="inputFoto" name="foto" accept="image/*" style="display: none;" onchange="previsualizarImagen(event)" />
 

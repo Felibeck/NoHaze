@@ -30,3 +30,18 @@ function AgregarApp(ID) {
         }
     });
 }
+
+function CompletarMision(iDdxu, meta, desafio, recompensa) {
+    if(desafio >= meta){
+        $.ajax({
+            url: '/Home/CompletarMision',
+            data: { id: iDdxu, recompensa: recompensa},
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                $("#boton_" + iDdxu).attr("style", "background-color : --color-principal !important;");
+                $("#boton_" + iDdxu).text("Reclamado");
+            }
+        });
+    }
+}

@@ -206,12 +206,12 @@ static public class BD
 
     // actualizar los datos del perfil
 
-    public static void actualizarPerfil(string username, DateTime fechaNacimiento, string descripcion, string objetivo, int IDUsuario)
+    public static void actualizarPerfil(Usuario user)
     {
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "exec actualizarPerfil @pusername, @pfechaNacimiento, @pdescripcion, @pobjetivo, @pIDUsuario";
-            connection.Execute(query, new { pusername = username,  pfechaNacimiento = fechaNacimiento, pdescripcion = descripcion, pobjetivo = objetivo, pIDUsuario = IDUsuario});
+            connection.Execute(query, new { pusername = user.username,  pfechaNacimiento = user.fechaNacimiento, pdescripcion = user.descripcion, pobjetivo = user.objetivo, pIDUsuario = user.id});
         }
 
         return;
@@ -227,4 +227,27 @@ static public class BD
 
         return;
     }
+
+       public static void CompletarMision (int id)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec CompletarMision @pId";
+            connection.Execute(query, new { pId = id});
+        }
+
+        return;
+    }
+        public static void agregarRecompensas (int id, int recompensa)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec AgregarRecompensa @pId, @pRecompensa";
+            connection.Execute(query, new { pId = id , pRecompensa = recompensa});
+        }
+
+        return;
+    }
+
+
 }
