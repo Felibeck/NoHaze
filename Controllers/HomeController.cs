@@ -46,12 +46,24 @@ public class HomeController : Controller
         
         string direccion = Direccion;
         string id = HttpContext.Session.GetString("ID");
-        ViewBag.ID = int.Parse(id);
+        int ID = int.Parse(id);
+        ViewBag.id = ID;
+
+
+
         if (string.IsNullOrEmpty(id))
         {
             direccion = "Index";
         }
+        else
+        {
+            Usuario user = BD.GetUsuario(ID);
+            ViewBag.cantMonedas = user.monedas;
+
+        }
         return RedirectToAction(direccion, "Home");
+
+
     }
     
      public IActionResult Playlist()
@@ -76,12 +88,22 @@ public class HomeController : Controller
         int id = int.Parse(HttpContext.Session.GetString("ID"));
         List<int>informes = BD.getHorasProductivas(id, 28);
         ViewBag.horaDiaria = informes[0];
-        List<int> horasSemanales = new List<int>();
-        for(int i=0; i < 7; i++)
-        {
-            horasSemanales.Add(informes[i]);
-        }
-        ViewBag.horasSemanales = horasSemanales;
+
+    // Asumimos: informes[0] = hoy, informes[1] = ayer, ...
+// Queremos un array en orden Lunes(0) .. Domingo(6)
+List<int> horasSemanales = new List<int>(new int[7]);
+
+for (int i = 0; i < 7; i++)
+{
+    // día de la semana del elemento informes[i]
+    int dow = ((int)DateTime.Now.DayOfWeek - i + 7) % 7; // 0=Dom,1=Lun,...6=Sáb
+    int indexMondayFirst = (dow + 6) % 7; // convierte a 0=Lun ... 6=Dom
+    horasSemanales[indexMondayFirst] = informes[i];
+}
+
+ViewBag.horasSemanales = horasSemanales;
+
+
 
         List<int>horasMensuales = new List<int>();
 
