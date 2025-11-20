@@ -1,17 +1,17 @@
 public class Usuario
 {
-    public int id {get; private set;}
-    public string username {get; private set;}
-    public string email {get; private set;}
-    public string password {get; private set;}
-    public DateTime fechaNacimiento {get; private set;}
-    public string descripcion {get; private set;}
-    public string objetivo {get; private set;}
-    public int monedas {get; private set;}
-    public bool aceptaNotis {get; private set;}
-    public DateTime ultimoIngreso {get; private set;}
-    public int racha {get; private set;}
-    public string foto {get; private set;}
+    public int id {get;  set;}
+    public string username {get;  set;}
+    public string email {get;  set;}
+    public string password {get;  set;}
+    public DateTime fechaNacimiento {get;  set;}
+    public string descripcion {get;  set;}
+    public string objetivo {get;  set;}
+    public int monedas {get;  set;}
+    public bool aceptaNotis {get;  set;}
+    public DateTime ultimoIngreso {get;  set;}
+    public int racha {get;  set;}
+    public string foto {get;  set;}
 
     
 

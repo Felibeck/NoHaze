@@ -18,7 +18,7 @@
     <input type="text" name="username" value="@ViewBag.Usuario.username"/>
 
     <label>Fecha de Nacimiento</label>
-    <input type="date" name="fechaNacimiento" value="@ViewBag.Usuario.fechaNacimiento.ToString("yyyy-MM-dd")"/>
+    <input type="date" name="fechaNacimiento" value='@ViewBag.Usuario.fechaNacimiento.ToString("yyyy-MM-dd")'/>
 
     <label>Objetivo</label>
     <input type="text" name="objetivo" value="@ViewBag.Usuario.objetivo"/>
@@ -27,6 +27,14 @@
     <textarea name="descripcion" rows="4">@ViewBag.Usuario.descripcion</textarea>
 
     <input type="submit" value="Aceptar" />
+
+    <input type="hidden" name="email" value="@ViewBag.Usuario.email">
+    <input type="hidden" name="password" value="@ViewBag.Usuario.password">
+    <input type="hidden" name="monedas" value="@ViewBag.Usuario.monedas">
+    <input type="hidden" name="aceptarNotificaciones" value="@ViewBag.Usuario.aceptaNotis">
+    <input type="hidden" name="ultimoIngreso" value="@ViewBag.Usuario.ultimoIngreso">
+    <input type="hidden" name="racha" value="@ViewBag.Usuario.racha">
+    <input type="hidden" name="id" value="@ViewBag.Usuario.id">
 
 </form>
 

@@ -199,6 +199,10 @@ public class HomeController : Controller
                 foto.CopyTo(stream);
             }
 
+            user.foto = (nombreArchivo);
+
+        }
+
             int id = int.Parse(HttpContext.Session.GetString("ID"));
 
             BD.actualizarPerfil(user);
@@ -206,7 +210,6 @@ public class HomeController : Controller
             // Recargar los datos del usuario
 
             ViewBag.Usuario = BD.GetUsuario(id);
-        }
 
     return View("Perfil");
     }
