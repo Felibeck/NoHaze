@@ -1,26 +1,23 @@
 <main class="apps-ocio-page">
+    <div class="apps-header">
+        <h1>Apps de ocio</h1>
+    </div>
 
-<h1>Apps de Ocio</h1>
+    <a href='@Url.Action("Pasar", "Home", new { Direccion = "AppsDeOcio_Selector" })' class="btn-seleccionar">
+        <img src="/Imagenes/add-icon.png" alt="Agregar" />
+        Seleccionar app de ocio
+    </a>
 
-<a href='@Url.Action("Pasar", "Home", new { Direccion = "AppsDeOcio_Selector" })'>
-    <img src="/Imagenes/add-icon.png" />
-    Seleccionar app de ocio
-
-</a>
-
-<section>
-
-    @foreach (AppOcio item in @ViewBag.listaAppsOcio)
-    {
-        <div id="app_@item.ID">
-            <img src="~/Imagenes/@item.foto" />
-
-            @item.titulo
-            <input type="image" src="/Imagenes/delete-icon.png" onclick="EliminarApp(@item.ID)"/>
-        </div>
-    }
-
-</section>
+    <section class="apps-list">
+        @foreach (AppOcio item in @ViewBag.listaAppsOcio)
+        {
+            <div class="app-card" id="app_@item.ID">
+                <img src="~/Imagenes/@item.foto" alt="@item.titulo" class="app-logo" />
+                <span class="app-nombre">@item.titulo</span>
+                <button type="button" class="btn-delete" onclick="EliminarApp(@item.ID)">
+                    <img src="/Imagenes/delete-icon.png" alt="Eliminar" />
+                </button>
+            </div>
+        }
+    </section>
 </main>
-
-<!-- 100 committtttts -->
