@@ -66,13 +66,11 @@ public class HomeController : Controller
 
     }
     
-     public IActionResult Playlist()
+     public IActionResult PlayList()
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
         List<Playlist> playlists = BD.getListaPlaylists(id);
         ViewBag.Playlists = playlists;
-
-      int i = 0;
 
         List<List<Tag>> listaDeListasTag = new List<List<Tag>>();
         foreach(Playlist item in playlists)
@@ -80,7 +78,7 @@ public class HomeController : Controller
             listaDeListasTag.Add(BD.getListaTags(item.id));
         }
 
-        ViewBag.listaTags = listaDeListasTag    ;
+        ViewBag.listaTags = listaDeListasTag;
     return View();
     }
     public IActionResult Estadisticas()
@@ -125,6 +123,8 @@ ViewBag.horasSemanales = horasSemanales;
     
     public IActionResult Playlist_Frecuencias(int idPlaylist)
     {
+        Playlist playlist = BD.GetPlaylist(idPlaylist);
+        ViewBag.playlist = playlist;
         List<Frecuencia> Frecuencias = BD.getListaFrecuencias(idPlaylist);
         ViewBag.Frecuencias = Frecuencias;
         return View();

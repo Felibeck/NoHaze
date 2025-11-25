@@ -7,10 +7,10 @@
             string fotoUsuario = ViewBag.Usuario.foto;
             if(fotoUsuario == null)
             {
-                <img src="/Imagenes/defaultUserFoto1.png" alt="Foto de perfil" class="perfil-photo">
+                <img src="/Imagenes/defaultUserFoto2.png" alt="Foto de perfil" class="perfil-photo">
             }else
             {
-                <img src="@fotoUsuario" alt="Foto de perfil" class="perfil-photo">
+                <img src="/Imagenes/@ViewBag.Usuario.foto" alt="Foto de perfil" class="perfil-photo">
             }
         }
     

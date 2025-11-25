@@ -140,13 +140,13 @@ static public class BD
 
     // get playlist por IDPlaylist
 
-    public static Playlist GetPlaylist(int IDUsuario)
+    public static Playlist GetPlaylist(int IDPlaylist)
     {
         Playlist playlistBuscada = new Playlist(); 
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Playlists WHERE Playlists.IDUsuario = @pIDUsuario";
-            playlistBuscada = connection.QueryFirstOrDefault<Playlist>(query, new { pIDUsuario = IDUsuario});
+            string query = "SELECT * FROM Playlists WHERE id = @pIDPlaylist";
+            playlistBuscada = connection.QueryFirstOrDefault<Playlist>(query, new { pIDPlaylist = IDPlaylist});
         }
             return playlistBuscada;
     }
