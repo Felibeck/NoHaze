@@ -248,4 +248,11 @@ ViewBag.horasSemanales = horasSemanales;
         BD.AgregarRegistro(id, Tiempo, Hoy);
         return 1;
     }
+
+    public int ComprarTiempo(int minutos)
+    {
+        int id = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.agregarRecompensas(id, (- minutos));
+        return 1;
+    }
 }

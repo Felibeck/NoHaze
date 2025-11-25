@@ -10,9 +10,9 @@
             @foreach(AppOcio app in ViewBag.listaAppsOcio)
             {
                 <div class="tienda-card">
-                    <img src="~/Imagenes/@app.foto" alt="@app.titulo">
+                    <img src="~/Imagenes/@app.foto" alt="@app.titulo" class="app-logo">
                     <span class="tienda-tiempo">15 mins</span>
-                    <a href='@Url.Action("Tienda_Compra", "Home", new { idApp = app.ID })' class="tienda-btn-comprar">Comprar</a>
+                    <button onclick="abrirModal('@app.foto', '@app.titulo', @app.ID)" class="tienda-btn-comprar">Comprar</button>
                 </div>
             }
         }
@@ -20,31 +20,65 @@
         {
             <!-- Apps de ejemplo mientras no hay datos -->
             <div class="tienda-card">
-                <img src="/Imagenes/discord-logo.png" alt="Discord">
+                <img src="/Imagenes/discord-logo.png" alt="Discord" class="app-logo">
                 <span class="tienda-tiempo">15 mins</span>
-                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
+                <button onclick="abrirModal('/Imagenes/discord-logo.png', 'Discord', 1)" class="tienda-btn-comprar">Comprar</button>
             </div>
             <div class="tienda-card">
-                <img src="/Imagenes/instagram-logo.png" alt="Instagram">
+                <img src="/Imagenes/instagram-logo.png" alt="Instagram" class="app-logo">
                 <span class="tienda-tiempo">15 mins</span>
-                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
+                <button onclick="abrirModal('/Imagenes/instagram-logo.png', 'Instagram', 2)" class="tienda-btn-comprar">Comprar</button>
             </div>
             <div class="tienda-card">
-                <img src="/Imagenes/logo-x.png" alt="X">
+                <img src="/Imagenes/logo-x.png" alt="X" class="app-logo">
                 <span class="tienda-tiempo">15 mins</span>
-                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
+                <button onclick="abrirModal('/Imagenes/logo-x.png', 'X', 3)" class="tienda-btn-comprar">Comprar</button>
             </div>
             <div class="tienda-card">
-                <img src="/Imagenes/youtube-icon.png" alt="YouTube">
+                <img src="/Imagenes/youtube-icon.png" alt="YouTube" class="app-logo">
                 <span class="tienda-tiempo">15 mins</span>
-                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
+                <button onclick="abrirModal('/Imagenes/youtube-icon.png', 'YouTube', 4)" class="tienda-btn-comprar">Comprar</button>
             </div>
             <div class="tienda-card">
-                <img src="/Imagenes/tiktok-icon.png" alt="TikTok">
+                <img src="/Imagenes/tiktok-icon.png" alt="TikTok" class="app-logo">
                 <span class="tienda-tiempo">15 mins</span>
-                <a href='@Url.Action("Tienda_Compra", "Home")' class="tienda-btn-comprar">Comprar</a>
+                <button onclick="abrirModal('/Imagenes/tiktok-icon.png', 'TikTok', 5)" class="tienda-btn-comprar">Comprar</button>
             </div>
         }
     </section>
 
+    <!-- Modal de compra -->
+    <div id="modalCompra" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" onclick="cerrarModal()">✕</button>
+            
+            <!-- Contenido de compra -->
+            <div id="contenidoCompra">
+                <img id="modalAppLogo" src="" alt="App" class="modal-app-logo">
+                
+                <div class="modal-info">
+                    <span id="modalCantidad">1</span>
+                    <img src="/Imagenes/haze-coin.png" alt="Haze Coin" class="modal-coin">
+                    <span>= 1 minuto</span>
+                </div>
+
+                <div class="selector">
+                    <span class="flecha" onclick="cambiarMinutos(-5)">◀</span>
+                    <span id="valorMinutos">15 mins</span>
+                    <span class="flecha" onclick="cambiarMinutos(5)">▶</span>
+                </div>
+
+                <button class="modal-btn-comprar" onclick="realizarCompra()">Comprar por <span id="precioTotal">15</span></button>
+            </div>
+
+            <!-- Contenido de agradecimiento (oculto inicialmente) -->
+            <div id="contenidoGracias" style="display: none;">
+                <h2>Gracias por su compra</h2>
+                <button class="modal-btn-aceptar" onclick="cerrarModal()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
 </main>
+
+<script src="~/js/tienda.js"></script>
