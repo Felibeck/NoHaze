@@ -33,12 +33,19 @@ public class AccountController : Controller
     public IActionResult guardarLogin(string username, string password)
     {
         if (username != null && password != null)
-        {
+        {   
+            
             int IDusuario = BD.Login(username, password);
-
+            
             if (IDusuario > 0)
             {
                 HttpContext.Session.SetString("ID", IDusuario.ToString());
+                Usuario usuario = BD.GetUsuario(IDusuario);
+                if(usuario.ultimoIngreso < DateTime.Today)
+                {
+                    BD.RecargarDesafios(IDusuario);
+                    BD.cambiarFechaLogin(IDusuario);
+                }
                 return RedirectToAction("Pasar", "Home", new { Direccion = "Home" });
             }
         }

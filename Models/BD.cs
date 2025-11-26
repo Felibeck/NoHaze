@@ -249,5 +249,25 @@ static public class BD
         return;
     }
 
+     public static void cambiarFechaLogin (int IDUsuario)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec cambiarFechaLogin @pIDUsuario";
+            connection.Execute(query, new { pIDUsuario = IDUsuario});
+        }
 
+        return;
+    }
+
+     public static void RecargarDesafios (int IDUsuario)
+    {
+        using(SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "exec RecargarDesafios @pIDUsuario";
+            connection.Execute(query, new { pIDUsuario = IDUsuario});
+        }
+
+        return;
+    }
 }
