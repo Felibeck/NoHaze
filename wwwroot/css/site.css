@@ -1347,8 +1347,8 @@ main:not(.no-header) {
     padding: 12px 20px;
     font-size: 1.05rem;
   }
-
-  /* ========================================
+}
+/* ========================================
    CSS EXCLUSIVO PARA APPSDEOCIO_CATALOGO.CSHTML
    ======================================== */
 
@@ -1365,7 +1365,7 @@ main:not(.no-header) {
     font-size: 2rem;
     font-weight: 700;
     color: #333;
-    margin: 0 0 25px 0;
+    margin: 0 0 20px 0;
 }
 
 /* Botón seleccionar app */
@@ -1377,11 +1377,11 @@ main:not(.no-header) {
     background-color: var(--color-secundario);
     color: white !important;
     text-decoration: none;
-    padding: 14px 24px;
+    padding: 12px 20px;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(122, 91, 168, 0.3);
     transition: all 0.3s ease;
 }
@@ -1394,8 +1394,8 @@ main:not(.no-header) {
 }
 
 .btn-seleccionar img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     filter: brightness(0) invert(1);
 }
 
@@ -1451,7 +1451,7 @@ main:not(.no-header) {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background-color: rgba(122, 91, 168, 0.2);
+    background-color: rgba(122, 91, 168, 0.3);
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -1460,7 +1460,7 @@ main:not(.no-header) {
 }
 
 .btn-delete:hover {
-    background-color: rgba(122, 91, 168, 0.4);
+    background-color: rgba(122, 91, 168, 0.5);
     transform: scale(1.05);
 }
 
@@ -1479,29 +1479,26 @@ main:not(.no-header) {
 
     .apps-ocio-page h1 {
         font-size: 1.8rem;
-    }
-
-    .apps-coins {
-        padding: 6px 12px;
-    }
-
-    .apps-coins span {
-        font-size: 1rem;
-    }
-
-    .apps-coins img {
-        width: 24px;
-        height: 24px;
+        margin-bottom: 18px;
     }
 
     .btn-seleccionar {
-        padding: 12px 20px;
-        font-size: 0.95rem;
+        padding: 11px 18px;
+        font-size: 0.9rem;
+        margin-bottom: 18px;
     }
 
     .btn-seleccionar img {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .apps-list {
+        gap: 10px;
+    }
+
+    .app-card {
+        padding: 10px 14px !important;
     }
 
     .app-logo {
@@ -1535,44 +1532,31 @@ main:not(.no-header) {
 
     .apps-ocio-page h1 {
         font-size: 2.3rem;
-        margin-bottom: 30px;
-    }
-
-    .apps-coins {
-        padding: 10px 18px;
-    }
-
-    .apps-coins span {
-        font-size: 1.2rem;
-    }
-
-    .apps-coins img {
-        width: 30px;
-        height: 30px;
+        margin-bottom: 25px;
     }
 
     .btn-seleccionar {
-        padding: 16px 28px;
+        padding: 14px 24px;
         font-size: 1.05rem;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .btn-seleccionar img {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
 
     .apps-list {
-        gap: 15px;
+        gap: 14px;
     }
 
     .app-card {
-        padding: 14px 18px !important;
+        padding: 13px 17px !important;
     }
 
     .app-logo {
-        width: 52px !important;
-        height: 52px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
 
     .app-nombre {
@@ -1601,50 +1585,37 @@ main:not(.no-header) {
 
     .apps-ocio-page h1 {
         font-size: 2.6rem;
-        margin-bottom: 35px;
-    }
-
-    .apps-coins {
-        padding: 12px 20px;
-    }
-
-    .apps-coins span {
-        font-size: 1.3rem;
-    }
-
-    .apps-coins img {
-        width: 32px;
-        height: 32px;
+        margin-bottom: 30px;
     }
 
     .btn-seleccionar {
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
-        padding: 18px 32px;
+        padding: 16px 28px;
         font-size: 1.1rem;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
 
     .btn-seleccionar img {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     /* Grid de 2 columnas en desktop */
     .apps-list {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
+        gap: 16px;
     }
 
     .app-card {
-        padding: 16px 20px !important;
+        padding: 14px 18px !important;
     }
 
     .app-logo {
-        width: 56px !important;
-        height: 56px !important;
+        width: 52px !important;
+        height: 52px !important;
     }
 
     .app-nombre {
@@ -3180,7 +3151,7 @@ main:not(.no-header) {
 /* Botón volver (flecha) */
 .btn-volver {
     position: fixed;
-    bottom: 80px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
