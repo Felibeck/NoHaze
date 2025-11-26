@@ -4081,7 +4081,7 @@ main:not(.no-header) {
         font-size: 1.4rem;
     }
 }
-}
+
 
 
 /* ========================================
@@ -4306,7 +4306,7 @@ main:not(.no-header) {
 /* ========================================
    RESPONSIVE - DESKTOP (1024px+)
    ======================================== */
-@media (min-width: 1024px) {
+   @media (min-width: 1024px) {
     .playlist-page {
         max-width: 900px;
         padding: 40px;
@@ -4327,34 +4327,35 @@ main:not(.no-header) {
         right: 22px;
     }
 
-    /* Grid de 2 columnas */
+    /* Mantener columna única en desktop */
     .playlists-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 30px;
     }
 
     .playlist-card {
         padding: 20px;
         gap: 20px;
+        max-width: 100%;
     }
 
     .playlist-img {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
     }
 
     .playlist-titulo {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
     }
 
     .playlist-autor {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .playlist-btn-play {
-        padding: 13px 0;
-        font-size: 1.05rem;
+        padding: 14px 0;
+        font-size: 1.1rem;
     }
 
     .playlist-btn-play svg {
@@ -4366,7 +4367,6 @@ main:not(.no-header) {
         font-size: 0.85rem;
     }
 }
-
 /* ========================================
    RESPONSIVE - MOBILE PEQUEÑO (max 480px)
    ======================================== */

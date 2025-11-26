@@ -18,44 +18,45 @@
     <section class="playlists-grid">
         @for(int i = 0; i < ViewBag.Playlists.Count; i++)
         {
-            <div class="playlist-card" data-titulo="@ViewBag.Playlists[i].titulo.ToLower()">
-                <!-- Imagen -->
-                <img 
-                    src="/Imagenes/@ViewBag.Playlists[i].foto" 
-                    alt="@ViewBag.Playlists[i].titulo"
-                    class="playlist-img"
-                />
+           <a 
+    href='@Url.Action("Playlist_Frecuencias", "Home", new {idPlaylist = ViewBag.Playlists[i].id})' 
+    class="playlist-card" 
+    data-titulo="@ViewBag.Playlists[i].titulo.ToLower()"
+>
+    <!-- Imagen -->
+    <img 
+        src="/Imagenes/@ViewBag.Playlists[i].foto" 
+        alt="@ViewBag.Playlists[i].titulo"
+        class="playlist-img"
+    />
 
-                <!-- Contenido -->
-                <div class="playlist-content">
-                    <div>
-                        <h2 class="playlist-titulo">@ViewBag.Playlists[i].titulo</h2>
-                        <p class="playlist-autor">@ViewBag.Playlists[i].autor</p>
-                        
-                        <!-- Tags -->
-                        @if(ViewBag.listaTags[i].Count > 0)
-                        {
-                            <div class="playlist-tags">
-                                @foreach(Tag tag in ViewBag.listaTags[i])
-                                {
-                                    <span class="playlist-tag">@tag.titulo</span>
-                                }
-                            </div>
-                        }
-                    </div>
-
-                    <!-- Botón Play -->
-                    <a 
-                        href='@Url.Action("Playlist_Frecuencias", "Home", new {idPlaylist = ViewBag.Playlists[i].id})' 
-                        class="playlist-btn-play"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        Play
-                    </a>
+    <!-- Contenido -->
+    <div class="playlist-content">
+        <div>
+            <h2 class="playlist-titulo">@ViewBag.Playlists[i].titulo</h2>
+            <p class="playlist-autor">@ViewBag.Playlists[i].autor</p>
+            
+            <!-- Tags -->
+            @if(ViewBag.listaTags[i].Count > 0)
+            {
+                <div class="playlist-tags">
+                    @foreach(Tag tag in ViewBag.listaTags[i])
+                    {
+                        <span class="playlist-tag">@tag.titulo</span>
+                    }
                 </div>
-            </div>
+            }
+        </div>
+
+        <!-- Botón Play -->
+        <div class="playlist-btn-play">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            Play
+        </div>
+    </div>
+</a>
         }
     </section>
 
