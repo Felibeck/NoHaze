@@ -1,24 +1,85 @@
-    <main>
-            <div class="container-fluid">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                </form>
-            </div>
+<main class="playlist-page">
+    
+    <!-- Barra de búsqueda -->
+    <div class="playlist-search">
+        <input 
+            type="search" 
+            id="searchInput" 
+            placeholder="Buscar..."
+            aria-label="Buscar playlists"
+        />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+        </svg>
+    </div>
 
-            <section>
-                    @for(int i = 0; i > ViewBag.Playlists.count; i++)
-                {
-                <div>
-                    <img src= @ViewBag.Playlists[i].foto alt="FotoPlaylist">
-                    <h2> @ViewBag.Playlist[i].titulo </h2>
-                    <button onclick="Play()">Play</button>
-                    @foreach(Tag item in ViewBag.listaTags[i])    
+    <!-- Grid de playlists -->
+    <section class="playlists-grid">
+        @for(int i = 0; i < ViewBag.Playlists.Count; i++)
+        {
+           <a 
+    href='@Url.Action("Playlist_Frecuencias", "Home", new {idPlaylist = ViewBag.Playlists[i].id})' 
+    class="playlist-card" 
+    data-titulo="@ViewBag.Playlists[i].titulo.ToLower()"
+>
+    <!-- Imagen -->
+    <img 
+        src="/Imagenes/@ViewBag.Playlists[i].foto" 
+        alt="@ViewBag.Playlists[i].titulo"
+        class="playlist-img"
+    />
+
+    <!-- Contenido -->
+    <div class="playlist-content">
+        <div>
+            <h2 class="playlist-titulo">@ViewBag.Playlists[i].titulo</h2>
+            <p class="playlist-autor">@ViewBag.Playlists[i].autor</p>
+            
+            <!-- Tags -->
+            @if(ViewBag.listaTags[i].Count > 0)
+            {
+                <div class="playlist-tags">
+                    @foreach(Tag tag in ViewBag.listaTags[i])
                     {
-                       <p>@item.titulo</p> 
+                        <span class="playlist-tag">@tag.titulo</span>
                     }
                 </div>
+            }
+        </div>
 
+        <!-- Botón Play -->
+        <div class="playlist-btn-play">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            Play
+        </div>
+    </div>
+</a>
+        }
+    </section>
+
+</main>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.playlist-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const titulo = card.getAttribute('data-titulo');
+                
+                if (titulo.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
                 }
-
-            </section>
-    </main>
+            });
+        });
+    });
+</script>

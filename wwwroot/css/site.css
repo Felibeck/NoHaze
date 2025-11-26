@@ -1347,8 +1347,8 @@ main:not(.no-header) {
     padding: 12px 20px;
     font-size: 1.05rem;
   }
-
-  /* ========================================
+}
+/* ========================================
    CSS EXCLUSIVO PARA APPSDEOCIO_CATALOGO.CSHTML
    ======================================== */
 
@@ -1365,7 +1365,7 @@ main:not(.no-header) {
     font-size: 2rem;
     font-weight: 700;
     color: #333;
-    margin: 0 0 25px 0;
+    margin: 0 0 20px 0;
 }
 
 /* Botón seleccionar app */
@@ -1377,11 +1377,11 @@ main:not(.no-header) {
     background-color: var(--color-secundario);
     color: white !important;
     text-decoration: none;
-    padding: 14px 24px;
+    padding: 12px 20px;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(122, 91, 168, 0.3);
     transition: all 0.3s ease;
 }
@@ -1394,8 +1394,8 @@ main:not(.no-header) {
 }
 
 .btn-seleccionar img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     filter: brightness(0) invert(1);
 }
 
@@ -1451,7 +1451,7 @@ main:not(.no-header) {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background-color: rgba(122, 91, 168, 0.2);
+    background-color: rgba(122, 91, 168, 0.3);
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -1460,7 +1460,7 @@ main:not(.no-header) {
 }
 
 .btn-delete:hover {
-    background-color: rgba(122, 91, 168, 0.4);
+    background-color: rgba(122, 91, 168, 0.5);
     transform: scale(1.05);
 }
 
@@ -1479,29 +1479,26 @@ main:not(.no-header) {
 
     .apps-ocio-page h1 {
         font-size: 1.8rem;
-    }
-
-    .apps-coins {
-        padding: 6px 12px;
-    }
-
-    .apps-coins span {
-        font-size: 1rem;
-    }
-
-    .apps-coins img {
-        width: 24px;
-        height: 24px;
+        margin-bottom: 18px;
     }
 
     .btn-seleccionar {
-        padding: 12px 20px;
-        font-size: 0.95rem;
+        padding: 11px 18px;
+        font-size: 0.9rem;
+        margin-bottom: 18px;
     }
 
     .btn-seleccionar img {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .apps-list {
+        gap: 10px;
+    }
+
+    .app-card {
+        padding: 10px 14px !important;
     }
 
     .app-logo {
@@ -1535,44 +1532,31 @@ main:not(.no-header) {
 
     .apps-ocio-page h1 {
         font-size: 2.3rem;
-        margin-bottom: 30px;
-    }
-
-    .apps-coins {
-        padding: 10px 18px;
-    }
-
-    .apps-coins span {
-        font-size: 1.2rem;
-    }
-
-    .apps-coins img {
-        width: 30px;
-        height: 30px;
+        margin-bottom: 25px;
     }
 
     .btn-seleccionar {
-        padding: 16px 28px;
+        padding: 14px 24px;
         font-size: 1.05rem;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .btn-seleccionar img {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
 
     .apps-list {
-        gap: 15px;
+        gap: 14px;
     }
 
     .app-card {
-        padding: 14px 18px !important;
+        padding: 13px 17px !important;
     }
 
     .app-logo {
-        width: 52px !important;
-        height: 52px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
 
     .app-nombre {
@@ -1601,50 +1585,37 @@ main:not(.no-header) {
 
     .apps-ocio-page h1 {
         font-size: 2.6rem;
-        margin-bottom: 35px;
-    }
-
-    .apps-coins {
-        padding: 12px 20px;
-    }
-
-    .apps-coins span {
-        font-size: 1.3rem;
-    }
-
-    .apps-coins img {
-        width: 32px;
-        height: 32px;
+        margin-bottom: 30px;
     }
 
     .btn-seleccionar {
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
-        padding: 18px 32px;
+        padding: 16px 28px;
         font-size: 1.1rem;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
 
     .btn-seleccionar img {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     /* Grid de 2 columnas en desktop */
     .apps-list {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
+        gap: 16px;
     }
 
     .app-card {
-        padding: 16px 20px !important;
+        padding: 14px 18px !important;
     }
 
     .app-logo {
-        width: 56px !important;
-        height: 56px !important;
+        width: 52px !important;
+        height: 52px !important;
     }
 
     .app-nombre {
@@ -3180,7 +3151,7 @@ main:not(.no-header) {
 /* Botón volver (flecha) */
 .btn-volver {
     position: fixed;
-    bottom: 80px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -4110,3 +4081,403 @@ main:not(.no-header) {
         font-size: 1.4rem;
     }
 }
+
+
+
+/* ========================================
+   CSS EXCLUSIVO PARA PLAYLIST.CSHTML
+   ======================================== */
+
+/* Container principal */
+.playlist-page {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Barra de búsqueda */
+.playlist-search {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.playlist-search input {
+    width: 100%;
+    padding: 14px 45px 14px 18px;
+    border: none;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.playlist-search input:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.3);
+}
+
+.playlist-search input::placeholder {
+    color: #999;
+}
+
+.playlist-search svg {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #999;
+    pointer-events: none;
+}
+
+/* Grid de playlists */
+.playlists-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card individual de playlist */
+.playlist-card {
+    background: linear-gradient(135deg, #C7B2E1 0%, #D4C4E8 100%);
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.playlist-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(122, 91, 168, 0.25);
+}
+
+.playlist-card.hidden {
+    display: none;
+}
+
+/* Imagen de la playlist */
+.playlist-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenido derecho */
+.playlist-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+/* Título de la playlist */
+.playlist-titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 5px 0;
+    line-height: 1.3;
+}
+
+/* Autor */
+.playlist-autor {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555;
+    margin: 0 0 10px 0;
+}
+
+/* Botón Play */
+.playlist-btn-play {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(122, 91, 168, 0.3);
+    text-decoration: none;
+}
+
+.playlist-btn-play:hover {
+    background-color: #6A4B98;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.4);
+    color: white;
+}
+
+.playlist-btn-play svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+/* Tags */
+.playlist-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.playlist-tag {
+    background-color: rgba(122, 91, 168, 0.3);
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .playlist-page {
+        max-width: 700px;
+        padding: 30px;
+    }
+
+    .playlist-search {
+        margin-bottom: 30px;
+    }
+
+    .playlist-search input {
+        padding: 16px 50px 16px 20px;
+        font-size: 1.05rem;
+    }
+
+    .playlist-search svg {
+        width: 22px;
+        height: 22px;
+        right: 20px;
+    }
+
+    .playlists-grid {
+        gap: 25px;
+    }
+
+    .playlist-card {
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .playlist-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .playlist-titulo {
+        font-size: 1.2rem;
+    }
+
+    .playlist-autor {
+        font-size: 0.95rem;
+    }
+
+    .playlist-btn-play {
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .playlist-tag {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ======================================== */
+   @media (min-width: 1024px) {
+    .playlist-page {
+        max-width: 900px;
+        padding: 40px;
+    }
+
+    .playlist-search {
+        margin-bottom: 35px;
+    }
+
+    .playlist-search input {
+        padding: 18px 55px 18px 22px;
+        font-size: 1.1rem;
+    }
+
+    .playlist-search svg {
+        width: 24px;
+        height: 24px;
+        right: 22px;
+    }
+
+    /* Mantener columna única en desktop */
+    .playlists-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .playlist-card {
+        padding: 20px;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .playlist-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .playlist-titulo {
+        font-size: 1.3rem;
+    }
+
+    .playlist-autor {
+        font-size: 1.05rem;
+    }
+
+    .playlist-btn-play {
+        padding: 14px 0;
+        font-size: 1.1rem;
+    }
+
+    .playlist-btn-play svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .playlist-tag {
+        font-size: 0.85rem;
+    }
+}
+/* ========================================
+   RESPONSIVE - MOBILE PEQUEÑO (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .playlist-page {
+        padding: 15px;
+    }
+
+    .playlist-search {
+        margin-bottom: 20px;
+    }
+
+    .playlist-search input {
+        padding: 12px 40px 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    .playlist-search svg {
+        width: 18px;
+        height: 18px;
+        right: 16px;
+    }
+
+    .playlists-grid {
+        gap: 15px;
+    }
+
+    .playlist-card {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .playlist-img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .playlist-titulo {
+        font-size: 1rem;
+    }
+
+    .playlist-autor {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .playlist-btn-play {
+        padding: 9px 0;
+        font-size: 0.9rem;
+    }
+
+    .playlist-btn-play svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .playlist-tags {
+        gap: 5px;
+        margin-top: 6px;
+    }
+
+    .playlist-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+@keyframes fadeInPlaylist {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.playlist-card {
+    animation: fadeInPlaylist 0.4s ease forwards;
+}
+
+.playlist-card:nth-child(1) {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.playlist-card:nth-child(2) {
+    animation-delay: 0.15s;
+    opacity: 0;
+}
+
+.playlist-card:nth-child(3) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.playlist-card:nth-child(4) {
+    animation-delay: 0.25s;
+    opacity: 0;
+}
+
+.playlist-card:nth-child(5) {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.playlist-card:nth-child(6) {
+    animation-delay: 0.35s;
+    opacity: 0;
+}   
