@@ -13,7 +13,7 @@
                 <div>
                     <img src= "/Imagenes/@ViewBag.Playlists[i].foto" alt="FotoPlaylist">
                     <h2> @ViewBag.Playlists[i].titulo </h2>
-                    <a href='@Url.Action("Playlist_Frecuencias", "Home", new {id = @ViewBag.Playlists.id})'>Play</a>
+                    <a href='@Url.Action("Playlist_Frecuencias", "Home", new {idPlaylist = @ViewBag.Playlists[i].id})'>Play</a>
                     @foreach(Tag item in ViewBag.listaTags[i])    
                     {
                        <p>@item.titulo</p> 
