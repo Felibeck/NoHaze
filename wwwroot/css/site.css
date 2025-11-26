@@ -3567,6 +3567,7 @@ main:not(.no-header) {
     padding: 15px;
     text-align: center;
     transition: all 0.3s ease;
+    justify-content: center;
 }
 
 /* Podio Oro (primer lugar - centro, más alto) */
@@ -3601,7 +3602,7 @@ main:not(.no-header) {
 .podio.bronce {
     background: linear-gradient(135deg, #CD7F32 0%, #B8660F 100%);
     width: 80px;
-    height: 130px;
+    height: 150px;
     order: 3;
     box-shadow: 0 5px 12px rgba(205, 127, 50, 0.4);
 }
@@ -3694,7 +3695,7 @@ main:not(.no-header) {
 
     .podio.bronce {
         width: 100px;
-        height: 150px;
+        height: 170px;
     }
 
     .podio-img {
@@ -3765,7 +3766,7 @@ main:not(.no-header) {
 
     .podio.bronce {
         width: 120px;
-        height: 180px;
+        height: 200px;
     }
 
     .podio-img {
@@ -3838,7 +3839,7 @@ main:not(.no-header) {
 
     .podio.bronce {
         width: 75px;
-        height: 110px;
+        height: 132px;
     }
 
     .podio-img {
