@@ -21,7 +21,7 @@ function abrirModal(fotoApp, nombreApp, idApp) {
 }
 
 function cerrarModal() {
-    document.getElementById('modalCompra').style.display = 'none';
+    window.location.reload();
 }
 
 function cambiarMinutos(cantidad) {
