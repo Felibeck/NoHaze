@@ -16,69 +16,60 @@
                 </div>
             }
         }
-        else
-        {
-            <!-- Apps de ejemplo mientras no hay datos -->
-            <div class="tienda-card">
-                <img src="/Imagenes/discord-logo.png" alt="Discord" class="app-logo">
-                <span class="tienda-tiempo">15 mins</span>
-                <button onclick="abrirModal('/Imagenes/discord-logo.png', 'Discord', 1)" class="tienda-btn-comprar">Comprar</button>
-            </div>
-            <div class="tienda-card">
-                <img src="/Imagenes/instagram-logo.png" alt="Instagram" class="app-logo">
-                <span class="tienda-tiempo">15 mins</span>
-                <button onclick="abrirModal('/Imagenes/instagram-logo.png', 'Instagram', 2)" class="tienda-btn-comprar">Comprar</button>
-            </div>
-            <div class="tienda-card">
-                <img src="/Imagenes/logo-x.png" alt="X" class="app-logo">
-                <span class="tienda-tiempo">15 mins</span>
-                <button onclick="abrirModal('/Imagenes/logo-x.png', 'X', 3)" class="tienda-btn-comprar">Comprar</button>
-            </div>
-            <div class="tienda-card">
-                <img src="/Imagenes/youtube-icon.png" alt="YouTube" class="app-logo">
-                <span class="tienda-tiempo">15 mins</span>
-                <button onclick="abrirModal('/Imagenes/youtube-icon.png', 'YouTube', 4)" class="tienda-btn-comprar">Comprar</button>
-            </div>
-            <div class="tienda-card">
-                <img src="/Imagenes/tiktok-icon.png" alt="TikTok" class="app-logo">
-                <span class="tienda-tiempo">15 mins</span>
-                <button onclick="abrirModal('/Imagenes/tiktok-icon.png', 'TikTok', 5)" class="tienda-btn-comprar">Comprar</button>
-            </div>
-        }
     </section>
 
-    <!-- Modal de compra -->
-    <div id="modalCompra" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <button class="modal-close" onclick="cerrarModal()">✕</button>
-            
-            <!-- Contenido de compra -->
-            <div id="contenidoCompra">
-                <img id="modalAppLogo" src="" alt="App" class="modal-app-logo">
-                
-                <div class="modal-info">
-                    <span id="modalCantidad">1</span>
-                    <img src="/Imagenes/haze-coin.png" alt="Haze Coin" class="modal-coin">
-                    <span>= 1 minuto</span>
-                </div>
-
-                <div class="selector">
-                    <span class="flecha" onclick="cambiarMinutos(-5)">◀</span>
-                    <span id="valorMinutos">15 mins</span>
-                    <span class="flecha" onclick="cambiarMinutos(5)">▶</span>
-                </div>
-
-                <button class="modal-btn-comprar" onclick="realizarCompra()">Comprar por <span id="precioTotal">15</span></button>
+    <!-- Modal de compra mejorado -->
+<div id="modalCompra" class="modal-compra-overlay" style="display: none;">
+    <div class="modal-compra-content">
+        <button class="modal-compra-close" onclick="cerrarModal()">✕</button>
+        
+        <!-- Contenido de compra -->
+        <div id="contenidoCompra">
+            <div class="modal-compra-header">
+                <img id="modalAppLogo" src="" alt="App" class="modal-compra-app-logo">
+                <h3 class="modal-compra-titulo">Comprar tiempo</h3>
             </div>
 
-            <!-- Contenido de agradecimiento (oculto inicialmente) -->
-            <div id="contenidoGracias" style="display: none;">
-                <h2>Gracias por su compra</h2>
-                <button class="modal-btn-aceptar" onclick="cerrarModal()">Aceptar</button>
+            <div class="modal-compra-info">
+                <div class="modal-compra-coin-container">
+                    <img src="/Imagenes/haze-coin.png" alt="Coin" class="modal-compra-coin">
+                    <span id="modalCantidad" class="modal-compra-cantidad">1</span>
+                </div>
+                <span class="modal-compra-igual">=</span>
+                <span class="modal-compra-minuto">1 minuto</span>
+            </div>
+
+            <div class="modal-compra-selector">
+                <button class="selector-flecha" onclick="cambiarMinutos(-5)">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <span id="valorMinutos" class="selector-valor">15 mins</span>
+                <button class="selector-flecha" onclick="cambiarMinutos(5)">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <button class="modal-compra-btn" onclick="realizarCompra()">
+                Comprar por <span id="precioTotal">15</span>
+                <img src="/Imagenes/haze-coin.png" alt="Coin" class="modal-compra-btn-coin">
+            </button>
+        </div>
+
+        <!-- Contenido de agradecimiento -->
+        <div id="contenidoGracias" style="display: none;">
+            <div class="modal-gracias-content">
+                <div class="modal-gracias-icon">✓</div>
+                <h2 class="modal-gracias-titulo">¡Gracias por tu compra!</h2>
+                <p class="modal-gracias-texto">Tu tiempo ha sido agregado exitosamente</p>
+                <button class="modal-gracias-btn" onclick="cerrarModal()">Aceptar</button>
             </div>
         </div>
     </div>
-
+</div>
 </main>
 
 <script src="~/js/tienda.js"></script>
