@@ -838,7 +838,7 @@ main:not(.no-header) {
 
     .home-page .horizontal img {
         width: 120px;
-        height: 120px;
+        height: 100px;
     }
 
     .home-page .horizontal h1 {
@@ -881,7 +881,7 @@ main:not(.no-header) {
     }
 
     .home-page .horizontal img {
-        width: 70px;
+        /* width: 70px; */
         height: 70px;
     }
 
