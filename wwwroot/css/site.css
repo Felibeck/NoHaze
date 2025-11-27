@@ -4486,3 +4486,485 @@ main:not(.no-header) {
     animation-delay: 0.35s;
     opacity: 0;
 }   
+
+
+
+
+/* ========================================
+   CSS EXCLUSIVO PARA PLAYLIST_FRECUENCIAS.CSHTML
+   ======================================== */
+
+/* Container principal */
+.playlist-frecuencias-page {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header con imagen y controles */
+.playlist-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+/* Imagen principal de la playlist */
+.playlist-main-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(122, 91, 168, 0.3);
+}
+
+/* Título de la playlist */
+.playlist-main-titulo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0 5px 0;
+    text-align: center;
+}
+
+/* Autor */
+.playlist-main-autor {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+/* Botones de control (Play y Shuffle) */
+.playlist-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.playlist-btn-control {
+    flex: 1;
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(122, 91, 168, 0.3);
+}
+
+.playlist-btn-control:hover {
+    background-color: #6A4B98;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(122, 91, 168, 0.4);
+}
+
+.playlist-btn-control svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+/* Lista de frecuencias */
+.frecuencias-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Item individual de frecuencia */
+.frecuencia-item {
+    background: linear-gradient(135deg, #C7B2E1 0%, #D4C4E8 100%);
+    border-radius: 15px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 3px 10px rgba(122, 91, 168, 0.15);
+    transition: all 0.3s ease;
+}
+
+.frecuencia-item:hover {
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.25);
+}
+
+/* Ícono de onda sonora */
+.frecuencia-icon {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(122, 91, 168, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.frecuencia-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #7A5BA8;
+}
+
+/* Contenido de la frecuencia */
+.frecuencia-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Título de la frecuencia */
+.frecuencia-titulo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Autor de la frecuencia */
+.frecuencia-autor {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+}
+
+/* Botón Play individual */
+.frecuencia-btn-play {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-secundario);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(122, 91, 168, 0.3);
+}
+
+.frecuencia-btn-play:hover {
+    background-color: #6A4B98;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(122, 91, 168, 0.4);
+}
+
+.frecuencia-btn-play svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+    margin-left: 2px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .playlist-frecuencias-page {
+        max-width: 700px;
+        padding: 30px;
+    }
+
+    .playlist-header {
+        margin-bottom: 35px;
+        gap: 18px;
+    }
+
+    .playlist-main-img {
+        width: 320px;
+        height: 320px;
+    }
+
+    .playlist-main-titulo {
+        font-size: 2.1rem;
+        margin: 12px 0 6px 0;
+    }
+
+    .playlist-main-autor {
+        font-size: 1.1rem;
+        margin-bottom: 18px;
+    }
+
+    .playlist-controles {
+        max-width: 350px;
+        gap: 18px;
+    }
+
+    .playlist-btn-control {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+
+    .playlist-btn-control svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .frecuencias-lista {
+        gap: 18px;
+        margin-top: 25px;
+    }
+
+    .frecuencia-item {
+        padding: 14px 18px;
+        gap: 14px;
+    }
+
+    .frecuencia-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .frecuencia-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .frecuencia-titulo {
+        font-size: 1.05rem;
+    }
+
+    .frecuencia-autor {
+        font-size: 0.9rem;
+    }
+
+    .frecuencia-btn-play {
+        width: 44px;
+        height: 44px;
+    }
+
+    .frecuencia-btn-play svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .playlist-frecuencias-page {
+        max-width: 900px;
+        padding: 40px;
+    }
+
+    .playlist-header {
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+
+    .playlist-main-img {
+        width: 360px;
+        height: 360px;
+    }
+
+    .playlist-main-titulo {
+        font-size: 2.4rem;
+        margin: 15px 0 8px 0;
+    }
+
+    .playlist-main-autor {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .playlist-controles {
+        max-width: 400px;
+        gap: 20px;
+    }
+
+    .playlist-btn-control {
+        padding: 16px 28px;
+        font-size: 1.1rem;
+        border-radius: 28px;
+    }
+
+    .playlist-btn-control svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .frecuencias-lista {
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .frecuencia-item {
+        padding: 16px 20px;
+        gap: 16px;
+    }
+
+    .frecuencia-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .frecuencia-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .frecuencia-titulo {
+        font-size: 1.1rem;
+    }
+
+    .frecuencia-autor {
+        font-size: 0.95rem;
+    }
+
+    .frecuencia-btn-play {
+        width: 48px;
+        height: 48px;
+    }
+
+    .frecuencia-btn-play svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PEQUEÑO (max 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .playlist-frecuencias-page {
+        padding: 15px;
+    }
+
+    .playlist-header {
+        margin-bottom: 25px;
+        gap: 12px;
+    }
+
+    .playlist-main-img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .playlist-main-titulo {
+        font-size: 1.6rem;
+        margin: 8px 0 4px 0;
+    }
+
+    .playlist-main-autor {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    .playlist-controles {
+        max-width: 280px;
+        gap: 12px;
+    }
+
+    .playlist-btn-control {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .playlist-btn-control svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .frecuencias-lista {
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .frecuencia-item {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .frecuencia-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .frecuencia-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .frecuencia-titulo {
+        font-size: 0.95rem;
+    }
+
+    .frecuencia-autor {
+        font-size: 0.8rem;
+    }
+
+    .frecuencia-btn-play {
+        width: 36px;
+        height: 36px;
+    }
+
+    .frecuencia-btn-play svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+@keyframes fadeInFrecuencia {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.playlist-header {
+    animation: fadeInFrecuencia 0.5s ease forwards;
+}
+
+.frecuencia-item {
+    animation: fadeInFrecuencia 0.4s ease forwards;
+}
+
+.frecuencia-item:nth-child(1) {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.frecuencia-item:nth-child(2) {
+    animation-delay: 0.15s;
+    opacity: 0;
+}
+
+.frecuencia-item:nth-child(3) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.frecuencia-item:nth-child(4) {
+    animation-delay: 0.25s;
+    opacity: 0;
+}
+
+.frecuencia-item:nth-child(5) {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
