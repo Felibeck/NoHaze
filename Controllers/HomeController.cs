@@ -252,6 +252,7 @@ ViewBag.horasSemanales = horasSemanales;
     public int ComprarTiempo(int minutos)
     {
         int id = int.Parse(HttpContext.Session.GetString("ID"));
+        BD.
         BD.agregarRecompensas(id, (- minutos));
         return 1;
     }
