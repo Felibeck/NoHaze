@@ -102,10 +102,8 @@
     <div class="navbar-monedas">
      <a href='@Url.Action("Pasar", "Home", new {Direccion = "Tienda_Catalogo"})'>
         <span class="navbar-monedas-cantidad" id="ValorMonedas">
-          <!-- aca hay que poner el valor conseguido pidiendo previamente a la base de datos -->
 
-      @Html.Raw(BD.GetHazeCoins(int.Parse(HttpContext.Session.GetString("ID"))))
-          
+          @Html.Raw(BD.GetHazeCoins(int.Parse(Context.Session.GetString("ID"))))
         
         </span>
         <img src="/Imagenes/NoHaze-Logo nuevo.png" alt="Moneda">
