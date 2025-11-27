@@ -6,7 +6,7 @@ function abrirModal(fotoApp, nombreApp, idApp) {
     minutosSeleccionados = 15;
     
     // Actualizar la imagen de la app
-    document.getElementById('modalAppLogo').src = fotoApp;
+    document.getElementById('modalAppLogo').src = "/Imagenes/"+ fotoApp;
     document.getElementById('modalAppLogo').alt = nombreApp;
     
     // Actualizar valores iniciales
