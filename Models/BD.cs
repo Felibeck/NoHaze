@@ -270,17 +270,4 @@ static public class BD
 
         return;
     }
-
-    public static int GetHazeCoins(int IDUsuario)
-    {
-        int  cantidadMonedas = 0;
-        using(SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string query = "SELECT monedas FROM Usuarios WHERE ID = @pID";
-            cantidadMonedas = connection.QueryFirstOrDefault<int>(query, new { pID = IDUsuario});
-        }
-            return cantidadMonedas;
-    }
-
-
 }
