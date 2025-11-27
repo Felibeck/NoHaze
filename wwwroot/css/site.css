@@ -5226,3 +5226,86 @@ main:not(.no-header) {
     animation-delay: 0.3s;
     opacity: 0;
 }
+
+
+/* ========================================
+   NOTIFICACIÓN DE DESCANSO - POMODORO
+   ======================================== */
+
+   .notificacion-descanso {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: linear-gradient(135deg, #7A5BA8 0%, #9B7AC7 100%);
+    color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(122, 91, 168, 0.5);
+    z-index: 2000;
+    text-align: center;
+    animation: popIn 0.5s ease forwards;
+}
+
+.notificacion-descanso.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.notificacion-descanso h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.notificacion-descanso p {
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    opacity: 0.9;
+}
+
+.notificacion-btn-cerrar {
+    background-color: white;
+    color: var(--color-secundario);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.notificacion-btn-cerrar:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+@keyframes popIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .notificacion-descanso {
+        padding: 25px 30px;
+        width: 90%;
+    }
+
+    .notificacion-descanso h2 {
+        font-size: 1.5rem;
+    }
+
+    .notificacion-descanso p {
+        font-size: 1rem;
+    }
+}

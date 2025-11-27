@@ -5,6 +5,8 @@ let estado = "pausado"; // "trabajo", "descanso", o "pausado"
 let temporizador = null;
 let tiempoTrabajado = 0;
 
+let audioAlarma = new Audio('/sounds/alarma.mp3');
+
 function actualizarPantalla() {
     const min = Math.floor(segundosRestantes / 60);
     const seg = segundosRestantes % 60;
@@ -37,7 +39,11 @@ function iniciar() {
                     segundosRestantes = tiempoDescanso * 60;
                     document.getElementById("estado").textContent = "Tiempo de descanso";
                     tiempoTrabajado += tiempoTrabajo;
-                } else {
+                    
+                    // Reproducir alarma
+// Reproducir alarma y mostrar notificación
+audioAlarma.play().catch(err => console.log("Error al reproducir:", err));
+mostrarNotificacion();                } else {
                     estado = "trabajo";
                     segundosRestantes = tiempoTrabajo * 60;
                     document.getElementById("estado").textContent = "Tiempo de trabajo";
@@ -88,3 +94,20 @@ function guardarTiempos() {
 
 // Inicializar al cargar
 actualizarPantalla();
+
+
+function mostrarNotificacion() {
+    const notificacion = document.getElementById("notificacionDescanso");
+    notificacion.style.display = "block";
+    setTimeout(() => {
+        notificacion.classList.add("show");
+    }, 10);
+}
+
+function cerrarNotificacion() {
+    const notificacion = document.getElementById("notificacionDescanso");
+    notificacion.classList.remove("show");
+    setTimeout(() => {
+        notificacion.style.display = "none";
+    }, 300);
+}
