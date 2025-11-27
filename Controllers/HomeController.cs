@@ -251,8 +251,14 @@ ViewBag.horasSemanales = horasSemanales;
 
     public int ComprarTiempo(int minutos)
     {
+        int dinero2 = 0;
         int id = int.Parse(HttpContext.Session.GetString("ID"));
-        BD.agregarRecompensas(id, (- minutos));
-        return 1;
+        int monedas = BD.GetHazeCoins(id);
+        if(monedas >= minutos)
+        {
+            BD.agregarRecompensas(id, (- minutos));
+            dinero2 = 1;
+        }
+        return dinero2;
     }
 }
