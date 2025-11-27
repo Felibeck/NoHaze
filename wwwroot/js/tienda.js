@@ -49,7 +49,10 @@ function realizarCompra() {
         type: 'POST',
         dataType: 'json',
         success: function(response) {
-            mostrarGracias();
+            if(response = 1)
+            {
+                mostrarGracias();
+            }
         }
     });
 }
