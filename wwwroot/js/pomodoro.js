@@ -7,6 +7,17 @@ let tiempoTrabajado = 0;
 
 let audioAlarma = new Audio('/sounds/alarma.mp3');
 
+// Función para reproducir audio por 3 segundos
+function reproducirAlarma() {
+    audioAlarma.currentTime = 0; // Reiniciar desde el inicio
+    audioAlarma.play().catch(err => console.log("Error al reproducir:", err));
+    
+    setTimeout(() => {
+        audioAlarma.pause();
+        audioAlarma.currentTime = 0;
+    }, 3000); // 3 segundos
+}
+
 function actualizarPantalla() {
     const min = Math.floor(segundosRestantes / 60);
     const seg = segundosRestantes % 60;
@@ -40,13 +51,18 @@ function iniciar() {
                     document.getElementById("estado").textContent = "Tiempo de descanso";
                     tiempoTrabajado += tiempoTrabajo;
                     
-                    // Reproducir alarma
-// Reproducir alarma y mostrar notificación
-audioAlarma.play().catch(err => console.log("Error al reproducir:", err));
-mostrarNotificacion();                } else {
+                    // Reproducir alarma y mostrar notificación
+                    reproducirAlarma();
+                    mostrarNotificacion();
+                    
+                } else {
                     estado = "trabajo";
                     segundosRestantes = tiempoTrabajo * 60;
                     document.getElementById("estado").textContent = "Tiempo de trabajo";
+                    
+                    // Reproducir alarma cuando vuelve a trabajar
+                    reproducirAlarma();
+                    mostrarNotificacionTrabajo();
                 }
                 actualizarPantalla();
             }
@@ -110,4 +126,20 @@ function cerrarNotificacion() {
     setTimeout(() => {
         notificacion.style.display = "none";
     }, 300);
+}
+
+function mostrarNotificacionTrabajo() {
+    const notificacion = document.getElementById("notificacionDescanso");
+    notificacion.querySelector("h2").textContent = "¡A trabajar! 💪";
+    notificacion.querySelector("p").textContent = "Tu descanso ha terminado";
+    notificacion.style.display = "block";
+    setTimeout(() => {
+        notificacion.classList.add("show");
+    }, 10);
+    
+    // Resetear el texto después de cerrar
+    setTimeout(() => {
+        notificacion.querySelector("h2").textContent = "¡Tiempo de descanso! 🎉";
+        notificacion.querySelector("p").textContent = "Has completado tu sesión de trabajo";
+    }, 5000);
 }
