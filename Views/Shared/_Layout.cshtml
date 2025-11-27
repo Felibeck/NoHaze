@@ -103,7 +103,7 @@
      <a href='@Url.Action("Pasar", "Home", new {Direccion = "Tienda_Catalogo"})'>
         <span class="navbar-monedas-cantidad" id="ValorMonedas">
 
-          @Html.Raw(BD.GetHazeCoins(userId))
+          @Html.Raw(BD.GetHazeCoins(int.Parse(userId)))
         
         </span>
         <img src="/Imagenes/NoHaze-Logo nuevo.png" alt="Moneda">
